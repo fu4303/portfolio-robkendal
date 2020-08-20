@@ -1,0 +1,29 @@
+.navigation {
+  font-size: 1.5rem;
+
+  a:not(.button) {
+    font-family: var(--font-family-headings);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    margin: 0 1rem;
+    color: var(--brand-alt);
+    text-shadow: 2px 2px 2px var(--brand-alt-light-trans);
+
+    &:hover {
+      border-bottom: 4px solid var(--brand-alt);
+    }
+  }
+
+  a.button {
+  }
+
+  a:hover {
+  }
+}
+
+.active {
+  a {
+    border-bottom: 4px solid var(--brand-alt-light);
+  }
+}
