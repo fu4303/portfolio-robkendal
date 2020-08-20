@@ -1,0 +1,28 @@
+/* ---------------------------------------------------------------------- */
+/* utilities */
+/* ---------------------------------------------------------------------- */
+.flex {
+  display: flex;
+  /* align-content: stretch; */
+}
+.flex.column {
+  flex-direction: column;
+}
+.flex.reverse {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/* ---------------------------------------------------------------------- */
+/* misc */
+/* ---------------------------------------------------------------------- */
+
+main > section {
+  margin: 1em 0;
+  padding: 1em 0;
+  border-top: 1px solid var(--grey-light);
+  border-bottom: 1px solid var(--grey-light);
+}
+main > section + section {
+  border-top: 0;
+}
