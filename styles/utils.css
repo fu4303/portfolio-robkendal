@@ -1,0 +1,115 @@
+/* ---------------------------------------------------------------------- */
+/* sizing */
+/* ---------------------------------------------------------------------- */
+.has-padding-md {
+  padding: 2em !important;
+}
+.has-padding-left-md {
+  padding-left: 2em !important;
+}
+.has-padding-right-md {
+  padding-right: 2em !important;
+}
+.has-padding-top-md {
+  padding-top: 2em !important;
+}
+.has-padding-bottom-md {
+  padding-bottom: 2em !important;
+}
+
+.has-padding-lg {
+  padding: 4em !important;
+}
+.has-padding-left-lg {
+  padding-left: 4em !important;
+}
+.has-padding-right-lg {
+  padding-right: 4em !important;
+}
+.has-padding-top-lg {
+  padding-top: 4em !important;
+}
+.has-padding-bottom-lg {
+  padding-bottom: 4em !important;
+}
+
+/* ---------------------------------------------------------------------- */
+/* layout */
+/* ---------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------- */
+/* helpers */
+/* ---------------------------------------------------------------------- */
+.no-margin {
+  margin: 0 !important;
+}
+/* ---------------------------------------------------------------------- */
+/* text */
+/* ---------------------------------------------------------------------- */
+.has-text-uppercase {
+  text-transform: uppercase !important;
+}
+.has-text-centered {
+  text-align: center !important;
+}
+.has-text-right {
+  text-align: right !important;
+}
+.has-text-grey-light {
+  color: var(--grey-line);
+}
+.is-white {
+  color: white !important;
+}
+/* ---------------------------------------------------------------------- */
+/* comments */
+/* ---------------------------------------------------------------------- */
+.comments-area {
+  margin: 2.5em 0 1.66667em;
+  position: relative;
+}
+
+.comments-overlay {
+  background: linear-gradient(
+    to bottom,
+    hsla(0, 0%, 100%, 0) 0%,
+    hsla(0, 0%, 100%, 0) 30%,
+    hsl(0, 0%, 100%) 100%
+  );
+  color: var(--brand-tertiary);
+  display: none;
+  height: 250px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  text-align: center;
+}
+
+#comments-show {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  font-weight: bold;
+  transform: translateX(-50%);
+  transition: 0.3s ease;
+  z-index: 1;
+}
+
+.comments-area.comments--loaded .comments-inside {
+  height: 300px;
+  overflow: hidden;
+}
+
+.comments-area.comments--opened .comments-inside {
+  height: auto;
+  overflow: auto;
+}
+
+.comments-area.comments--loaded .comments-overlay {
+  display: block;
+}
+
+.comments-area.comments--opened .comments-overlay {
+  display: none;
+}

@@ -1,6 +1,7 @@
 .button {
   position: relative;
   padding: 0.5rem 1rem;
+  display: inline-block;
   font-size: 1em;
   font-weight: 600;
   text-decoration: none;
@@ -8,9 +9,13 @@
   text-shadow: 0px 2px var(--brand-alt-lighter);
   color: var(--grey);
   transition: all 0.1s;
+  cursor: pointer;
 }
 .button:hover {
-  color: inherit;
+  color: var(--text-color);
+}
+.button:active {
+  margin-bottom: 4px;
 }
 
 /* varieties */
@@ -27,11 +32,11 @@
 }
 
 .button.is-primary {
-  border: 1px solid var(--brand-secondary);
-  border-bottom: 5px solid var(--brand-secondary-dark);
-  background-color: var(--brand-secondary);
-  color: var(--brand-primary-light);
-  text-shadow: 0px 2px var(--brand-secondary-dark);
+  border: 1px solid var(--brand-secondary-dark);
+  border-bottom: 5px solid var(--brand-secondary-darker);
+  background-color: var(--brand-secondary-dark);
+  color: var(--brand-primary-lighter);
+  text-shadow: 0px 2px var(--brand-secondary-darker);
 }
 .button.is-primary:active {
   border-bottom: 1px solid var(--brand-secondary);
@@ -46,4 +51,19 @@
 }
 .button.has-icon span + span {
   margin-left: 0.5rem;
+}
+
+/* sizes */
+.button.is-medium {
+  font-size: var(--font-size-5);
+  padding: 0.75rem 1.5rem;
+}
+.button.is-large {
+  font-size: var(--font-size-4);
+  padding: 1rem 2rem;
+}
+
+/* spacing */
+.button + .button {
+  margin-left: 0.75em;
 }

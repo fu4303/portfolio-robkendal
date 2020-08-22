@@ -10,13 +10,16 @@ import Footer from './Footer';
 import styles from './scss/layout.module.scss';
 
 const shortTitle = 'Freelance WordPress Developer and Jamstack developer';
+const baseUrl = "https://robkendal.co.uk/";
+
+const generateUrl = url => `${baseUrl}${url}`;
 
 const Layout = ({
   children,
   title = 'Freelance WordPress Developer | Jamstack developer | Rob Kendal',
   description = 'A friendly, reliable, remote freelance WordPress developer and website consultant with 15 years experience based in Selby, Yorkshire',
   image = '/img/alt-logo.png',
-  url = 'https://robkendal.co.uk/'
+  url = ''
 }) => (
   <div className={styles.container}>
     <Head>
@@ -40,7 +43,7 @@ const Layout = ({
       <meta property='og:image' content={image} />
       <meta property='og:image:alt' content={shortTitle} />
       <meta property='og:type' content='website' />
-      <meta property='og:url' content={url} />
+      <meta property='og:url' content={generateUrl(url)} />
       <meta name='twitter:card' content='summary_large_image' />
       <meta name='twitter:creator' content='Rob Kendal' />
       <meta name='twitter:site' content='https://robkendal.co.uk' />
@@ -72,7 +75,7 @@ const Layout = ({
         <div aria-hidden className={styles.chromebar}>
           <span></span>
         </div>
-        <main className={styles['content-container']}>{children}</main>
+        <main className={`main-content ${styles['content-container']}`}>{children}</main>
         <Footer className={styles.footer} />
       </section>
     </div>

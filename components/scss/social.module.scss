@@ -1,0 +1,16 @@
+.social-links {
+  margin: 1em 0;
+  font-size: 1.5rem;
+
+  a {
+    margin: 0 1em 0 0;
+
+    &:visited {
+      color: var(--brand-tertiary);
+
+      &:hover {
+        color: var(--brand-tertiary-dark);
+      }
+    }
+  }
+}

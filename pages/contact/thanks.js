@@ -1,56 +1,42 @@
+import Link from 'next/link';
+
+// components
 import Layout from '../../components/Layout';
 
 const ContactThanks = () => {
   return (
     <Layout>
-      <h1>Thanks for contact</h1>
+      <div className='container'>
+        <h1>Thank you for your message</h1>
+        <img
+          src='https://media.giphy.com/media/111ebonMs90YLu/giphy.gif'
+          alt='Thumbs up'
+        />
+        <p>
+          Thanks for getting in touch. I'll respond to your message within 24
+          hours and I look forward to working together.
+        </p>
+        <p>
+          In true 'choose your own adventure' style, you can choose where to go
+          next:
+        </p>
+        <ul>
+          <li>
+            <Link href='/'>
+              <a>Visit the home page</a>
+            </Link>{' '}
+            or,
+          </li>
+          <li>
+            Read some{' '}
+            <Link href='/blog'>
+              <a>blog articles</a>
+            </Link>
+          </li>
+        </ul>
+      </div>
     </Layout>
   );
 };
 
 export default ContactThanks;
-
-// export default () => (
-//   <Layout>
-//     <section className='section'>
-//       <div className='container'>
-//         <div className='columns'>
-//           <div className='column is-10 is-offset-1'>
-//             <div className='content'>
-//               <h1>Who's awesome? You're awesome!</h1>
-//               <img
-//                 src='https://media.giphy.com/media/111ebonMs90YLu/giphy.gif'
-//                 alt='Thumbs up'
-//               />
-//               <p>
-//                 Thank you for signing up for my regular update email. You'll
-//                 barely regret it!
-//               </p>
-//               <p>
-//                 In true 'choose your own adventure' style, you can choose where
-//                 to go next:
-//               </p>
-//               <ul>
-//                 <li>
-//                   Go{' '}
-//                   <a
-//                     href='#previous-page'
-//                     onClick={() => (window.location = document.referrer)}
-//                   >
-//                     back to the previous page
-//                   </a>
-//                 </li>
-//                 <li>
-//                   <a href='/'>Visit the home page</a> or,
-//                 </li>
-//                 <li>
-//                   Read some more <a href='/blog'>lovely articles</a>
-//                 </li>
-//               </ul>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   </Layout>
-// );

@@ -18,7 +18,7 @@ tags:
 
 I've been moving over to using React Hooks in my development of late. They offer a much simpler, terser approach to development and are super powerful. They do require a certain mind-shift towards [thinking in React Hooks](https://wattenberger.com/blog/react-hooks) (read that article by Amelia Wattenberger, it's so well written and helpful!), but they really push your development on.
 
-Anyway, up until now, I had been like a lot of developers who wanted to employ a centralised state management system; I had been using the [Redux library](https://redux.js.org/), specifically [React Redux](https://react-redux.js.org/introduction/why-use-react-redux) and the [Redux Toolkit](https://redux-toolkit.js.org/) (which just simplifies things a little I feel). 
+Anyway, up until now, I had been like a lot of developers who wanted to employ a centralised state management system; I had been using the [Redux library](https://redux.js.org/), specifically [React Redux](https://react-redux.js.org/introduction/why-use-react-redux) and the [Redux Toolkit](https://redux-toolkit.js.org/) (which just simplifies things a little I feel).
 
 However, the React core team has [introduced the `useReducer` Hook](https://reactjs.org/docs/hooks-reference.html#usereducer) and I've found it a little nicer to use. It doesn't require additional libraries or tooling, and I feel like it might just take some of the edge of learning the Redux pattern(s) for beginners. It certainly removes a lot of the configuration 'fun' that accompanies a typical Redux setup.
 
@@ -45,11 +45,12 @@ This is a long article, so if you want to skip around then you'll find this outl
 - [Further reading and resources](#further-reading)
 
 ## A Redux primer
+
 <a name="redux-primer"></a>
 
 **(If you're already a Redux king or queen and just want to start using the useReducer Hook, you can [skip to the tutorial part now](#redux-with-usereducer))**
 
-I mentor some junior and aspiring developers and at some point they all land on the Redux methodology for manging their state. It's easy to see why: it's a very common approach to solving application state management in complex apps; let's face it, most commercial apps qualify as 'complex' and you are always better off learning things that are geared to helping you in a realistic role. 
+I mentor some junior and aspiring developers and at some point they all land on the Redux methodology for managing their state. It's easy to see why: it's a very common approach to solving application state management in complex apps; let's face it, most commercial apps qualify as 'complex' and you are always better off learning things that are geared to helping you in a realistic role.
 
 However, the concepts involved in Redux are where a lot of beginners come unstuck. I think it's a combination of having to understand several moving parts that wire together to make a Redux-y state change, as well as some unfamiliar (and potentially confusing) terminology.
 
@@ -68,31 +69,32 @@ So, there are four main players within the Redux pattern:
 
 The most straightforward of the bunch, this is simply a centralised object with various properties that represent the 'state' of our application at a given moment. It can contain anything your app needs, but typically it could contain collections of items, settings, preferences and so on.
 
-In more complex applications you might find that state is broken into small sections (often referred to as 'slices' in Redux land) which are then stitched together when the application is served. 
+In more complex applications you might find that state is broken into small sections (often referred to as 'slices' in Redux land) which are then stitched together when the application is served.
 
 ### Reducers
-<a name="reducers"></a> 
 
-Reducers are functions that modify our state. 
+<a name="reducers"></a>
 
-They usually accept an output of an **action creator** and use this to determine what *action* to take on our state. 
+Reducers are functions that modify our state.
+
+They usually accept an output of an **action creator** and use this to determine what _action_ to take on our state.
 
 You might see something like this:
 
-```JavaScript
+```javascript
 function mySuperReducer(state, action) {
-    switch(action.type) {
-        case 'INCREMENT':
-            return state + 1;
-        default: 
-            return state;
-    }
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    default:
+      return state;
+  }
 }
 ```
 
 For some state changes, however, we also need to modify our state based on a passed in value. For this, we'll use an action that contains a **payload**.
 
-A **payload** could be anything: a value, string, integer, array, object, etc. It's passed in with the action object into the reducer and is used to modify state. 
+A **payload** could be anything: a value, string, integer, array, object, etc. It's passed in with the action object into the reducer and is used to modify state.
 
 It might look like this:
 
@@ -101,23 +103,24 @@ function mySuperReducer(state, action) {
     switch(action.type) {
         case 'ADD_USER':
             return [...state, action.payload.newUser]
-        default: 
+        default:
             return state;
     }
 }
 ```
 
 ### Action creators
+
 <a name="action-creators"></a>
 
-Action creators are functions that create actions. That's not very helpful though. 
+Action creators are functions that create actions. That's not very helpful though.
 
 What they are, are quite simple functions that return an object. This object usually contains two things:
 
 1. The type of action you want to take (often a string constant)
 2. The value you want to take action with (see above example in the reducers section)
 
-When you pass an action (the result of an action creator) into a reducer, it is the action type that determines what will happen to state, and (if required/available) what *value* will be used as part of the state changes.
+When you pass an action (the result of an action creator) into a reducer, it is the action type that determines what will happen to state, and (if required/available) what _value_ will be used as part of the state changes.
 
 What they look like varies from use to use, but in a relatively standard Redux setup, they'll look either like this:
 
@@ -136,11 +139,12 @@ const addUser = createAction('ADD USER');
 ```
 
 ### Dispatchers
+
 <a name="dispatch-methods"></a>
 
-The final piece of the puzzle, dispatchers. Dispatchers are the gophers between actions and reducers. Essentially, dispatchers are functions that trigger/kick-off all state updates. 
+The final piece of the puzzle, dispatchers. Dispatchers are the gophers between actions and reducers. Essentially, dispatchers are functions that trigger/kick-off all state updates.
 
-You call a dispatch function, passing in an action. The dispatch function takes the action to the reducer and the reducer modifies the state. 
+You call a dispatch function, passing in an action. The dispatch function takes the action to the reducer and the reducer modifies the state.
 
 Using a dispatcher might look like this:
 
@@ -175,11 +179,12 @@ If you need further help on this, check out the various [Redux JS documentation 
 2. [React and Redux components with data handlers - part two](https://robkendal.co.uk/blog/2020-01-27-react-redux-components-apis-and-handler-utilities-part-two/)
 
 ## Redux with React and useReducer
+
 <a name="redux-with-usereducer"></a>
 
-OK, to the main meat and potatoes of the article, using the useReducer Hook to manage your application state in React. 
+OK, to the main meat and potatoes of the article, using the useReducer Hook to manage your application state in React.
 
-We're going to build a small shopping list app that accepts some simple data via input elements and uses the Redux pattern to update a global state-held list. 
+We're going to build a small shopping list app that accepts some simple data via input elements and uses the Redux pattern to update a global state-held list.
 
 The tools we'll be using include:
 
@@ -218,6 +223,7 @@ export default {
 Nothing too clever here, just a plain old JavaScript object with a couple of properties that are fairly self-explanatory;
 
 ### Creating the reducer
+
 <a name="creating-reducers"></a>
 
 Next, we'll create our reducer file, `reducer.js`. It will contain a few items when we're done:
@@ -233,14 +239,14 @@ Our new file looks like this:
 import React from "react";
 
 // Contexts
-// will be used to pass down the dispatch method and our 
-// application state via the Context Provider and consumed 
+// will be used to pass down the dispatch method and our
+// application state via the Context Provider and consumed
 // in child components using the useContext Hook
-export const StateContext = React.createContext(null); 
+export const StateContext = React.createContext(null);
 export const ShoppingContext = React.createContext(null);
 
 // Action constants
-// we will import this object and use the various properties 
+// we will import this object and use the various properties
 // in child objects when calling the dispatch method
 export const actions = {
     GET_ITEMS: "get items",
@@ -249,9 +255,9 @@ export const actions = {
     REMOVE_ITEM: "remove item"
 };
 
-// This is a simple helper function that will take a type 
-// (from the constants above) and a payload, which will be the 
-// value which needs to be affected in state it returns 
+// This is a simple helper function that will take a type
+// (from the constants above) and a payload, which will be the
+// value which needs to be affected in state it returns
 // a simple object that will be passed to our dispatch function
 export const createAction = (type, payload) => {
     return {
@@ -261,7 +267,7 @@ export const createAction = (type, payload) => {
 };
 
 // Reducer
-// the function that accepts our app state, and the action to 
+// the function that accepts our app state, and the action to
 // take upon it, which then carries out that action
 export const reducer = (state, action) => {
     switch (action.type) {
@@ -301,17 +307,18 @@ export const reducer = (state, action) => {
 };
 ```
 
-In a more complex app, it may make sense to split these functions out, but for smaller apps and our example, it makes sense to me to keep them contained within one reducer file. You could name it something that encompasses the more holistic nature of the elements within it, but for now, it's fine. 
+In a more complex app, it may make sense to split these functions out, but for smaller apps and our example, it makes sense to me to keep them contained within one reducer file. You could name it something that encompasses the more holistic nature of the elements within it, but for now, it's fine.
 
 The main thing to understand is that each part in here is related and will join together throughout our app to make changes to our state.
 
-The reducer function is the most interesting part and you can see that it accepts our current state (this is taken care of by React's `useReducer` function that you will see later on) and the action we want to take against the state. 
+The reducer function is the most interesting part and you can see that it accepts our current state (this is taken care of by React's `useReducer` function that you will see later on) and the action we want to take against the state.
 
-Based on the supplied action's type, the reducer determines which action we're talking about and then does some simple state mutation based on what that action type may be. 
+Based on the supplied action's type, the reducer determines which action we're talking about and then does some simple state mutation based on what that action type may be.
 
 For example, if we pass the action type 'REMOVE_ITEM' (just a string constant), the reducer returns a new version of state with the 'shoppingList' property where the previous shopping list has been filtered to remove the item that matches the action's payload (which will be the item's id value).
 
 ## Wiring up the App component with `useReducer`
+
 <a name="wiring-the-app"></a>
 
 So we've got a reducer (and it's other moving parts) and some state for the reducer to act upon. Now we need to wire this up into our App.
@@ -339,9 +346,9 @@ Next, we'll define our main export and proceed to fill it as we go.
 
 ```JavaScript
 export default props => {
-    
+
     return (
-        <div>The app has landed</div>  
+        <div>The app has landed</div>
     );
 };
 ```
@@ -371,16 +378,17 @@ export default props => {
 };
 ```
 
-The useReducer Hook is a really simple function in essence. It returns an array, `[state, dispatch]` which contains our app's state, and the dispatch function we will use to update it. 
+The useReducer Hook is a really simple function in essence. It returns an array, `[state, dispatch]` which contains our app's state, and the dispatch function we will use to update it.
 
-We're also using the useEffect Hook with an empty array, which means it will only fire once, **not on every render**. 
+We're also using the useEffect Hook with an empty array, which means it will only fire once, **not on every render**.
 
-The useEffect Hook here is not at all necessary, but I've used it to mimic a realistic scenario whereby an app would load and then go off and fetch some data from an API. 
+The useEffect Hook here is not at all necessary, but I've used it to mimic a realistic scenario whereby an app would load and then go off and fetch some data from an API.
 
 ### Faking the API call
+
 <a name="fake-api-calls"></a>
 
-In a real app, you'll need to interact with an API and you'll most likely want to show some sort of loading message whilst you wait for data back. We're not using an API and our data is miniscule by comparison, but we can fake the *effects* of an API using a `setTimeout` callback. 
+In a real app, you'll need to interact with an API and you'll most likely want to show some sort of loading message whilst you wait for data back. We're not using an API and our data is miniscule by comparison, but we can fake the _effects_ of an API using a `setTimeout` callback.
 
 In the useEffect Hook, we actually use the dispatch method for the first time. We pass it a type of 'GET_ITEMS' which is a string property on our imported actions constants object (`actions`) from the top of our App component.
 
@@ -402,13 +410,14 @@ export const reducer = (state, action) => {
 We simply set the 'loadingItems' flag to true, which means in our App component, we'll display a loading element.
 
 ### Rendering the components
+
 <a name="rendering-components"></a>
 
 Finally, we need to wire up the app so that it actually renders something useful. We'll do that here:
 
 ```JavaScript
 export default props => {
-    
+
     // ...unchanged
 
     return (
@@ -435,9 +444,9 @@ export default props => {
 };
 ```
 
-The main take away here is the two context providers that we use to wrap the main App component in. 
+The main take away here is the two context providers that we use to wrap the main App component in.
 
-The first, `<ShoppingContext.Provider value={dispatch}>` allows us to pass down the dispatch function to child components. 
+The first, `<ShoppingContext.Provider value={dispatch}>` allows us to pass down the dispatch function to child components.
 
 The second `<StateContext value={state}>` is the same, but allows child components to access our application state when they need.
 
@@ -504,6 +513,7 @@ export default props => {
 ```
 
 ## Displaying our list in the ShoppingList component
+
 <a name="displaying-the-list"></a>
 
 Next, we'll dig into the ShoppingList component. At the top of the file, we'll see a familiar set of imports:
@@ -569,6 +579,7 @@ export default props => {
 The main return of the component doesn't have anything too interesting beyond standard React stuff. The interesting things, however, are the 'const' definitions and the `handleRemoteItem()` method.
 
 ### Wiring up context in the ShoppingList component
+
 <a name="introducing-context"></a>
 
 We know from our App component that we're already passing down the Redux dispatch method and our application state, but how do we access them?
@@ -585,6 +596,7 @@ That's all there is to it. We can now use 'state' to access various properties o
 Similarly, we use 'dispatch' to trigger state changes; in our case to remove items from our list.
 
 ### Dispatching updates to our shopping list
+
 <a name="dispatch-updates"></a>
 
 Whilst you could inline the following directly into the button element (and I normally would for brevity), I think it's a little clearer for learning to abstract the 'remove' button's click handler into its own variable.
@@ -627,9 +639,10 @@ export const reducer = (state, action) => {
 We employ a straightforward `Array.filter()` on the state's shoppingList property that just skips over the item with the id value that we've passed in, that we want to remove.
 
 ## Adding new items with the AddItem component
+
 <a name="add-new-items"></a>
 
-Finally, we need to be able to add an item to our list to complete the circle of CRUD (almost, we're not doing updates...). 
+Finally, we need to be able to add an item to our list to complete the circle of CRUD (almost, we're not doing updates...).
 
 By now, things should start looking familiar, so we'll take a look at the entire AddItem component as a whole and walk through the finer points:
 
@@ -696,7 +709,7 @@ Next, in our main output, we have a default state object, `_defaultFields` that 
 
 We consume the dispatch function using useContext so we can pass a new item into our shopping list. **Notice that we're not consuming the state context, however.** We don't need to use anything from our application's state, so there's no need to consume the context.
 
-Most everything else is pretty standard React form field handling [using controlled components](https://reactjs.org/docs/forms.html#controlled-components) that is beyond the scope of this article. 
+Most everything else is pretty standard React form field handling [using controlled components](https://reactjs.org/docs/forms.html#controlled-components) that is beyond the scope of this article.
 
 What we're interested in, however, happens in the `handleFormSubmit()` method:
 
@@ -708,9 +721,9 @@ const handleFormSubmit = evt => {
 };
 ```
 
-Firstly, we call the synthetic event's `preventDefault()` method to prevent the page from refreshing. 
+Firstly, we call the synthetic event's `preventDefault()` method to prevent the page from refreshing.
 
-Next, we call our familiar dispatch method, passing in the action 'ADD_ITEM' and the fields object from state which is a collection of any values we've made into the form's fields. 
+Next, we call our familiar dispatch method, passing in the action 'ADD_ITEM' and the fields object from state which is a collection of any values we've made into the form's fields.
 
 What happens in our reducer looks like this:
 
@@ -736,7 +749,7 @@ export const reducer = (state, action) => {
 };
 ```
 
-This is arguably the most complex part of our reducer, but it's easy to follow: 
+This is arguably the most complex part of our reducer, but it's easy to follow:
 
 - We work out the current highest id value in our shopping list items and increment it by one (not recommended in real life!);
 - We add the id to a new item object;
@@ -745,9 +758,10 @@ This is arguably the most complex part of our reducer, but it's easy to follow:
 Finally, we clear out any saved fields/input data by replacing local state with the `_defaultFields` object.
 
 ## Putting it all together
+
 <a name="demo"></a>
 
-You can see the finished app and play about with it below, and you can [view it online in the CodeSandbox environment](https://codesandbox.io/s/redux-with-usereducer-9tfko). 
+You can see the finished app and play about with it below, and you can [view it online in the CodeSandbox environment](https://codesandbox.io/s/redux-with-usereducer-9tfko).
 
 <iframe
      src="https://codesandbox.io/embed/redux-with-usereducer-9tfko?fontsize=14&hidenavigation=1&theme=dark"
@@ -763,11 +777,12 @@ This article covers the basics of using the useReducer Hook in conjunction with 
 
 However, this particular approach I've used may not suit you and your situation. It probably won't scale that well 'as-is' and could benefit from some smoothing out in terms of using this exact approach for a full-scale application. For example, you may wish to split your state into smaller parts for different areas of your application, which is great, but you can see how you'll need to work on that with from we've done here.
 
-There is always more than one way to approach a problem and I think it's worth knowing your options. This article helps to introduce the Redux patterns and concepts whilst employing a nice new approach of employing reducers using built-in Hooks. 
+There is always more than one way to approach a problem and I think it's worth knowing your options. This article helps to introduce the Redux patterns and concepts whilst employing a nice new approach of employing reducers using built-in Hooks.
 
 I would (and do) use this commercially, but do take what you see here and adapt it to your own means.
 
 ## Further reading and references
+
 <a name="further-reading"></a>
 
 It's always handy to have a list of other sources of information, so here's that very list of useful references, links, resources that are worth a peek to help you in your quest to be a Redux master:

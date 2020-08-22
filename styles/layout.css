@@ -17,12 +17,140 @@
 /* misc */
 /* ---------------------------------------------------------------------- */
 
-main > section {
+main > section,
+.section {
   margin: 1em 0;
-  padding: 1em 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
   border-top: 1px solid var(--grey-light);
   border-bottom: 1px solid var(--grey-light);
 }
-main > section + section {
+main > section + section,
+.section + .section {
   border-top: 0;
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
+
+/* sizes */
+.section.is-lg {
+  margin: 3em 0 1em;
+  padding: 3em 3em 5em;
+}
+.section.is-md {
+  margin: 2em 0 0.5em;
+  padding: 2em 2em 4.5em;
+}
+
+/* coloured sections */
+.section.is-grey,
+.section.is-grey-light,
+.section.is-primary,
+.section.is-secondary,
+.section.is-alt {
+  color: white;
+  border-radius: 4px;
+}
+
+.section.is-grey {
+  background-color: var(--grey-line);
+}
+.section.is-grey-light {
+  background-color: var(--grey-light);
+}
+.section.is-primary {
+  background-color: var(--brand-primary);
+}
+.section.is-secondary {
+  background-color: var(--brand-secondary-dark);
+}
+.section.is-alt {
+  background-color: var(--brand-alt);
+}
+
+/* ---------------------------------------------------------------------- */
+/* media items */
+/* ---------------------------------------------------------------------- */
+.media {
+  display: flex;
+}
+.media > figure,
+.media-left {
+  margin-bottom: 0;
+}
+.media-left img:not(.fancy-img) {
+  max-width: 15rem;
+  border: initial;
+  box-shadow: initial;
+}
+.media-left img {
+  max-width: 15rem;
+}
+.media-content {
+}
+
+/* ---------------------------------------------------------------------- */
+/* containers */
+/* ---------------------------------------------------------------------- */
+.container {
+  max-width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------------------------------------------------------------------- */
+/* articles */
+/* ---------------------------------------------------------------------- */
+.article {
+}
+
+.article .post-meta {
+}
+.article .post-meta h1 {
+  margin-top: 0;
+}
+.article .post-meta time {
+  font-size: var(--font-size-4);
+  margin-bottom: 0.5em;
+  display: block;
+}
+
+.article-item {
+  height: 100%;
+}
+.article-item h3 {
+  margin-top: 0.3em;
+}
+
+/* ---------------------------------------------------------------------- */
+/* cards */
+/* ---------------------------------------------------------------------- */
+.card {
+  background-color: white;
+  border-radius: 4px;
+  color: var(--text-color);
+}
+.card .card-image {
+}
+.card .card-image img {
+  border-radius: 4px 4px 0 0;
+}
+.card .card-content {
+  padding: 1em;
+}
+.card .card-content p {
+}
+
+/* ---------------------------------------------------------------------- */
+/* boxes */
+/* ---------------------------------------------------------------------- */
+
+.author-box {
+  margin: 4em 0 2em;
+}
+.author-box .media {
+  align-items: center;
+}
+.author-box .media-left img {
+  max-width: 7rem;
 }

@@ -1,11 +1,13 @@
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 // styles
 import styles from './scss/nav.module.scss';
 
 const Navigation = () => {
-  const isActive = url => {
-    return false; // window.location.pathname === url ? styles.active : ''
+  const router = useRouter();
+  const isActive = href => {
+    return router.pathname === href ? styles.active : ''
   }
   return (
     <nav role='navigation' className={styles.navigation}>
