@@ -4,6 +4,9 @@ import Link from 'next/link';
 import Layout from '../components/Layout';
 import Testimonials from '../components/Testimonials';
 
+// utils
+import { Config } from '../lib/utils';
+
 const Mentorship = () => {
   return (
     <Layout
@@ -86,7 +89,7 @@ const Mentorship = () => {
                       data-item-id='mentorship-level-1'
                       data-item-price='49.00'
                       data-item-max-quantity='1'
-                      data-item-url='/mentorship'
+                      data-item-url={`${Config.baseSiteUrl}/mentorship`}
                       data-item-description='Rob Kendal mentorship subscription option level 1'
                       data-item-image='/img/mentorship/level1.png'
                       data-item-name='Mentorship Level 1'
@@ -134,7 +137,7 @@ const Mentorship = () => {
                       data-item-id='mentorship-level-2'
                       data-item-price='99.00'
                       data-item-max-quantity='1'
-                      data-item-url='/mentorship'
+                      data-item-url={`${Config.baseSiteUrl}/mentorship`}
                       data-item-description='Rob Kendal mentorship subscription option level 2'
                       data-item-image='/img/mentorship/level2.png'
                       data-item-name='Mentorship Level 2'

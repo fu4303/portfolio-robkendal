@@ -10,7 +10,7 @@ const Publications = () => {
       description='Download helpful web development ebooks, videos and training courses on starting to code'
     >
       <h1 className='has-text-centered'>Publications</h1>
-      <div class='container'>
+      <div className='container'>
         <p>
           In addition to my{' '}
           <Link href='/mentorship'>

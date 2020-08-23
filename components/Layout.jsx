@@ -40,6 +40,12 @@ const Layout = ({
         <meta name='description' content={description} />
         // sitemap and RSS feeds
         <link rel='sitemap' type='application/xml' href='/sitemap.xml' />
+        <link
+          rel='alternative'
+          type='application/rss+xml'
+          title='RSS for blog articles'
+          href='https://robkendal.co.uk/rss'
+        />
         // favicon
         <Favicon />
         // social media
