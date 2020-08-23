@@ -4,7 +4,10 @@ import ContactForm from '../components/ContactForm';
 
 const About = () => {
   return (
-    <Layout>
+    <Layout
+      title='About Rob Kendal, freelance web developer'
+      description="I'm Rob Kendal, a freelance web developer specialising in WordPress and headless CMS web development. I work with clients remotely from my home office in Selby, North Yorkshire"
+    >
       <h1>About Rob Kendal</h1>
       <p>
         I got into computers (and video games) from an early age. Although I

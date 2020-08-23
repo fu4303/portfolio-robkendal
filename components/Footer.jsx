@@ -11,7 +11,7 @@ const Footer = () => (
     <h4 className='is-sr-only'>Site links</h4>
     <ul>
       <li>
-        <Link href='/freelance-wordpress-developer'>
+        <Link href='/'>
           <a>freelance wordpress developer</a>
         </Link>
       </li>

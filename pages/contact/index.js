@@ -6,7 +6,10 @@ import ContactForm from '../../components/ContactForm';
 
 const Contact = () => {
   return (
-    <Layout>
+    <Layout
+      title='Contact Rob Kendal, freelance web developer'
+      description="Contact Rob Kendal about your next web development project, WordPress website, or if you're a developer looking for a coding mentor"
+    >
       <div className='container'>
         <h1>Let's talk!</h1>
         <p>

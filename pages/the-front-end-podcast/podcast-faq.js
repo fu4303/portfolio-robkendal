@@ -2,7 +2,10 @@ import Layout from '../../components/Layout';
 
 const PodcastFaq = () => {
   return (
-    <Layout>
+    <Layout
+      title='The Front End Podcast Frequently Asked Questions | Rob Kendal, freelance developer'
+      description='Find answers to the most frequently asked questions about The Front End Podcast'
+    >
       <div class='container'>
         <h1>The Front End FAQs</h1>
         <p>

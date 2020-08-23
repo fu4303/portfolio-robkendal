@@ -10,11 +10,12 @@ const DateDisplay = ({ dateString, className }) => {
 
   try {
     // e.g. 2020-05-29T10:01:20.985Z
-    const month = addLeadingZeros(date.getMonth());
+    const month = addLeadingZeros(date.getMonth() + 1);
     const day = addLeadingZeros(date.getDate());
     const hours = addLeadingZeros(date.getHours());
     const minutes = addLeadingZeros(date.getMinutes());
     const isoDate = parseISO(`${date.getFullYear()}-${month}-${day}T${hours}:${minutes}:00`);
+
     formattedDate = format(isoDate, 'LLLL d yyyy');
   } catch (err) {
     console.log('error', err);

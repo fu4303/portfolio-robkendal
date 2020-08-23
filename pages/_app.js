@@ -28,6 +28,12 @@ function MyApp({ Component, pageProps }) {
     <>
       <Component {...pageProps} />
 
+      <div
+        id='snipcart'
+        data-api-key='YjFhNDYyNGUtNTVjZS00NWNiLTkyZTQtNjBkYzAzNDIxZGI2NjM3MzI3MjYwNjczMjgyMDYw'
+        hidden
+      ></div>
+      <script src='https://cdn.snipcart.com/themes/v3.0.20/default/snipcart.js'></script>
       <script
         id='dsq-count-scr'
         src='//robkendal.disqus.com/count.js'

@@ -5,7 +5,10 @@ import Layout from '../components/Layout';
 
 const RecruiterFaq = () => {
   return (
-    <Layout>
+    <Layout
+      title='Recruitment FAQ | Rob Kendal, freelance developer'
+      description='Answers to the most frequently asked questions I get from recruiters'
+    >
       <h1>FAQ for recruiters</h1>
       <p>
         Well hello there. If you've found me via a social network or have simply

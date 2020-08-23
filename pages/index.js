@@ -61,8 +61,8 @@ export default function Home({ allPostsData }) {
         <div className='columns is-vcentered'>
           <div className='column is-5'>
             <video
-              playsinline=''
-              autoplay=''
+              playsInline=''
+              autoPlay=''
               muted=''
               loop=''
               poster='/img/videos/wp-demo.jpg'

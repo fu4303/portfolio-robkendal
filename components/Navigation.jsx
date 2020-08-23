@@ -12,19 +12,19 @@ const Navigation = () => {
   return (
     <nav role='navigation' className={styles.navigation}>
       <Link href='/about'>
-        <a className={() => isActive('/about')}>about</a>
+        <a className={isActive('/about')}>about</a>
       </Link>
       <Link href='/consultancy'>
-        <a className={() => isActive('/consultancy')}>consultancy</a>
+        <a className={isActive('/consultancy')}>consultancy</a>
       </Link>
       <Link href='/mentorship'>
-        <a className={() => isActive('/mentorship')}>mentorship</a>
+        <a className={isActive('/mentorship')}>mentorship</a>
       </Link>
       <Link href='/publications'>
-        <a className={() => isActive('/publications')}>publications</a>
+        <a className={isActive('/publications')}>publications</a>
       </Link>
       <Link href='/blog'>
-        <a className={() => isActive('/blog')}>articles</a>
+        <a className={isActive('/blog')}>articles</a>
       </Link>
       <Link href='/contact'>
         <a

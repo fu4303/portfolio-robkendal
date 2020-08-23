@@ -2,7 +2,10 @@ import Layout from '../components/Layout';
 
 const Privacy = () => {
   return (
-    <Layout>
+    <Layout
+      title='Privacy page | Rob Kendal, freelance developer'
+      description='Rob Kendal values and respects your privacy. You can read my privacy policy here.'
+    >
       <h1>Privacy Policy</h1>
 
       <p>

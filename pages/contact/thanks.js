@@ -5,7 +5,10 @@ import Layout from '../../components/Layout';
 
 const ContactThanks = () => {
   return (
-    <Layout>
+    <Layout
+      title='Contact Rob Kendal, freelance web developer'
+      description="Contact Rob Kendal about your next web development project, WordPress website, or if you're a developer looking for a coding mentor"
+    >
       <div className='container'>
         <h1>Thank you for your message</h1>
         <img

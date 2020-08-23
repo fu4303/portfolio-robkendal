@@ -4,7 +4,7 @@
 :root {
   --brand-primary: hsl(37, 90%, 63%);
   --brand-primary-dark: hsl(37, 90%, 43%);
-  --brand-primary-light: hsl(36, 94%, 94%);
+  --brand-primary-light: #fef3e1;
   --brand-primary-lighter: hsl(43, 64%, 98%);
   --brand-secondary: hsl(157, 90%, 60%);
   --brand-secondary-dark: hsl(157, 90%, 40%);
@@ -22,7 +22,7 @@
   --grey-light: hsl(0, 0%, 86%);
   --grey-lighter: hsl(0, 0%, 90%);
   --grey-dark: hsl(0, 0%, 60%);
-  --grey-line: hsl(218, 20%, 68%);
+  --grey-line: #9da9be;
   --font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
@@ -125,7 +125,8 @@ h6 {
   font-weight: 600;
   line-height: 1.125;
   color: var(--brand-alt-light);
-  margin: 0.5em auto 1em;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
 }
 h1,
 h2 {

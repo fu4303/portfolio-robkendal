@@ -2,7 +2,10 @@ import Layout from '../components/Layout';
 
 const Projects = () => {
   return (
-    <Layout>
+    <Layout
+      title='Discover open source projects and resources by Rob Kendal, freelance developer'
+      description='Find out more about my open source projects, such as the Google Sheets API Reader and React Query Builder'
+    >
       <div className='container'>
         <h1>Projects</h1>
         <p>
