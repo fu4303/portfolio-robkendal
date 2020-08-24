@@ -3,23 +3,35 @@ label: Blog post
 hide_body: false
 fields:
 - type: text
-  name: templateKey
-  label: templateKey
-- type: text
   name: title
-  label: title
-- type: datetime
-  name: date
-  label: date
-- type: boolean
-  name: featured
-  label: featured
-- type: file
-  name: featuredimage
-  label: featuredimage
+  label: Title
+  config:
+    required: true
 - type: textarea
   name: description
-  label: description
+  label: Description
+  config:
+    required: true
+- type: datetime
+  name: date
+  label: Date
+  config:
+    export_format: YYYY-MM-DDThh:mm:ss
+    time_format: HH:MM
+    display_utc: false
+    date_format: DD MM YYYY
+    required: true
+  default: now
+- type: file
+  name: featuredimage
+  label: Featured Image
+- type: boolean
+  name: featured
+  label: Featured
+- name: published
+  type: boolean
+  label: Published
+  default: true
 - type: list
   name: tags
-  label: tags
+  label: Tags
