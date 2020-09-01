@@ -13,7 +13,7 @@ export default function Home({ allPostsData }) {
     <Layout>
       <div className='columns is-vcentered'>
         <div className='column is-6 is-offset-1'>
-          <h1 className=''>A freelance web developer who know's his stuff</h1>
+          <h1 className=''>A freelance web developer who knows his stuff</h1>
           <p>
             If you've been searching for a{' '}
             <strong>
@@ -21,8 +21,8 @@ export default function Home({ allPostsData }) {
               development inside and out
             </strong>
             , you've come to the right place.
-            <br /> With me, you'll always get:
           </p>
+          <p>With me, you'll always get:</p>
           <ul className='unstyled'>
             <li className='flex has-padding-bottom-sm'>
               <span class='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
@@ -78,6 +78,7 @@ export default function Home({ allPostsData }) {
             Talking about your project costs nothing; choosing the right partner
             to deliver it could save you a fortune!
           </p>
+          <br />
           <p>
             <Link href='/contact'>
               <a className='button is-primary has-icon is-medium'>
@@ -231,7 +232,7 @@ export default function Home({ allPostsData }) {
           <div className='has-text-centered'>
             <Link href='/contact'>
               <a className='button is-primary has-icon is-medium'>
-                <span>discuss you project</span>
+                <span>discuss your project</span>
                 <span className='icon fas fa-chevron-circle-right'></span>
               </a>
             </Link>
