@@ -67,7 +67,7 @@ body {
 }
 
 a {
-  color: var(--brand-tertiary);
+  color: var(--brand-secondary-dark);
   text-decoration: underline;
   transition: 0.25s color 0s ease-in-out;
 }
@@ -77,7 +77,7 @@ a:hover {
 }
 
 a:visited {
-  color: var(--brand-alt);
+  color: var(--brand-tertiary-dark);
 }
 
 p:not(:last-child),
@@ -251,6 +251,11 @@ ul {
   list-style: disc outside;
   margin-left: 2em;
   margin-top: 1em;
+}
+ul.unstyled {
+  list-style: none;
+  margin-left: 1em;
+  padding-left: 0;
 }
 ul ul {
   list-style-type: circle;

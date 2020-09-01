@@ -20,7 +20,7 @@ const Mentorship = () => {
           <Link href='/blog'>
             <a>web development articles</a>
           </Link>{' '}
-          and
+          and{' '}
           <Link href='/publications'>
             <a>publications and resources</a>
           </Link>
@@ -37,8 +37,8 @@ const Mentorship = () => {
             I want to help as many people as I can learn to code and get into
             frontend development. That's why my mentorship support starts at{' '}
             <strong>free</strong>. With that you'll get access to over 15 years
-            of experience and knowledge in the tech industry as a developer, a
-            manager, and a self-taught developer.
+            of experience and knowledge in the tech industry as a self-taight
+            developer, a manager, and a marketer.
           </p>
           <p>My free mentorship option includes:</p>
           <ul>

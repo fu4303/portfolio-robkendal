@@ -1,3 +1,6 @@
+import Link from 'next/link';
+
+// components
 import Layout from '../components/Layout';
 import SocialLinks from '../components/SocialLinks';
 import ContactForm from '../components/ContactForm';
@@ -10,15 +13,16 @@ const About = () => (
     <h1 className='has-text-centered'>About Rob Kendal</h1>
     <div className='container'>
       <p>
-        I got into computers (and video games) from an early age. Although I
-        liked maths and science, computers were always my first love.
+        I've been fortunate enought to have discovered computers during their
+        golden beginnings when I was young. Although I liked maths and science,
+        computers were always my first love.
       </p>
       <p>
-        My first real job was in a school as a network technician, building
-        machines for classrooms and looking after the general network
-        infrastructure. From there, I found my way into the ambulance service,
-        working as part of a team to manage and support the Yorkshire Ambulance
-        Service IT infrastructure.
+        My first job was in a school as a network technician, building machines
+        for classrooms and looking after the general network infrastructure.
+        From there, I found my way into the ambulance service, working as part
+        of a team to manage and support the Yorkshire Ambulance Service IT
+        infrastructure.
       </p>
       <figure>
         <img
@@ -31,47 +35,92 @@ const About = () => (
       </figure>
       <p>
         It was in the ambulance service where I fell into web development – it's
-        more common of a starting story than you might think! I learnt asp.net –
-        in it's original 2.0 flavour – using Visual Basic and moving onto C#.
+        a very common origin story than you might think! I learnt asp.net – in
+        it's original 2.0 flavour – using Visual Basic and moving onto C#.
       </p>
       <p>
         After building a number of internal web systems, I found myself doing
         less infrastructure support and more development.
       </p>
       <p>
-        That was it for me, the defining moment where I knew I wanted to develop
-        all the things! I moved into the commercial sector, moving around a few
-        creative agencies and **working with some super-talented people**,
-        hopefully learning as much from them along the way.
+        A few years later, after working alongside some world class designers
+        and developers in digital agencies, I was introduced to WordPress
+        through a very talented graphic designer friend of mine who runs{' '}
+        <a
+          href='https://www.createdfor.co.uk'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          CreatedFor
+        </a>
+        .
       </p>
       <p>
-        More recently, I co-founded a creative marketing agency and managed
-        HubSpot campaigns for some local business heroes as well as some bigger
-        players, such as North Yorkshire County Council. We even won some awards
-        for our work!
+        Fast forward almost two decades later and the web has changed
+        dramatically from its humble beginnings. Today, I employ a range of
+        technologies and different platforms to build websites that offer superb
+        performance, great user expereinces and drive results for businesses.
       </p>
       <p>
-        Right now, I'm very excited to be working on a range of projects
-        involving React and Node JS. I enjoy blogging, presenting at events (and
-        sharing as much knowledge as I can), and learning something new every
-        day.
+        I've built marketing-led websites for the likes of North Yorkshire
+        County Council (who saw a <strong>600% growth in leads</strong> over 6
+        months following my work!), as well as partnering with HubSpot, a
+        world-leading sales and marketing platform, to bring people the best of
+        marketing automation direct to their business.
       </p>
-      I also run a web development podcast called &nbsp;
-      <a
-        href='https://thefrontendpodcast.site'
-        target='_blank'
-        rel='noopener noreferrer'
-      >
-        The Front End &nbsp;
-      </a>
-      which is available on &nbsp;
-      <a
-        href='https://anchor.fm/the-front-end'
-        target='_blank'
-        rel='noopener noreferrer'
-      >
-        Anchor podcasts
-      </a>
+      <p>
+        As a front end developer I love to keep on top of new development
+        strategies so I can give my clients the best websites possible. From
+        using WordPress as a headless CMS, to building out websites using
+        powerful JavaScript frameworks such as Gastby or Next.js. And I'll
+        always have a love for React, the UI library from Facebook.
+      </p>
+      <p>
+        I like to write and to document my knowledge right out in the open. I do
+        this through publishing regular{' '}
+        <Link href='/blog'>
+          <a>articles on my blog</a>
+        </Link>{' '}
+        and being an active member of the{' '}
+        <a href='https://twitter.com/kendalmintcode'>Twitter tech community</a>.
+      </p>
+      <p>
+        I help give back to the development community by providing support,
+        advice and guidance to aspiring developers through{' '}
+        <Link href='/mentorship'>
+          <a>my mentorship program</a>
+        </Link>
+        .
+      </p>
+
+      <p>
+        You can listen to the web development podcast I run called &nbsp;
+        <a
+          href='https://thefrontendpodcast.site'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          The Front End
+        </a>
+        &nbsp; which is available on &nbsp;
+        <a
+          href='https://anchor.fm/the-front-end'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Anchor podcasts
+        </a>
+        .
+      </p>
+      <p>
+        When I'm not recording a podcast,{' '}
+        <Link href='/consultancy'>
+          <a>offering web development consultancy services</a>
+        </Link>{' '}
+        or coding something exciting, then you'll find me right at home in the
+        middle of Yorkshire in a small village North of the market town of Selby
+        where I live with my wife and daughter.
+      </p>
       <h2>Connect with me</h2>
       <SocialLinks />
       <h2>Hire me</h2>

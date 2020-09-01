@@ -13,25 +13,70 @@ export default function Home({ allPostsData }) {
     <Layout>
       <div className='columns is-vcentered'>
         <div className='column is-6 is-offset-1'>
-          <h1 className=''>Welcome to the home page</h1>
+          <h1 className=''>A freelance web developer who know's his stuff</h1>
           <p>
-            this is a big paragraph of text explaining things about WordpRess
-            development. It goes on a little bit but it illustrates a pointn you
-            want to make with a slightly longer paragraph you see
+            If you've been searching for a{' '}
+            <strong>
+              freelance web developer who knows WordPress and front end web
+              development inside and out
+            </strong>
+            , you've come to the right place.
+            <br /> With me, you'll always get:
           </p>
-          <ul>
-            <li>This is point one</li>
-            <li>This is a slightly longer point</li>
-            <li>This is an even longer point</li>
-            <li>This is a slightly longer point</li>
-            <li>This is an even longer point</li>
-            <li>This is point one</li>
-            <li>This is an even longer point</li>
+          <ul className='unstyled'>
+            <li className='flex has-padding-bottom-sm'>
+              <span class='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
+              <span>
+                A fullstack developer with 15+ years development experience.
+              </span>
+            </li>
+            <li className='flex has-padding-bottom-sm'>
+              <span class='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
+              <span>
+                A reliable development professional who will always give you
+                straightforward, honest advice.
+              </span>
+            </li>
+            <li className='flex has-padding-bottom-sm'>
+              <span class='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
+              <span>
+                Marketing website design and development driven by your business
+                growth goals
+              </span>
+            </li>
+            <li className='flex has-padding-bottom-sm'>
+              <span class='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
+              <span>
+                Award-winning marketing and Search Engine Optimisation (SEO)
+                knowledge and support
+              </span>
+            </li>
+            <li className='flex has-padding-bottom-sm'>
+              <span class='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
+              <span>
+                Expert web development services using forward-thinking
+                technologies such as Gatsby.js, Next.js, WordPress REST API,
+                GraphQL and the Jamstack.
+              </span>
+            </li>
+            <li className='flex has-padding-bottom-sm'>
+              <span class='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
+              <span>
+                Enterprise-level HubSpot capaign management and integrations
+                (including WordPress)
+              </span>
+            </li>
+            <li className='flex has-padding-bottom-sm'>
+              <span class='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
+              <span>
+                Help and support launching super fast, accessible, static
+                websites that rank well on search engines
+              </span>
+            </li>
           </ul>
           <p>
-            this is a big paragraph of text explaining things about WordpRess
-            development. It goes on a little bit but it illustrates a pointn you
-            want to make with a slightly longer paragraph you see
+            Talking about your project costs nothing; choosing the right partner
+            to deliver it could save you a fortune!
           </p>
           <p>
             <Link href='/contact'>
@@ -48,7 +93,7 @@ export default function Home({ allPostsData }) {
             </Link>
           </p>
         </div>
-        <div className='column is-4 is-offset-1'>
+        <div className='column is-5 has-text-centered'>
           <img
             src='/img/rob-kendal.jpeg'
             alt='Rob Kendal freelance wordpress developer'
@@ -73,21 +118,48 @@ export default function Home({ allPostsData }) {
             </video>
           </div>
           <div className='column is-7 has-padding-left-lg'>
-            <h2 className='is-white'>WordPress development</h2>
+            <h2 className='is-white'>WordPress Consultancy</h2>
             <p>
-              this is a big paragraph of text explaining things about WordpRess
-              development. It goes on a little bit but it illustrates a pointn
-              you want to make with a slightly longer paragraph you see
+              I specialise in delivering WordPress websites for clients ranging
+              from small local businesses, through to enterprise level
+              organisations.
             </p>
-            <ul>
-              <li>This is point one</li>
-              <li>This is a slightly longer point</li>
-              <li>This is an even longer point</li>
-              <li>This is a slightly longer point</li>
-              <li>This is an even longer point</li>
-              <li>This is point one</li>
-              <li>This is an even longer point</li>
+            <p>
+              I offer WordPress consultancy services to help with a range of
+              projects and needs including:
+            </p>
+            <ul style={{ lineHeight: '1.7' }}>
+              <li>
+                Building enterprise-level marketing-led business websites using
+                WordPress.
+              </li>
+              <li>
+                Creating an ecommerce platform with WordPress, WooCommerce,
+                Snipcart or Stripe.
+              </li>
+              <li>WordPress migrations between hosts</li>
+              <li>HubSpot to WordPress integrations and campaign setups</li>
+              <li>
+                Help and support with using WordPress as a headless CMS with
+                React and Gatsby or Next
+              </li>
+              <li>
+                Designing, developing and deploying static frontend websites
+                using a WordPress-powered backend on Netlify, Vercel, or the AWS
+                platform
+              </li>
+              <li>
+                Improving WordPress performance and Search Engine Optimisation
+                (SEO)
+              </li>
+              <li>
+                UX or UI consultancy support to plan out your WordPress-powered
+                website
+              </li>
             </ul>
+            <p>
+              Let's discuss your WordPress project and find out how I can help.
+            </p>
             <p>
               <Link href='/contact'>
                 <a className='button is-default has-icon is-medium'>
@@ -144,6 +216,32 @@ export default function Home({ allPostsData }) {
           </p>
           <br />
           <Testimonials />
+        </div>
+      </section>
+
+      <section className='section is-md'>
+        <div className='container'>
+          <h2 className='has-text-centered'>Need some help?</h2>
+          <p className='has-text-centered'>
+            Whether you need a freelance web developer for your website project,
+            or you're getting into code and need some personal support and
+            mentorship, it costs absolutely nothing to start the conversation.
+          </p>
+          <br />
+          <div className='has-text-centered'>
+            <Link href='/contact'>
+              <a className='button is-primary has-icon is-medium'>
+                <span>discuss you project</span>
+                <span className='icon fas fa-chevron-circle-right'></span>
+              </a>
+            </Link>
+            <Link href='/mentorship'>
+              <a className='button is-default has-icon is-medium'>
+                <span>discover mentorship</span>
+                <span className='icon fas fa-chevron-circle-right'></span>
+              </a>
+            </Link>
+          </div>
         </div>
       </section>
 

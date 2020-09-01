@@ -49,7 +49,7 @@ const RecruiterFaq = () => {
       <p>No.</p>
 
       <p>
-        I'm settled where I am with a mixture of a full time role as a Senion
+        I'm settled where I am with a mixture of a full time role as a Senior
         AWS Consultant and my work as a{' '}
         <Link href='/freelance-wordpress-consultant'>
           <a>freelance WordPress consultant</a>
@@ -92,8 +92,8 @@ const RecruiterFaq = () => {
       <p>
         As a slightly more concrete example of a really ace company that's
         nailed the culture, check out{' '}
-        <a href='https://www.hubspot.com/jobs'>Hubspot's careers page</a>
-        where they even have their own **culture code**.
+        <a href='https://www.hubspot.com/jobs'>Hubspot's careers page</a> where
+        they even have their own culture code.
       </p>
 
       <h2>Do you have a preferred technology stack?</h2>
@@ -107,6 +107,8 @@ const RecruiterFaq = () => {
         <li>JAMstack (JavaScript, API's, Markup)</li>
         <li>React (or Vue)</li>
         <li>ES6 JavaScript</li>
+        <li>Next.js</li>
+        <li>Gatsby</li>
         <li>
           CSS – both vanilla and preprocessors (SASS) using modern layouts, such
           as grid or flexbox
@@ -187,7 +189,7 @@ const RecruiterFaq = () => {
         Of course, fully remote roles are ace and I'll always consider those :)
       </p>
 
-      <h2>I've come across your CV on \[XYZ\] can we have a quick call?</h2>
+      <h2>I've come across your CV on 'XYZ' can we have a quick call?</h2>
 
       <p>I'll have to politely decline, initially.</p>
 
@@ -213,8 +215,9 @@ const RecruiterFaq = () => {
           <li>The job spec</li>
           <li>Salary and benefits information</li>
           <li>
-            A subject line of 'React is ace!' so that **I know you've made it
-            this far onto the page**. You will always get a reply from me!
+            <strong>A subject line of 'React is ace!'</strong> so that I know
+            you've made it this far onto the page. You will always get a reply
+            from me!
           </li>
         </ul>
       </ul>
@@ -222,8 +225,8 @@ const RecruiterFaq = () => {
       <h2>Can you send me an up to date copy of your CV?</h2>
 
       <p>
-        I could, but you can always **view the latest, most up to date version**
-        of my CV on{' '}
+        I could, but you can always view the latest, most up to date version of
+        my CV on{' '}
         <a href='https://www.visualcv.com/rob-kendal-dev/'>my Visual CV page</a>
         .
       </p>
@@ -233,7 +236,7 @@ const RecruiterFaq = () => {
       <p>
         Alternatively,{' '}
         <a href='https://www.linkedin.com/in/robkendal/'>my LinkedIn profile</a>{' '}
-        is always keep as a living experience document so that it matches my
+        is always kept as a living experience document so that it matches my
         work history, current projects and achievements.
       </p>
 

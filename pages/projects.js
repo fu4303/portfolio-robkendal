@@ -29,7 +29,10 @@ const Projects = () => {
               g-sheets-api
             </p>
             <h2 className='title is-size-4'>
-              <a href='https://github.com/bpk68/g-sheets-api'>
+              <a
+                href='https://github.com/bpk68/g-sheets-api'
+                className='has-text-brand-alt'
+              >
                 Google Sheets Reader
               </a>
             </h2>
@@ -39,7 +42,12 @@ const Projects = () => {
               deal with the full-blown Google Sheets API
             </p>
             <p>
-              <a href='https://github.com/bpk68/g-sheets-api'>Find out more</a>
+              <a
+                href='https://github.com/bpk68/g-sheets-api'
+                className='has-text-brand-alt'
+              >
+                Find out more
+              </a>
             </p>
           </div>
         </article>
@@ -55,7 +63,10 @@ const Projects = () => {
               api-server-starter
             </p>
             <h2 className='title is-size-4'>
-              <a href='https://github.com/bpk68/api-server-starter'>
+              <a
+                href='https://github.com/bpk68/api-server-starter'
+                className='has-text-brand-alt'
+              >
                 Node API Server Starter Kit
               </a>
             </h2>
@@ -84,7 +95,10 @@ const Projects = () => {
               react-visual-query-builder
             </p>
             <h2 className='title is-size-4'>
-              <a href='https://github.com/bpk68/react-visual-query-builder'>
+              <a
+                href='https://github.com/bpk68/react-visual-query-builder'
+                className='has-text-brand-alt'
+              >
                 React Visual Query Builder
               </a>
             </h2>
@@ -113,7 +127,10 @@ const Projects = () => {
               Family-Dog-Finder (in progress)
             </p>
             <h2 className='post-title title is-size-4'>
-              <a href='https://github.com/bpk68/Family-Dog-Finder'>
+              <a
+                href='https://github.com/bpk68/Family-Dog-Finder'
+                className='has-text-brand-alt'
+              >
                 Ruff Guides: a family dog matcher
               </a>
             </h2>

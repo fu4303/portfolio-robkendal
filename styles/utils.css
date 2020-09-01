@@ -1,6 +1,22 @@
 /* ---------------------------------------------------------------------- */
 /* sizing */
 /* ---------------------------------------------------------------------- */
+.has-padding-sm {
+  padding: 0.5em !important;
+}
+.has-padding-left-sm {
+  padding-left: 0.5em !important;
+}
+.has-padding-right-sm {
+  padding-right: 0.5em !important;
+}
+.has-padding-top-sm {
+  padding-top: 0.5em !important;
+}
+.has-padding-bottom-sm {
+  padding-bottom: 0.5em !important;
+}
+
 .has-padding-md {
   padding: 2em !important;
 }
@@ -58,8 +74,18 @@
 .has-text-grey-light {
   color: var(--grey-line);
 }
-.is-white {
+.is-white,
+.has-text-white {
   color: white !important;
+}
+.has-text-primary {
+  color: var(--brand-primary) !important;
+}
+.has-text-secondary {
+  color: var(--brand-secondary-dark) !important;
+}
+.has-text-brand-alt {
+  color: var(--brand-alt-light) !important;
 }
 /* ---------------------------------------------------------------------- */
 /* comments */
