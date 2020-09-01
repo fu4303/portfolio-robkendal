@@ -81,7 +81,7 @@ Enjoy the list and please give it a share if you think anyone else will find the
 
 ![a poorly lit laptop screen and lamp](/img/contemporary-dark-data-669996.jpg)
 
-* [Carbon](https://carbon.now.sh/) - I wish I'd discovered this earlier, but Carbon is a simple code editing window where you cna write your code, style it up and then export it to Twitter or download it as an image file.
+* [Carbon](https://carbon.now.sh/) - I wish I'd discovered this earlier, but Carbon is a simple code editing window where you can write your code, style it up and then export it to Twitter or download it as an image file.
 * [HypeFury](https://app.hypefury.com) - I've just started using this for my Twitter management, but it's a queuing and promotion tool. It has a load of features like evergreen tweets and clever scheduling.
 * [Otter AI](https://otter.ai/login) - I use this to transcribe my podcast episodes, but you can use it for meetings, lectures or just about anything. The transcriptions are very accurate and quick.
 * [Zencastr](https://zencastr.com/) - continuing on the podcast theme, Zencastr is amazing. It's dead simple and offers a unique recording approach whereby you get several streams, one per guest — this makes it easy for post production and mixing.
