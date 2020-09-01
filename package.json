@@ -8,15 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.14.0",
-    "date-fns": "^2.15.0",
-    "gray-matter": "^4.0.2",
+    "@fortawesome/fontawesome-free": "5.14.0",
+    "date-fns": "2.15.0",
+    "gray-matter": "4.0.2",
     "next": "9.5.2",
-    "prismjs": "^1.21.0",
+    "prismjs": "1.21.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "remark": "^12.0.1",
-    "remark-html": "^12.0.0",
-    "sass": "^1.26.10"
+    "remark": "12.0.1",
+    "remark-html": "12.0.0",
+    "sass": "1.26.10"
   }
 }
