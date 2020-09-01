@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.14.0",
-    "date-fns": "2.15.0",
+    "date-fns": "2.16.1",
     "gray-matter": "4.0.2",
     "next": "9.5.2",
     "prismjs": "1.21.0",
