@@ -11,31 +11,69 @@ const Navigation = () => {
   }
   return (
     <nav role='navigation' className={styles.navigation}>
-      <Link href='/about'>
-        <a className={isActive('/about')}>about</a>
-      </Link>
-      <Link href='/consultancy'>
-        <a className={isActive('/consultancy')}>consultancy</a>
-      </Link>
-      <Link href='/mentorship'>
-        <a className={isActive('/mentorship')}>mentorship</a>
-      </Link>
-      <Link href='/publications'>
-        <a className={isActive('/publications')}>publications</a>
-      </Link>
-      <Link href='/blog'>
-        <a className={isActive('/blog')}>articles</a>
-      </Link>
-      <Link href='/contact'>
-        <a
-          className={`button is-primary has-icon ${isActive('/contact')} ${
-            styles.button
-          }`}
-        >
-          <span>hire me</span>
-          <span className='icon fas fa-chevron-circle-right'></span>
-        </a>
-      </Link>
+      <div className={styles.mainnav}>
+        <Link href='/about'>
+          <a className={isActive('/about')}>about</a>
+        </Link>
+        <Link href='/consultancy'>
+          <a className={isActive('/consultancy')}>consultancy</a>
+        </Link>
+        <Link href='/mentorship'>
+          <a className={isActive('/mentorship')}>mentorship</a>
+        </Link>
+        <Link href='/publications'>
+          <a className={isActive('/publications')}>publications</a>
+        </Link>
+        <Link href='/blog'>
+          <a className={isActive('/blog')}>articles</a>
+        </Link>
+        <Link href='/contact'>
+          <a
+            className={`button is-primary has-icon ${isActive('/contact')} ${
+              styles.button
+            }`}
+          >
+            <span>hire me</span>
+            <span className='icon fas fa-chevron-circle-right'></span>
+          </a>
+        </Link>
+      </div>
+      <div className={styles.mobilenav}>
+        <div className={styles.mobiletoggle}>
+          <input type='checkbox' />
+          <p className={styles.navburger}>
+            <span>menu</span>
+            <span className='icon fas fa-bars'></span>
+          </p>
+          <div className={styles.mobilenavmenu}>
+            <Link href='/about'>
+              <a className={isActive('/about')}>about</a>
+            </Link>
+            <Link href='/consultancy'>
+              <a className={isActive('/consultancy')}>consultancy</a>
+            </Link>
+            <Link href='/mentorship'>
+              <a className={isActive('/mentorship')}>mentorship</a>
+            </Link>
+            <Link href='/publications'>
+              <a className={isActive('/publications')}>publications</a>
+            </Link>
+            <Link href='/blog'>
+              <a className={isActive('/blog')}>articles</a>
+            </Link>
+            <Link href='/contact'>
+              <a
+                className={`button is-primary has-icon ${isActive(
+                  '/contact'
+                )} ${styles.button}`}
+              >
+                <span>hire me</span>
+                <span className='icon fas fa-chevron-circle-right'></span>
+              </a>
+            </Link>
+          </div>
+        </div>
+      </div>
     </nav>
   );
 };

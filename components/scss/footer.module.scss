@@ -40,3 +40,13 @@
 .copyright {
   font-size: 0.8rem;
 }
+
+@media screen and (max-width: 700px) {
+  .social-links {
+    font-size: 1.5rem;
+
+    a {
+      margin: 0 0.5em 0.5em;
+    }
+  }
+}

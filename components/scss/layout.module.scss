@@ -95,3 +95,19 @@
   flex-grow: 1;
   order: 1;
 }
+
+@media screen and (max-width: 1150px) {
+  .header {
+    max-width: 100%;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .content-container {
+    padding: 2em 1em 0;
+  }
+  .main {
+    padding: 0 1em;
+  }
+}

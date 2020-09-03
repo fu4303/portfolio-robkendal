@@ -25,34 +25,34 @@ export default function Home({ allPostsData }) {
           <p>With me, you'll always get:</p>
           <ul className='unstyled'>
             <li className='flex has-padding-bottom-sm'>
-              <span class='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
+              <span className='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
               <span>
                 A fullstack developer with 15+ years development experience.
               </span>
             </li>
             <li className='flex has-padding-bottom-sm'>
-              <span class='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
+              <span className='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
               <span>
                 A reliable development professional who will always give you
                 straightforward, honest advice.
               </span>
             </li>
             <li className='flex has-padding-bottom-sm'>
-              <span class='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
+              <span className='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
               <span>
                 Marketing website design and development driven by your business
                 growth goals
               </span>
             </li>
             <li className='flex has-padding-bottom-sm'>
-              <span class='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
+              <span className='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
               <span>
                 Award-winning marketing and Search Engine Optimisation (SEO)
                 knowledge and support
               </span>
             </li>
             <li className='flex has-padding-bottom-sm'>
-              <span class='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
+              <span className='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
               <span>
                 Expert web development services using forward-thinking
                 technologies such as Gatsby.js, Next.js, WordPress REST API,
@@ -60,14 +60,14 @@ export default function Home({ allPostsData }) {
               </span>
             </li>
             <li className='flex has-padding-bottom-sm'>
-              <span class='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
+              <span className='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
               <span>
                 Enterprise-level HubSpot capaign management and integrations
                 (including WordPress)
               </span>
             </li>
             <li className='flex has-padding-bottom-sm'>
-              <span class='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
+              <span className='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
               <span>
                 Help and support launching super fast, accessible, static
                 websites that rank well on search engines

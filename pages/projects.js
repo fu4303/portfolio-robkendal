@@ -12,7 +12,8 @@ const Projects = () => {
           I have a few open source projects and repositories that I'm working on
           or have available on{' '}
           <a href='https://github.com/bpk68/'>my GitHub account</a>.
-          <br />
+        </p>
+        <p>
           I've broken down a few of the more popular ones here. Check them out
           and feel free to fork, feedback, leave pull requests, or request
           features :D.

@@ -49,9 +49,9 @@ const Mentorship = () => {
             <li>limited video replies</li>
           </ul>
         </section>
-        <section className='section is-md'>
-          <div className='columns'>
-            <div className='column'>
+        <section className='section'>
+          <div className='columns is-desktop'>
+            <div className='column '>
               <div className='card is-fullheight'>
                 <div className='card-image'>
                   <img

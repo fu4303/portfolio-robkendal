@@ -25,3 +25,119 @@
 .active {
   border-bottom: 4px solid var(--brand-alt-light);
 }
+
+.mainnav {
+}
+
+.mobilenav {
+  display: none;
+  color: white;
+
+  .mobiletoggle {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 25px;
+    //left: 25px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+
+    input {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      cursor: pointer;
+      opacity: 0;
+      z-index: 2;
+    }
+
+    input:checked ~ div {
+      transform: none;
+    }
+
+    .navburger {
+      color: var(--brand-alt);
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+
+      span {
+        margin: 0 0.4rem;
+      }
+    }
+  }
+
+  .mobilenavmenu {
+    position: absolute;
+    width: 60vw;
+    height: 100vh;
+    box-shadow: 0 15px 11px rgba(20, 23, 31, 0.05),
+      0 9px 46px rgba(20, 23, 31, 0.06), 0 24px 38px rgba(20, 23, 31, 0.19);
+    margin: 0 0 0 -50vw;
+    padding: 1rem 2rem 0 3rem;
+    padding-top: 3rem;
+    border: 2px solid var(--grey-light);
+    border-width: 1.5em 5px 0;
+    border-radius: 0 10px 0 0;
+    background-color: var(--brand-primary-lighter);
+
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+
+    a:not(.button) {
+      display: block;
+      border-bottom: 4px solid transparent;
+
+      &:hover {
+        border-bottom: 4px solid var(--brand-alt);
+      }
+      &.active {
+        border-bottom: 4px solid var(--brand-alt-light);
+      }
+    }
+
+    a.button {
+      margin: 1rem;
+    }
+
+    &::before {
+      content: 'x';
+      position: absolute;
+      top: -25px;
+      right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: white;
+      font-weight: bold;
+      background-color: hsl(2, 100%, 66%);
+      border: 1px solid hsl(2, 100%, 66%);
+      border-radius: 50%;
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 865px) {
+  .mainnav {
+    display: none;
+  }
+
+  .mobilenav {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .mobilenav {
+    .mobilenavmenu {
+      width: 70vw;
+      margin: 0 0 0 -50vw;
+    }
+  }
+}

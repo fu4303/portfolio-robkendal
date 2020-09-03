@@ -45,8 +45,8 @@ const Testimonials = () => (
       </figure>
       <p>
         <span className='fas fa-quote-left'></span>Rob has been an excellent
-        mentor for me. I would defiantly recommend working with Rob to any
-        developers for a mentor. Rob has been part of my biggest javaScript
+        mentor for me. I would definitely recommend working with Rob to any
+        developers looking for a mentor. Rob has been part of my biggest javaScript
         progression to date.
         <cite>Simeron Taak</cite>
       </p>

@@ -17,6 +17,9 @@ import '../styles/buttons.css';
 import '../styles/prism.shades.css';
 //import '../styles/prism.nord.css';
 
+// responsiveness
+import '../styles/responsive.css';
+
 // utils
 import { CommentsLoader } from '../lib/utils';
 

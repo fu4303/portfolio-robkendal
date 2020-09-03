@@ -1,0 +1,24 @@
+@media screen and (max-width: 900px) {
+  .project-item {
+  }
+  .project-item .media-left img {
+    max-width: 9rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .media {
+    flex-direction: column;
+  }
+
+  .article-list-item .media-left {
+    margin-right: auto;
+  }
+
+  .article-list-item .media-left img {
+    max-width: 100%;
+  }
+  .project-item .media-left img {
+    max-width: 70%;
+  }
+}
