@@ -1,0 +1,58 @@
+.home-hero {
+  border: none;
+  margin: 0 0 0.5em;
+  padding: 0 2em 4.5em;
+  display: flex;
+}
+
+.home-hero .hero-left {
+  margin-right: 2em;
+}
+
+.home-hero .hero-right {
+  position: relative;
+  padding-top: 2em;
+}
+
+.home-hero .hero-right::after,
+.home-hero .hero-right::before {
+  content: '';
+  display: block;
+  height: 8em;
+  width: 8em;
+  background-color: var(--brand-alt-lighter);
+  border: 1px solid var(--grey-line);
+  border: 5px solid var(--brand-alt-light);
+  border-radius: 50%;
+  box-shadow: 4px 4px 5px var(--brand-alt-light-trans);
+  margin-left: 1em;
+  margin-top: 1em;
+}
+.home-hero .hero-right::before {
+  height: 5em;
+  width: 5em;
+  position: absolute;
+  top: 30em;
+  right: 2em;
+}
+.home-hero .hero-right img {
+  max-width: 20rem;
+}
+
+.home-section-wordpress {
+  padding: 2rem 3rem;
+  align-items: center;
+}
+
+.home-section-wordpress .media-left {
+  max-width: 45rem;
+  margin: 0 3em 0 0;
+}
+
+.home-section-wordpress .media-left video {
+  max-width: 100%;
+}
+
+.home-section-wordpress .media-left img {
+  max-width: 100%;
+}

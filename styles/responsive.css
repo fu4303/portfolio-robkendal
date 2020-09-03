@@ -1,3 +1,71 @@
+@media screen and (max-width: 1570px) {
+  .home-section-wordpress {
+    flex-direction: column;
+  }
+
+  .home-section-wordpress .media-left {
+    display: flex;
+    align-items: center;
+    max-width: initial;
+    margin: 0 0 2em 0;
+  }
+
+  .home-section-wordpress .media-left video {
+    max-width: 50%;
+  }
+
+  .home-section-wordpress .media-left img {
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 1460px) {
+  .home-hero .hero-right img {
+    max-width: 15rem;
+  }
+  .home-hero .hero-right::after,
+  .home-hero .hero-right::before {
+    height: 6em;
+    width: 6em;
+  }
+  .home-hero .hero-right::before {
+    height: 4em;
+    width: 4em;
+    top: 24em;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .home-hero {
+    padding: 0 1em 4.5em;
+  }
+  .home-hero .hero-right img {
+    max-width: 13rem;
+  }
+
+  .home-section-wordpress .media-left video {
+    max-width: 100%;
+  }
+
+  .home-section-wordpress .media-left img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .home-hero {
+    flex-direction: column-reverse;
+  }
+  .home-hero .hero-right img {
+    max-width: 20rem;
+    display: block;
+  }
+  .home-hero .hero-right::before,
+  .home-hero .hero-right::after {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .project-item {
   }
@@ -20,5 +88,19 @@
   }
   .project-item .media-left img {
     max-width: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home-hero {
+    padding: 0 0 2.5em;
+  }
+  .home-hero .button {
+    display: block;
+    max-width: 75%;
+    margin: 0 auto 0.75em;
+  }
+  .home-section-wordpress {
+    padding: 2rem 1.5rem;
   }
 }

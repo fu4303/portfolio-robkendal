@@ -10,6 +10,7 @@ import '../styles/utils.css';
 import '../styles/columns.sass';
 import '../styles/layout.css';
 import '../styles/buttons.css';
+import '../styles/homepage.css';
 
 // prism themes
 //import '../styles/prism.tomorrow-night.css';

@@ -71,6 +71,9 @@
 .has-text-right {
   text-align: right !important;
 }
+.has-text-left {
+  text-align: left !important;
+}
 .has-text-grey-light {
   color: var(--grey-line);
 }

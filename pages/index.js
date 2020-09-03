@@ -11,9 +11,12 @@ import { getSortedPostsData } from '../lib/posts';
 export default function Home({ allPostsData }) {
   return (
     <Layout>
-      <div className='columns is-vcentered'>
-        <div className='column is-6 is-offset-1'>
-          <h1 className=''>A freelance web developer who knows his stuff</h1>
+      <section className='section home-hero'>
+        <div className='hero-left'>
+          <h1>
+            Rob Kendal
+            <br />A freelance web developer who knows his stuff
+          </h1>
           <p>
             If you've been searching for a{' '}
             <strong>
@@ -94,18 +97,18 @@ export default function Home({ allPostsData }) {
             </Link>
           </p>
         </div>
-        <div className='column is-5 has-text-centered'>
+        <div className='hero-right'>
           <img
             src='/img/rob-kendal.jpeg'
             alt='Rob Kendal freelance wordpress developer'
             className='fancy-img is-lg filter'
           />
         </div>
-      </div>
+      </section>
 
-      <section className='section is-secondary is-lg'>
-        <div className='columns is-vcentered'>
-          <div className='column is-5'>
+      <section className='section is-secondary'>
+        <article className='home-section-wordpress media'>
+          <figure className='media-left'>
             <video
               playsInline=''
               autoPlay=''
@@ -117,8 +120,13 @@ export default function Home({ allPostsData }) {
               <source src='/img/videos/wp-demo.webm' type='video/webm' />
               <source src='/img/videos/wp-demo.mp4' type='video/mp4' />
             </video>
-          </div>
-          <div className='column is-7 has-padding-left-lg'>
+            <img
+              src='/img/wordpress-logo.png'
+              alt='WordPress logo'
+              className='unstyled'
+            />
+          </figure>
+          <div className='media-content'>
             <h2 className='is-white'>WordPress Consultancy</h2>
             <p>
               I specialise in delivering WordPress websites for clients ranging
@@ -170,7 +178,7 @@ export default function Home({ allPostsData }) {
               </Link>
             </p>
           </div>
-        </div>
+        </article>
       </section>
 
       <section className='section is-md'>
@@ -179,26 +187,26 @@ export default function Home({ allPostsData }) {
           I've been honoured to work with local and national brands' to build
           marketing websites powered by WordPress
         </p>
-        <div className='columns'>
-          <div className='column is-2 is-offset-1'>
+        <div className='columns is-multiline'>
+          <div className='column is-12-tablet is-4-desktop is-2-widescreen is-offset-1-widescreen has-text-centered'>
             <img src='/img/logos/nhs-logo.png' alt='NHS logo' />
           </div>
-          <div className='column is-2'>
+          <div className='column is-12-tablet is-4-desktop is-2-widescreen has-text-centered'>
             <img src='/img/logos/hubspot-logo.png' alt='HubSpot logo' />
           </div>
-          <div className='column is-2'>
+          <div className='column is-12-tablet is-4-desktop is-2-widescreen has-text-centered'>
             <img
               src='/img/logos/citizens-advice-logo.png'
               alt='Citizens Advice logo'
             />
           </div>
-          <div className='column is-2'>
+          <div className='column is-12-tablet is-4-desktop is-2-widescreen has-text-centered'>
             <img
               src='/img/logos/enterprise-partnership.png'
               alt='Yorkshire Enterprise Partnership logo'
             />
           </div>
-          <div className='column is-2'>
+          <div className='column is-12-tablet is-4-desktop is-2-widescreen has-text-centered'>
             <img
               src='/img/logos/north-yorkshire-council.png'
               alt='North Yorkshire County Council logo'
@@ -229,27 +237,31 @@ export default function Home({ allPostsData }) {
             mentorship, it costs absolutely nothing to start the conversation.
           </p>
           <br />
-          <div className='has-text-centered'>
-            <Link href='/contact'>
-              <a className='button is-primary has-icon is-medium'>
-                <span>discuss your project</span>
-                <span className='icon fas fa-chevron-circle-right'></span>
-              </a>
-            </Link>
-            <Link href='/mentorship'>
-              <a className='button is-default has-icon is-medium'>
-                <span>discover mentorship</span>
-                <span className='icon fas fa-chevron-circle-right'></span>
-              </a>
-            </Link>
+          <div className='columns has-text-centered is-variable is-desktop'>
+            <div className='column is-5-desktop is-offset-1-desktop'>
+              <Link href='/contact'>
+                <a className='button is-primary has-icon is-medium'>
+                  <span>discuss your project</span>
+                  <span className='icon fas fa-chevron-circle-right'></span>
+                </a>
+              </Link>
+            </div>
+            <div className='column is-5-desktop'>
+              <Link href='/mentorship'>
+                <a className='button is-default has-icon is-medium'>
+                  <span>discover mentorship</span>
+                  <span className='icon fas fa-chevron-circle-right'></span>
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className='section is-primary is-lg'>
+      <section className='section is-primary is-md'>
         <h2 className='has-text-centered is-white'>Latest articles</h2>
         <br />
-        <div className='columns is-multiline'>
+        <div className='columns is-multiline is-variable is-1-tablet is-2-desktop is-3-widescreen'>
           {allPostsData
             .slice(0, 7)
             .map(({ id, date, title, featuredimage, description }) => {
@@ -257,7 +269,11 @@ export default function Home({ allPostsData }) {
                 allPostsData.map(post => post.id).indexOf(id) <= 2;
               return (
                 <div
-                  className={`column ${isFeatured ? 'is-4' : 'is-3'}`}
+                  className={`column ${
+                    isFeatured
+                      ? 'is-12-touch is-offset-0-touch is-10-desktop is-offset-1-desktop is-4-widescreen is-offset-0-widescreen'
+                      : 'is-6-tablet is-6-desktop is-6-widescreen is-3-fullhd'
+                  }`}
                   key={id}
                 >
                   <div className='card article-item'>
