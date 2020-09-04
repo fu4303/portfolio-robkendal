@@ -124,7 +124,7 @@ const About = () => (
       <h2>Connect with me</h2>
       <SocialLinks />
       <h2>Hire me</h2>
-      <ContactForm />
+      <ContactForm action='/contact/thanks' />
     </div>
   </Layout>
 );

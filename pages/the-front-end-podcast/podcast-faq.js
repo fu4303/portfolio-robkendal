@@ -6,7 +6,7 @@ const PodcastFaq = () => {
       title='The Front End Podcast Frequently Asked Questions | Rob Kendal, freelance developer'
       description='Find answers to the most frequently asked questions about The Front End Podcast'
     >
-      <div class='container'>
+      <div className='container'>
         <h1>The Front End FAQs</h1>
         <p>
           So, you're looking to appear on the show, or want to know a little bit

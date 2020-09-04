@@ -9,7 +9,7 @@ const Podcast = () => {
       title='The Front End Podcast | Rob Kendal, freelance developer'
       description='The Front End Podcast is a podcast all about life as a developer, including origin stories, special guests, and more'
     >
-      <div class='container'>
+      <div className='container'>
         <h1>The Front End Podcast</h1>
         <p>
           In{' '}

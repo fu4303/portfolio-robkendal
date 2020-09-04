@@ -12,27 +12,30 @@ const encode = data => {
 };
 
 const ContactForm = ({formName = "contact-form", action="/contact/thanks"}) => {
-  const [isValidated, setIsValidated] = useState(false);
+  //const [isValidated, setIsValidated] = useState(false);
   const [fields, setFields] = useState({});
   const router = useRouter();
 
     const handleChange = e => {
-        setFields({ [e.target.name]: e.target.value });
+        setFields({
+          ...fields,
+           [e.target.name]: e.target.value 
+        });
     }
 
     const handleSubmit = e => {
-        e.preventDefault()
-        const form = e.target
+        e.preventDefault();
+
         fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: encode({
-                'form-name': form.getAttribute('name'),
-                ...fields,
-            }),
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encode({
+            'form-name': formName,
+            ...fields
+          })
         })
-        .then(() => router.push(form.getAttribute('action')))
-        .catch(error => alert(error))
+          .then(() => router.push(action))
+          .catch(error => alert(error));
     }
 
   return (
