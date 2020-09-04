@@ -1,12 +1,18 @@
+import Link from 'next/link';
+
 // components
 import Layout from '../../components/Layout';
 import DateDisplay from '../../components/DateDisplay';
 import CommentsLoader from '../../components/CommentsLoader';
 
 // helpers
-import { getAllPostIds, getPostData } from '../../lib/posts';
+import {
+  getAllPostIds,
+  getPostData,
+  getSortedPostsData
+} from '../../lib/posts';
 
-export default function Post({ postData }) {
+export default function Post({ postData, allRelatedPostsData }) {
   return (
     <Layout
       description={postData.description}
@@ -70,11 +76,61 @@ export default function Post({ postData }) {
           <CommentsLoader pageUrl={postData.id} pageId={postData.id} />
 
           <h2 className='title is-size-3'>Read more</h2>
+          {allRelatedPostsData.map(
+            ({ id, date, title, featuredimage, description, tags }) => (
+              <div className='' key={`${id}_${date}_1`}>
+                <div className='media article-list-item'>
+                  <div className='media-left'>
+                    <Link href={`/blog/${id}`}>
+                      <a>
+                        <img src={featuredimage} alt={title} className='' />
+                      </a>
+                    </Link>
+                  </div>
+                  <div className='media-content'>
+                    <DateDisplay
+                      dateString={date}
+                      className='has-text-grey-light has-text-uppercase'
+                    />
+                    <h3 className='subtitle is-size-4'>
+                      <Link href={`/blog/${id}`}>
+                        <a>{title}</a>
+                      </Link>
+                    </h3>
+                    <p>{description}</p>
+                    <p className='tags'>
+                      {tags.length > 0 &&
+                        tags.map(tag => (
+                          <Link href={`/tags/?tag=${tag}`}>
+                            <a>
+                              <small>#{tag}</small>
+                            </a>
+                          </Link>
+                        ))}
+                    </p>
+                    <p className='has-text-right'>
+                      <Link href={`/blog/${id}`}>
+                        <a>read the full article</a>
+                      </Link>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )
+          )}
         </div>
       </>
     </Layout>
   );
 }
+
+const hasRelatedTags = (mainPostTags, loopPostTags) => {
+  let matchingTags = loopPostTags.length > 0;
+
+  matchingTags = loopPostTags.some(tag => mainPostTags.includes(tag));
+
+  return matchingTags;
+};
 
 export async function getStaticPaths() {
   // Return a list of possible value for id
@@ -88,9 +144,24 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   // Fetch necessary data for the blog post using params.id
   const postData = await getPostData(params.id);
+  const allPostsData = await getSortedPostsData();
+  let allRelatedPostsData = [];
+
+  try {
+    allRelatedPostsData = allPostsData
+      .filter(
+        post =>
+          post.id !== params.id && hasRelatedTags(postData.tags, post.tags)
+      )
+      .slice(0, 3);
+  } catch (err) {
+    allRelatedPostsData = [];
+  }
+
   return {
     props: {
-      postData
+      postData,
+      allRelatedPostsData
     }
   };
 }
