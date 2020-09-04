@@ -184,7 +184,7 @@ export default function Home({ allPostsData }) {
       <section className='section is-md'>
         <h2 className='has-text-centered'>Trusted by brands big and small</h2>
         <p className='has-text-centered'>
-          I've been honoured to work with local and national brands' to build
+          I've been honoured to work with local and national brands to build
           marketing websites powered by WordPress
         </p>
         <div className='columns is-multiline'>

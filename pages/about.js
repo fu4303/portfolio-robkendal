@@ -114,7 +114,7 @@ const About = () => (
       </p>
       <p>
         When I'm not recording a podcast,{' '}
-        <Link href='/consultancy'>
+        <Link href='/wordpress-consultancy'>
           <a>offering web development consultancy services</a>
         </Link>{' '}
         or coding something exciting, then you'll find me right at home in the

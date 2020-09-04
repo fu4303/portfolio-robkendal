@@ -15,8 +15,8 @@ const Navigation = () => {
         <Link href='/about'>
           <a className={isActive('/about')}>about</a>
         </Link>
-        <Link href='/consultancy'>
-          <a className={isActive('/consultancy')}>consultancy</a>
+        <Link href='/wordpress-consultancy'>
+          <a className={isActive('/wordpress-consultancy')}>consultancy</a>
         </Link>
         <Link href='/mentorship'>
           <a className={isActive('/mentorship')}>mentorship</a>
