@@ -53,7 +53,7 @@ export default function Post({ postData }) {
                   and recording podcasts, such as{' '}
                   <a
                     href='https://thefrontendpodcast.site'
-                    title='the front end podcast website'
+                    title='The Front End podcast website'
                   >
                     The Front End
                   </a>

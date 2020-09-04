@@ -101,7 +101,7 @@ const RecruiterFaq = () => {
         <h2>Do you have a preferred technology stack?</h2>
 
         <p>
-          Most of my work now is in front end technologies, largely based in
+          Most of my work now is in frontend technologies, largely based in
           JavaScript. My current, general tech stack looks like this:
         </p>
 
@@ -126,7 +126,7 @@ const RecruiterFaq = () => {
           I've been in the IT industry for over 15 years, most of that as a
           developer. I started in full stack development using the Microsoft
           (MS) tech stack of C#, ASP.Net 2.0. In more recent years, I have been
-          a senior front end developer specialising in performant websites using
+          a senior frontend developer specialising in performant websites using
           the latest JavaScript and frameworks, such as React.
         </p>
 

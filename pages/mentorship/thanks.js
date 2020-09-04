@@ -17,7 +17,7 @@ const MentorshipThanks = () => {
         />
         <p>
           Thank you for signing up to my mentorship program. You've made a brave
-          first step on your way to becoming a front end developer.
+          first step on your way to becoming a frontend developer.
         </p>
         <p>
           I'll be in touch over the next 24 hours to arrange our first kick-off

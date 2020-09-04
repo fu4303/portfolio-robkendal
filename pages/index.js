@@ -20,7 +20,7 @@ export default function Home({ allPostsData }) {
           <p>
             If you've been searching for a{' '}
             <strong>
-              freelance web developer who knows WordPress and front end web
+              freelance web developer who knows WordPress and frontend web
               development inside and out
             </strong>
             , you've come to the right place.
@@ -44,14 +44,14 @@ export default function Home({ allPostsData }) {
               <span className='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
               <span>
                 Marketing website design and development driven by your business
-                growth goals
+                growth goals.
               </span>
             </li>
             <li className='flex has-padding-bottom-sm'>
               <span className='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
               <span>
                 Award-winning marketing and Search Engine Optimisation (SEO)
-                knowledge and support
+                knowledge and support.
               </span>
             </li>
             <li className='flex has-padding-bottom-sm'>
@@ -65,15 +65,15 @@ export default function Home({ allPostsData }) {
             <li className='flex has-padding-bottom-sm'>
               <span className='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
               <span>
-                Enterprise-level HubSpot capaign management and integrations
-                (including WordPress)
+                Enterprise-level HubSpot campaign management and integrations
+                (including WordPress).
               </span>
             </li>
             <li className='flex has-padding-bottom-sm'>
               <span className='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
               <span>
                 Help and support launching super fast, accessible, static
-                websites that rank well on search engines
+                websites that rank well on search engines.
               </span>
             </li>
           </ul>
@@ -146,24 +146,24 @@ export default function Home({ allPostsData }) {
                 Creating an ecommerce platform with WordPress, WooCommerce,
                 Snipcart or Stripe.
               </li>
-              <li>WordPress migrations between hosts</li>
-              <li>HubSpot to WordPress integrations and campaign setups</li>
+              <li>WordPress migrations between hosts.</li>
+              <li>HubSpot to WordPress integrations and campaign setups.</li>
               <li>
                 Help and support with using WordPress as a headless CMS with
-                React and Gatsby or Next
+                React and Gatsby or Next.
               </li>
               <li>
                 Designing, developing and deploying static frontend websites
                 using a WordPress-powered backend on Netlify, Vercel, or the AWS
-                platform
+                platform.
               </li>
               <li>
                 Improving WordPress performance and Search Engine Optimisation
-                (SEO)
+                (SEO).
               </li>
               <li>
                 UX or UI consultancy support to plan out your WordPress-powered
-                website
+                website.
               </li>
             </ul>
             <p>

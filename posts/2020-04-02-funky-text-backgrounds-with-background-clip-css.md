@@ -22,7 +22,7 @@ A while back, I came across this funky looking text effect on Apple's website, [
 
 ![example of background-clip property used by Apple on their website](/img/apple-bg-effect.png)
 
-Having had a little dig around in the behind the scenes, you might be surprised to learn that it's really quite simple, taking advantage of the CSS 'background-clip' property. 
+Having had a little dig around in the behind the scenes, you might be surprised to learn that it's really quite simple, taking advantage of the CSS 'background-clip' property.
 
 The background-clip is a CSS property that determines whether an element's background is visible/shows underneath the content's border box, padding bounds, or box of the content itself. However, you can also restrict this to just the text, which is how we're going to achieve our final look in this article. You can [read more about background-clip and its uses](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip) in the ever-helpful MDN documentation on background-clip.
 
@@ -36,9 +36,7 @@ Here's the simple code we need to get things looking almost like Apple's example
 
 ```html
 <div class="container">
-  <p>
-    ...put whatever text you like in here
-  </p>
+  <p>...put whatever text you like in here</p>
 </div>
 ```
 
@@ -48,7 +46,7 @@ Next, our simple base styles:
 
 ```css
 html {
-  font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   background-color: black;
   color: white;
   display: flex;
@@ -59,16 +57,16 @@ html {
 .container {
   max-width: 950px;
   font-size: 64px;
-  font-weight: 600;  
+  font-weight: 600;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=640&q=80);
 }
 ```
 
-Nothing too special here, just a few base styles on the document to give it a punchy look, like Apple's on the HTML, and for the `.container` class, we're just restricting the width and making the text bold and big. 
+Nothing too special here, just a few base styles on the document to give it a punchy look, like Apple's on the HTML, and for the `.container` class, we're just restricting the width and making the text bold and big.
 
-Oh, and I found this [excellent background texture on Unsplash](https://unsplash.com/photos/8uZPynIu-rQ). It's a textural image created by Paweł Czerwiński. 
+Oh, and I found this [excellent background texture on Unsplash](https://unsplash.com/photos/8uZPynIu-rQ). It's a textural image created by Paweł Czerwiński.
 
 ![Texture image from Unsplash comprising of pinks, purples and light blue swirls](/img/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg)
 
@@ -81,7 +79,7 @@ So, we need to add in the final property, `background-clip: text` to make the ma
 ```css
 /* The magic */
 background-clip: text;
--webkit-background-clip: text;  
+-webkit-background-clip: text;
 color: transparent;
 ```
 
@@ -106,8 +104,8 @@ And there we have it. Simple, quick, but such a striking effect that can brighte
 
 Here are some supporting links used in the article:
 
-* Unsplash background image I used for the text effect
-* [Background-clip CSS property on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip)
-* Apple's use of this property [on their iPhone HR webpage](https://web.archive.org/web/20190105152534/https://www.apple.com/uk/iphone-xr/) (archived)
-* The final [demo on my CodePen](https://codepen.io/robkendal/pen/MWwRmMo)
-* [The Front End podcast](https://thefrontendpodcast.site) (because who else is going to shamelessly promote my podcast about all things front end?)
+- Unsplash background image I used for the text effect
+- [Background-clip CSS property on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip)
+- Apple's use of this property [on their iPhone HR webpage](https://web.archive.org/web/20190105152534/https://www.apple.com/uk/iphone-xr/) (archived)
+- The final [demo on my CodePen](https://codepen.io/robkendal/pen/MWwRmMo)
+- [The Front End podcast](https://thefrontendpodcast.site) (because who else is going to shamelessly promote my podcast about all things frontend?)

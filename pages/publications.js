@@ -60,7 +60,7 @@ const Publications = () => {
                   </p>
                   <ul>
                     <li>Getting into development,</li>
-                    <li>What to learn as a front end developer,</li>
+                    <li>What to learn as a frontend developer,</li>
                     <li>
                       How to look for and land a job in the tech industry,
                     </li>

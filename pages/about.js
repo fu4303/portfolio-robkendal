@@ -13,7 +13,7 @@ const About = () => (
     <h1 className='has-text-centered'>About Rob Kendal</h1>
     <div className='container'>
       <p>
-        I've been fortunate enought to have discovered computers during their
+        I've been fortunate enough to have discovered computers during their
         golden beginnings when I was young. Although I liked maths and science,
         computers were always my first love.
       </p>
@@ -69,8 +69,8 @@ const About = () => (
         marketing automation direct to their business.
       </p>
       <p>
-        As a front end developer I love to keep on top of new development
-        strategies so I can give my clients the best websites possible. From
+        As a frontend developer, I love to keep on top of new development
+        strategies so I can give my clients the best websites possible, from
         using WordPress as a headless CMS, to building out websites using
         powerful JavaScript frameworks such as Gastby or Next.js. And I'll
         always have a love for React, the UI library from Facebook.

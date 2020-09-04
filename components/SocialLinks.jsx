@@ -45,7 +45,7 @@ const SocialLinks = ({ overrideStyles }) => (
       </span>
     </a>
     <a
-      href='https://robkendal.co.uk/rss'
+      href='https://robkendal.co.uk/rss.xml'
       target='_blank'
       rel='noreferrer noopener'
     >
