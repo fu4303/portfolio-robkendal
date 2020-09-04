@@ -1,4 +1,4 @@
-import Link from 'next/Link';
+import Link from 'next/link';
 
 // components
 import Layout from '../../components/Layout';
