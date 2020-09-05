@@ -37,7 +37,6 @@
 
 @media screen and (max-width: 1260px) {
   .home-hero {
-    padding: 0 1em 4.5em;
   }
   .home-hero .hero-right img {
     max-width: 13rem;
@@ -55,6 +54,9 @@
 @media screen and (max-width: 1070px) {
   .home-hero {
     flex-direction: column-reverse;
+  }
+  .home-hero .hero-left {
+    margin-right: 0;
   }
   .home-hero .hero-right img {
     max-width: 20rem;
@@ -102,5 +104,41 @@
   }
   .home-section-wordpress {
     padding: 2rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  :root {
+    --font-size-1: 2.1rem;
+    --font-size-2: 1.8rem;
+    --font-size-3: 1.6rem;
+  }
+
+  .home-hero .hero-right img {
+    max-width: 80%;
+  }
+
+  .home-hero .button {
+    max-width: 90%;
+  }
+
+  ul {
+    margin-left: 1.3em;
+  }
+  ul.unstyled {
+    margin-left: 0.5em;
+  }
+
+  .section.is-md {
+    padding: 2em 1em 4.5em;
+  }
+
+  .comments-area {
+    margin: 2.5em 0 3.66667em;
+  }
+
+  #comments-show {
+    bottom: -85px;
+    width: 80%;
   }
 }

@@ -141,3 +141,11 @@
     }
   }
 }
+
+@media screen and (max-width: 520px) {
+  .mobilenav {
+    .mobilenavmenu {
+      width: 80vw;
+    }
+  }
+}

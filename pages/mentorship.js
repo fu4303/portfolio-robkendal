@@ -37,7 +37,7 @@ const Mentorship = () => {
             I want to help as many people as I can learn to code and get into
             frontend development. That's why my mentorship support starts at{' '}
             <strong>free</strong>. With that you'll get access to over 15 years
-            of experience and knowledge in the tech industry as a self-taight
+            of experience and knowledge in the tech industry as a self-taught
             developer, a manager, and a marketer.
           </p>
           <p>My free mentorship option includes:</p>

@@ -108,7 +108,10 @@ const Blog = ({ allPostsData }) => {
                     <p className='tags'>
                       {tags.length > 0 &&
                         tags.map(tag => (
-                          <Link href={`/tags/?tag=${tag}`}>
+                          <Link
+                            href={`/tags/?tag=${tag}`}
+                            key={`${tag}_${Date.now().toString()}`}
+                          >
                             <a>
                               <small>#{tag}</small>
                             </a>
