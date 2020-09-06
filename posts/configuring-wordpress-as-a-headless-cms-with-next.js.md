@@ -23,7 +23,7 @@ As we move through future articles in the series, we'll be covering a lot of mov
 * Creating an RSS feed for our static Next.js blog
 * Bundling, building and deploying our Next.js static blog with Netlify
 
-For this very article, however, we're just going to start with the basics of getting Next.js and our headless WordPress instance setup and ready to go. 
+For this very article, however, we're just going to start with the basics of getting Next.js and our headless WordPress instance setup and ready to go.
 
 So let's get to it!
 
@@ -59,7 +59,7 @@ By using WordPress as a headless CMS with Next.js, it's win win win. Website vis
 
 ## Step 1, getting WordPress ready for Next.js
 
-Installing and getting a WordPress instance going is beyond the scope of this article and there are many places to help get you started with that. 
+Installing and getting a WordPress instance going is beyond the scope of this article and there are many places to help get you started with that.
 
 If you're looking for a recommendation then check out [Amazon's Lightsail](https://aws.amazon.com/lightsail/ "Amazon Lightsail hosting"), or the AWS platform in general as there are often free tiers available, especially whilst you're just getting started.
 
@@ -219,6 +219,6 @@ What you'll see is a blazing fast site build, followed by a message that your si
 
 ![Next.js local development site running on http://localhost:3000](/public/img/nextjs-article-nextjs-demo-site-start.png)
 
-And it really is as simple as that...for now. 
+And it really is as simple as that...for now.
 
 In part two, we'll be looking at how to access our GraphQL data using Next.js and take a deeper dive into dynamic routing.
