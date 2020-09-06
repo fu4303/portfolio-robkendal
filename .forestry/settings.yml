@@ -10,7 +10,7 @@ sections:
   create: documents
   match: "**/*"
 upload_dir: public/img
-public_path: "/public/img"
+public_path: "/img"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
