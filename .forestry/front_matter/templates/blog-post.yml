@@ -37,3 +37,4 @@ fields:
   label: Tags
 pages:
 - posts/configuring-wordpress-as-a-headless-cms-with-next.js.md
+- posts/using-wordpress-as-a-headless-cms-with-next.js.md
