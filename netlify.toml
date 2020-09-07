@@ -15,12 +15,12 @@ package = "netlify-plugin-cache-nextjs"
 package = "@netlify/plugin-sitemap"
 
   [plugins.inputs]
-  buildDir = "/"
+  buildDir = "out"
   exclude = [
     # By file Path
-    './build-dir/path-to/file.html',
+    './out/_next/*',
     # By Glob pattern
-    '**/**/child-one.html'
+    #'**/**/child-one.html'
   ]
 
 [[plugins]]
