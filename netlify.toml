@@ -33,3 +33,59 @@ package = "netlify-plugin-checklinks"
   # Enable to check references to source maps, source map sources etc.
   # Many build tools don't emit working references, so this is disabled by default
   followSourceMaps = false
+
+
+[[plugins]]
+package = "netlify-plugin-image-optim"
+
+[[plugins]]
+package = "netlify-plugin-cache-nextjs"
+
+  # These options will cache the build directory at `${NETLIFY_BASE}/frontend/.next-build`
+  [plugins.inputs]
+  # The path to the build directory
+  build_dir_path = "/"
+  # Custom build directory if you aren't using `.next` (https://nextjs.org/docs/api-reference/next.config.js/setting-a-custom-build-directory)
+  #custom_build_dir_name = ".next-build"
+
+[[plugins]]
+package = "@netlify/plugin-sitemap"
+
+  [plugins.inputs]
+  buildDir = "/"
+  exclude = [
+    # By file Path
+    './build-dir/path-to/file.html',
+    # By Glob pattern
+    '**/**/child-one.html'
+  ]
+
+[[plugins]]
+  package = "netlify-plugin-submit-sitemap"
+
+	[plugins.inputs]
+
+	# The base url of your site (optional, default = main URL set in Netlify)
+	baseUrl = "https://robkendal.co.uk"
+
+	# Path to the sitemap URL (optional, default = /sitemap.xml)
+	sitemapPath = "/sitemap.xml"
+
+	# Enabled providers to submit sitemap to (optional, default = 'google', 'bing', 'yandex'). Possible providers are currently only 'google', 'bing', 'yandex'.
+	providers = [
+		"google",
+		"bing",
+		"yandex"
+	]
+
+[[plugins]]
+package = "netlify-plugin-hashfiles"
+
+  [plugins.inputs]
+  # An array of glob patterns for pages on your site. Recursive traversal will start from these
+  entryPoints = [
+    "*.html"
+  ]
+
+  # Directory where content-addressable files are moved and immutable cache-headers are set
+  staticDir = "/static/"
