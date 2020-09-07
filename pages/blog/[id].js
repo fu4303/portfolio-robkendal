@@ -16,7 +16,7 @@ export default function Post({ postData, allRelatedPostsData }) {
   return (
     <Layout
       description={postData.description}
-      image={postData.image}
+      image={postData.featuredimage}
       title={postData.title}
       url={`blog/${postData.id}`}
     >

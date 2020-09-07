@@ -11,7 +11,7 @@ import Footer from './Footer';
 import styles from './scss/layout.module.scss';
 
 const shortTitle = 'Freelance WordPress Developer and Jamstack developer';
-const baseUrl = "https://robkendal.co.uk/";
+const baseUrl = "https://robkendal.co.uk";
 
 const generateUrl = url => `${baseUrl}${url}`;
 
@@ -44,23 +44,23 @@ const Layout = ({
           rel='alternative'
           type='application/rss+xml'
           title='RSS for blog articles'
-          href='https://robkendal.co.uk/rss'
+          href='https://robkendal.co.uk/rss.xml'
         />
         // favicon
         <Favicon />
         // social media
         <meta property='og:title' content={title} />
         <meta property='og:description' content={description} />
-        <meta property='og:image' content={image} />
+        <meta property='og:image' content={generateUrl(image)} />
         <meta property='og:image:alt' content={title || shortTitle} />
         <meta property='og:type' content='website' />
         <meta property='og:url' content={generateUrl(url || router.pathname)} />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:creator' content='Rob Kendal' />
-        <meta name='twitter:site' content='https://robkendal.co.uk' />
+        <meta name='twitter:site' content={baseUrl} />
         <meta name='twitter:title' content={title} />
-        <meta property='twitter:image' content={image} />
-        <meta property='twitter:image:alt' content={shortTitle} />
+        <meta property='twitter:image' content={generateUrl(image)} />
+        <meta property='twitter:image:alt' content={title || shortTitle} />
         <meta name='twitter:description' content={description} />
         // fonts
         <link
