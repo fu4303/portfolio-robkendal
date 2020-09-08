@@ -36,6 +36,7 @@ Next, we need to amend the `/pages/index.js` file. This is the main entry point,
 
 Open up `/pages/index.js` and locate the `<main>` element in the component. Replace everything between the open `<main>` and closing `</main>` with the following:
 
+```html
     <h1 className={styles.title}>Welcome to our demo blog!</h1>
     
     <p>
@@ -44,12 +45,15 @@ Open up `/pages/index.js` and locate the `<main>` element in the component. Repl
     		<a>blog articles page</a>
     	</Link>
     </p>
+```
 
 If you've used React Router, you might be familiar with the rather unique-looking way that we're linking to the `/blog` page. Next.js uses a similar internal routing component as React Router to link to internal pages, it looks like this:
 
+```html
     <Link href='/blog'>
     	<a>blog articles page</a>
     </Link>
+```
 
 You can [read more about the Next.js Link element](https://nextjs.org/docs/api-reference/next/link "Next.js Link element") here, but the essence is that you need to declare the `<Link>` component and add a `href="/link-to-your-page"` attribute with the path to where you want to link to. Finally, you need to add a single `<a>` anchor element with whatever name you want to use for the link.
 
@@ -110,7 +114,7 @@ Add the following folders and files within them:
 * File `/pages/blog/index.js` - when people visit a route like `https://somedomain.co.uk/blog/` this is the page that will serve that request.
 * File `/pages/blog/[slug].js` -  similar to the above, this rather weird looking page will handle individual blog pages, e.g. a domain like `https://yourdomain.com/blog/an-interesting-article/.`
 * File `/styles/Blog.module.css` - this is a standard CSS file that will hold styles for our blog list items.
-* File `/.env.local` - an environment variable file to hold 
+* File `/.env.local` - an environment variable file to hold
 
 That odd looking file name, `[slug].js` looks really unfamiliar, but it's how Next.js determines dynamic routes within a folder.
 
@@ -118,7 +122,7 @@ We'll cover that next.
 
 ## Dynamic routing in Next.js
 
-Before we start building out our new pages, it'll be helpful to quickly highlight how dynamic routing in Next.js works. 
+Before we start building out our new pages, it'll be helpful to quickly highlight how dynamic routing in Next.js works.
 
 Out of the box, without doing anything fancy, Next.js will try to match any route you throw at it to a `.js` file that it finds under the `/pages` folder in your project.
 
@@ -147,13 +151,92 @@ Now for the real meat and potatoes of the article: fetching data!
 
 There's no right way to build out your files in a project like this, but I tend to prefer building things in a least-dependent to most-dependent order. In our case, the data-fetching isn't dependent on anything else, but the UI-layer depends on this, so it makes sense to start here.
 
-Open up the `/lib/api.js` file and let's start adding in our data-fetching magic.
-
 ### Dealing with environment variables
+
+Some things, like global variables that might change between environments are best stored in (funnily enough) environment variable files, usually created as `.env` files in the root of your project.
+
+Since we've already created one such file, let's populate it with our WordPress GraphQL URL. Open up the file `/.env.local` and add the following line:
+
+    WP_API_URL=http://demo.robkendal.co.uk/graphql/
+
+> **Note:** you can use my URL as above, but note that a) it might be taken down without notice, and b) you may not get the results you want. It's always best to get your own WordPress instance. Either way, you'll want to add in the url in the format `http://your-domain-here.com/graphql/`
+
+Next.js comes with built in support for environment variable files. You just have to add a `.env.local` file in the root of your file and add in what you need. As always, the Next team have [great docs on environment variables]() for you to peruse.
 
 ### Adding the general fetching function
 
+Open up the `/lib/api.js` file and let's start adding in our data-fetching magic. The first thing is to add the general fetch function that will handle the talking to our WordPress GraphQL endpoint.
+
+At the top of the file, we'll reference our API URL we just added into the `.env` file, followed by the `fetchAPI` function.
+
+    const API_URL = process.env.WP_API_URL;
+    
+    async function fetchAPI(query, { variables } = {}) {
+      // Set up some headers to tell the fetch call 
+      // that this is an application/json type
+      const headers = { 'Content-Type': 'application/json' };
+      
+      // build out the fetch() call using the API_URL 
+      // environment variable pulled in at the start
+      // Note the merging of the query and variables
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({ query, variables })
+      });
+    
+      // error handling work
+      const json = await res.json();
+      if (json.errors) {
+        console.log(json.errors);
+        console.log('error details', query, variables);
+        throw new Error('Failed to fetch API');
+      }
+      return json.data;
+    }
+
+This is an asynchronous function as we need to wait for the `fetch()` call to complete. The rest of the comments should be enough to walk you through the file.
+
+Believe it or not, this is the most complex function in our API file. Whilst not the longest, it does have more moving parts. The upcoming functions we'll be defining next largely outline GraphQL queries that the `fetchAPI()` function here will handle.
+
 ### Add function to get blog post listings
+
+From here on out, this is where we'll define our GraphQL queries that will shape the data we want back from WordPress. 
+
+> **Quick tip:** although handy to remember all this stuff, the best approach to defining GraphQL queries is to fire up the GraphiQL plugin on the WordPress instance, write your query, test the results and then copy it into your API file. That way, you know it works and hopefully eliminate errors along the way.
+
+As far as queries go, this is quite straightforward. We're looking at all posts, grabbing the first 20 results (for brevity), and ordering them by descending date order.
+
+With these exception of the `extraPostInfo` ACF custom fields [we defined in part one of this series](https://robkendal.co.uk/blog/configuring-wordpress-as-a-headless-cms-with-next.js "Part one of configuring WordPress as a headless CMS with Next.js"), the rest of the data is standard WordPress fare. 
+
+    export async function getAllPosts(preview) {
+      const data = await fetchAPI(
+        `
+        query AllPosts {
+          posts(first: 20, where: { orderby: { field: DATE, order: DESC}}) {
+            edges {
+              node {
+                id
+                date
+                title
+                slug
+                extraPostInfo {
+                  authorExcerpt
+                  thumbImage {
+                    mediaItemUrl
+                  }
+                }
+              }
+            }
+          }
+        }
+        `
+      );
+    
+      return data?.posts;
+    }
+
+Once the query returns, we use the [optional chaining operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining "Optional chaining operator") to return the `posts` array or `undefined` if that is unavailable.
 
 ### Add function to get all blog post slugs
 
@@ -161,9 +244,7 @@ Open up the `/lib/api.js` file and let's start adding in our data-fetching magic
 
 ## Listing blog posts from WordPress using GraphQL
 
-Now the exciting part: building out the blog listing page! 
-
- 
+Now the exciting part: building out the blog listing page!
 
 ### Module styling with `.module.css` files
 
