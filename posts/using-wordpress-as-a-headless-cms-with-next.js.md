@@ -28,7 +28,7 @@ Out of the box, the `create-next-app` provided by Next.js adds in a lot of helpf
 Open up the project from part one in VS Code (or your favourite IDE) and delete the following files and folders:
 
 * /pages/api
-* /pages/api/hello.js 
+* /pages/api/hello.js
 
 ### Files to edit
 
@@ -51,7 +51,7 @@ If you've used React Router, you might be familiar with the rather unique-lookin
     	<a>blog articles page</a>
     </Link>
 
-You can [read more about the Next.js Link element](https://nextjs.org/docs/api-reference/next/link "Next.js Link element") here, but the essence is that you need to declare the `<Link>` component and add a `href="/link-to-your-page"` attribute with the path to where you want to link to. Finally, you need to add a single `<a>` anchor element with whatever name you want to use for the link. 
+You can [read more about the Next.js Link element](https://nextjs.org/docs/api-reference/next/link "Next.js Link element") here, but the essence is that you need to declare the `<Link>` component and add a `href="/link-to-your-page"` attribute with the path to where you want to link to. Finally, you need to add a single `<a>` anchor element with whatever name you want to use for the link.
 
 **Note:** you should add any class names or other typical anchor attributes you wish to the `<a>` tag _not_ the `<Link>` component.
 
@@ -105,21 +105,74 @@ Of course, we need a couple more files that we'll build out over the course of t
 Add the following folders and files within them:
 
 * Folder `/lib` - put this in the root of the project. This will hold any utility files and specifically our API file that will talk to WordPress.
-* File `/lib/api.js` - this will handle our GraphQL queries and data fetching. 
-* Folder `/pages/blog` - nothing fancy here, just a folder to hold our blog pages. 
-* File `/pages/blog/index.js` - when people visit a route like `https://somedomain.co.uk/blog/` this is the page that will serve that request
-* File `/pages/blog/[slug].js` -  similar to the above, this rather weird looking page will handle individual blog pages, e.g. a domain like `https://yourdomain.com/blog/an-interesting-article/`
+* File `/lib/api.js` - this will handle our GraphQL queries and data fetching.
+* Folder `/pages/blog` - nothing fancy here, just a folder to hold our blog pages.
+* File `/pages/blog/index.js` - when people visit a route like `https://somedomain.co.uk/blog/` this is the page that will serve that request.
+* File `/pages/blog/[slug].js` -  similar to the above, this rather weird looking page will handle individual blog pages, e.g. a domain like `https://yourdomain.com/blog/an-interesting-article/.`
+* File `/styles/Blog.module.css` - this is a standard CSS file that will hold styles for our blog list items.
+* File `/.env.local` - an environment variable file to hold 
 
-That odd looking file name, `[slug].js` looks really unfamiliar, but it's how Next.js determines dynamic routes within a folder. 
+That odd looking file name, `[slug].js` looks really unfamiliar, but it's how Next.js determines dynamic routes within a folder.
 
-We'll cover that next. 
+We'll cover that next.
 
 ## Dynamic routing in Next.js
 
-## Accessing external data in Next.js using `getStaticProps()`
+Before we start building out our new pages, it'll be helpful to quickly highlight how dynamic routing in Next.js works. 
+
+Out of the box, without doing anything fancy, Next.js will try to match any route you throw at it to a `.js` file that it finds under the `/pages` folder in your project.
+
+For example:
+
+* `/` will match `/pages/index.js`
+* `/blog/` will match `/pages/blog.js` or `/pages/blog/index.js`
+* `/contact/thanks` will match `/pages/contact/thanks.js`
+
+However, when it comes to dynamic routes, such as a blog post or product page, we might have one physical page file that acts as a template of sorts, handling an unknown amount of routes.
+
+For this, Next.js will match a filename in the format `[param]`. So, in our case above where we have the file path `/pages/blog/[slug].js`, Next.js will call the `[slug].js` page for the following routes:
+
+* `/blog/my-awesome-blog-post`
+* `/blog/another-great-post-title`
+* `/blog/some-final-title-here`
+* ...and so on.
+
+You can call this dynamically routed file whatever you like between the `[` and `]` characters, but you'll be referencing this name inside the file (as you'll soon see), so it makes sense to call it something meaningful. In our case 'slug' is the terms that WordPress uses, so we'll leave it as that.
+
+It's worth looking at the [official Next.js documentation on dynamic routing](https://nextjs.org/docs/routing/dynamic-routes "Official documentation on Next.js dynamic routing") to familiarise yourself with the syntax and conventions to apply them to your app/site.
+
+## Fetching data with the api.js file
+
+Now for the real meat and potatoes of the article: fetching data!
+
+There's no right way to build out your files in a project like this, but I tend to prefer building things in a least-dependent to most-dependent order. In our case, the data-fetching isn't dependent on anything else, but the UI-layer depends on this, so it makes sense to start here.
+
+Open up the `/lib/api.js` file and let's start adding in our data-fetching magic.
+
+### Dealing with environment variables
+
+### Adding the general fetching function
+
+### Add function to get blog post listings
+
+### Add function to get all blog post slugs
+
+### Add function to get an individual blog post's data
 
 ## Listing blog posts from WordPress using GraphQL
 
+Now the exciting part: building out the blog listing page! 
+
+ 
+
+### Module styling with `.module.css` files
+
+### Accessing external data in Next.js using `getStaticProps()`
+
 ## Handling dynamic routes like blog posts
 
+## What's next in the series
+
 Coming up next, in part three, we'll be creating an XML RSS feed as part of the deployment process so that we can publish and syndicate our posts across the web.
+
+This is a common feature on just about any blog out there on the web, but it's not as straightforward as you may think when using Next.js. Don't worry though, it's all covered in part three.
