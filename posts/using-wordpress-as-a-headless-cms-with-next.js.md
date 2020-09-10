@@ -253,9 +253,9 @@ Here's how the same query looked in GraphiQL when I built it, and the results th
 
 ### Add function to get all blog post slugs
 
-Having fetched a list of blog posts from WordPress with some specific data, now we want to get a list of all possible Posts, but _only_ the slug of each Post. 
+Having fetched a list of blog posts from WordPress with some specific data, now we want to get a list of all possible Posts, but _only_ the slug of each Post.
 
-This function, `getAllPostsWithSlug()` will be used on our individual blog article page, currently located at `/blog/[slug].js`. 
+This function, `getAllPostsWithSlug()` will be used on our individual blog article page, currently located at `/blog/[slug].js`.
 
 I'll go into this in more detail when we get to the frontend component, but for now, it's enough to understand that we need to get a list of matching slug values for Next.js to match an individual one (i.e. the one you're visiting) against. That's where this function comes in.
 
@@ -276,11 +276,11 @@ Still in the `/lib/api.js` file, define a new exported async function, `getAllPo
       return data?.posts;
     }
 
-These sorts of queries will start to look more common and familiar the more that you build them out. You'll start to notice a pattern too where we define a content type (e.g. `posts`), add an optional filter (e.g. `(first: 10000)`), then look for `edges` and a `node` within that (e.g. the individual content type item) and properties of that content type (e.g. `slug`). 
+These sorts of queries will start to look more common and familiar the more that you build them out. You'll start to notice a pattern too where we define a content type (e.g. `posts`), add an optional filter (e.g. `(first: 10000)`), then look for `edges` and a `node` within that (e.g. the individual content type item) and properties of that content type (e.g. `slug`).
 
 ### Add function to get an individual blog post's data
 
-This next GraphQL query is going to be used to pull in data from an individual Post item. It'll be called when viewing a single blog article on the `[slug].js` page. 
+This next GraphQL query is going to be used to pull in data from an individual Post item. It'll be called when viewing a single blog article on the `[slug].js` page.
 
 Under the last query, define a new exported async function called `getPost()`. It should look like this:
 
@@ -316,11 +316,11 @@ Under the last query, define a new exported async function called `getPost()`. I
       return data;
     }
 
-This is the longest query in our `api.js` file and it looks a little different, so let's review it. 
+This is the longest query in our `api.js` file and it looks a little different, so let's review it.
 
 ### GraphQL fragments
 
-The very first part is called a [fragment](https://graphql.org/learn/queries/#fragments "GraphQL fragment documentation") and it's decorated with the `fragment` keyword in the query. 
+The very first part is called a [fragment](https://graphql.org/learn/queries/#fragments "GraphQL fragment documentation") and it's decorated with the `fragment` keyword in the query.
 
     fragment PostFields on Post {
           title
@@ -334,9 +334,9 @@ The very first part is called a [fragment](https://graphql.org/learn/queries/#fr
           }
         }
 
-GraphQL fragments give us the ability to break larger, more complex queries into smaller, reusable parts. 
+GraphQL fragments give us the ability to break larger, more complex queries into smaller, reusable parts.
 
-For example, you might have a couple of queries as part of your call, but they both use the same Post data. Rather than have to define the same fields on each query, you can define a single fragment, and then use the spread operator syntax to pull those fields in to each separate query. 
+For example, you might have a couple of queries as part of your call, but they both use the same Post data. Rather than have to define the same fields on each query, you can define a single fragment, and then use the spread operator syntax to pull those fields in to each separate query.
 
 We've done that here in the `PostBySlug` query that we defined:
 
@@ -366,7 +366,7 @@ Notice the `...PostFields` fragment that we've referenced. You could also remove
 
 ### GraphQL variables
 
-The other interesting thing in our query is the use of variables to filter the specific Post we want to fetch data about. 
+The other interesting thing in our query is the use of variables to filter the specific Post we want to fetch data about.
 
 Focussing on the main part of the query for now, this part:
 
@@ -385,21 +385,21 @@ Focussing on the main part of the query for now, this part:
           }
         }
 
-You can see the GraphQL variables defined with a '$' dollar symbol. In the first line, `query PostBySlug($id: ID!, $idType: PostIdType!)` we're defining our query name and the variables we'll be passing in, and their types. 
+You can see the GraphQL variables defined with a '$' dollar symbol. In the first line, `query PostBySlug($id: ID!, $idType: PostIdType!)` we're defining our query name and the variables we'll be passing in, and their types.
 
-The variable types are dictated by the GraphQL schema. You can view the schema on the WordPress GraphiQL explorer, but it's a bit beyond the scope of this article. 
+The variable types are dictated by the GraphQL schema. You can view the schema on the WordPress GraphiQL explorer, but it's a bit beyond the scope of this article.
 
-Next, we pass those variable placeholders in to filter a single, specific Post item using `post(id: $id, idType: $idType)`. 
+Next, we pass those variable placeholders in to filter a single, specific Post item using `post(id: $id, idType: $idType)`.
 
-Of course, now we need to actually pass in the variable _values_, which is where the second argument of the `fetchAPI()` method comes in. We pass in a plain JavaScript object with a `variables` property that contains all our GraphQL variables and their values. 
+Of course, now we need to actually pass in the variable _values_, which is where the second argument of the `fetchAPI()` method comes in. We pass in a plain JavaScript object with a `variables` property that contains all our GraphQL variables and their values.
 
-In this case, for `id` we're using the `slug` argument passed to the containing function, `getPost(slug)`. And for `idType` we're using a simple string value of `SLUG`. 
+In this case, for `id` we're using the `slug` argument passed to the containing function, `getPost(slug)`. And for `idType` we're using a simple string value of `SLUG`.
 
 With all our queries defined, tested and verified in WordPress GraphiQL, it's on to the frontend components and pages.
 
 ## Listing blog posts from WordPress using GraphQL
 
-Now the exciting part: building out the blog listing page! Next.js is built on React, so there shouldn't be too much out of the ordinary here. 
+Now the exciting part: building out the blog listing page! Next.js is built on React, so there shouldn't be too much out of the ordinary here.
 
 Open up the `/pages/blog/index.js` file and let's kick things off with the imports at the top:
 
@@ -413,9 +413,9 @@ Open up the `/pages/blog/index.js` file and let's kick things off with the impor
     import styles from '../../styles/Home.module.css';
     import blogStyles from '../../styles/Blog.module.css';
 
-You can see that we're pulling in the `Head` and `Link` components from Next.js (more on `Head` in a moment), followed by our data handling `getAllPosts` function. Right after those, we're adding two style module files. 
+You can see that we're pulling in the `Head` and `Link` components from Next.js (more on `Head` in a moment), followed by our data handling `getAllPosts` function. Right after those, we're adding two style module files.
 
-These are essentially modular, [component-level CSS files that Next.js gives support for](https://nextjs.org/docs/basic-features/built-in-css-support "Next.js built in CSS support") right out of the box. We'll also discuss those in a moment. 
+These are essentially modular, [component-level CSS files that Next.js gives support for](https://nextjs.org/docs/basic-features/built-in-css-support "Next.js built in CSS support") right out of the box. We'll also discuss those in a moment.
 
 Cool, imports done. Next thing is to outline the main Blog component:
 
@@ -454,13 +454,13 @@ Cool, imports done. Next thing is to outline the main Blog component:
       </div>
     );
 
-You'll see we're referencing a specific prop, `allPosts` using the destructuring syntax. This will be a collection of all available Posts returned from the WordPress GraphQL query we defined earlier. 
+You'll see we're referencing a specific prop, `allPosts` using the destructuring syntax. This will be a collection of all available Posts returned from the WordPress GraphQL query we defined earlier.
 
-The `allPosts` prop is automatically provided to our Blog component via the `getStaticProps` function that we'll define later in the article. 
+The `allPosts` prop is automatically provided to our Blog component via the `getStaticProps` function that we'll define later in the article.
 
 The `<Head></Head>` component allows us to define meta data for this page and is a built in Next.js feature, more on this in a moment.
 
-Similarly, the `className={styles.main}` syntax is how we reference styles from our CSS modules in Next.js. Again, we'll cover that shortly. 
+Similarly, the `className={styles.main}` syntax is how we reference styles from our CSS modules in Next.js. Again, we'll cover that shortly.
 
 The main part of the Blog component is the loop that starts with `{edges.map(({ node }) =>`. It's not the nicest of naming structures, but we're effectively `edges` is an array of `node` items, each `node` represents a WordPress Post item.
 
@@ -507,9 +507,44 @@ Knowing this information, it becomes easier to pull out the relevant bits of con
 
 ### Meta data with Next.js Head
 
+If you've built a site with React before you've probably come across the need to add meta data to your page. If you've done that, then there's an equally good chance you've come across [React Helmet](https://github.com/nfl/react-helmet "React Helmet"). React Helmet is a really straightforward means to inject meta data into a page. 
+
+Next.js offers a similar option that's handily baked right in. It provides a component called `<Head>` which you'll see imported at the top of our `/pages/blog/index.js` page like so:
+
+    import Head from 'next/head';
+
+And using it is even easier. Again looking at the top of our `Blog` component:
+
+    <Head>
+    	<title>Blog articles page</title>
+    	<link rel='icon' href='/favicon.ico' />
+    </Head>
+
+Anything you add between the opening and closing `<Head></Head>` tags will be magically transported to the `<head>` of the static output `.html` file.
+
 ### Module styling with `.module.css` files
 
-background in here...
+Next.js offers a [range of built in CSS support](https://nextjs.org/docs/basic-features/built-in-css-support "Next.js built in CSS support"). One of the most impressive is the modular, component-level CSS support. 
+
+You can define a component CSS file by creating a file with the naming convention, `[name].module.css` and importing it in the component or page you want to use it in. 
+
+Then, to apply the component-level styles, you attach them to an element as you would a JavaScript object, e.g. `className={styles.class}`.
+
+A more complete example might look like this:
+
+    import someStyles from 'componentName.module.css';
+    
+    export default function MyComponent() {
+    	return (
+        	<main className={someStyles.aclassname}>
+            	...rest of content here
+            </main>
+        );
+    }
+
+This applies a unique class name to the component when it's rendered on the page, scoping it to that component so that there are no class conflicts. 
+
+> Of course, you don't have to use this convention. You can just load in stylesheets as you would normally. However, to avoid conflicts, Next.js dictates that you must do this from a special file called `_app.js`, which you'll find by default under the `/pages/` directory.
 
 With that background in mind, we can populate the `/styles/Blog.module.css` with some basic styles for the blog list. Open up the file and copy in the following:
 
@@ -543,9 +578,8 @@ With that background in mind, we can populate the `/styles/Blog.module.css` with
       max-width: 60%;
       height: auto;
     }
-    
 
-It's not super imperative to have these styles in place and feel free to amend them. They do stop things looking a little wild though. 
+It's not super imperative to have these styles in place and feel free to amend them. They do stop things looking a little wild though.
 
 ### Static generation and handling external data
 
@@ -554,13 +588,13 @@ Next.js does a [fantastic job of fetching data](https://nextjs.org/learn/basics/
 1. Fetching data at build time via `getStaticProps()` - this is known as **static generation.**
 2. Fetching data at render time via `getServerSideProps()` - this is known as **server side rendering or SSR**
 
-> There is a third, sort of hybrid way, which is where you have a static-generated front end that calls for data once the page has rendered. It's called **client-side rendering**. It's not exactly an edge case, but it offers a mix of the main two methods mentioned above and might be used on, say, a dashboard page. 
+> There is a third, sort of hybrid way, which is where you have a static-generated front end that calls for data once the page has rendered. It's called **client-side rendering**. It's not exactly an edge case, but it offers a mix of the main two methods mentioned above and might be used on, say, a dashboard page.
 
-Most of the time, you'll want to strive for **static generation** using `getStaticProps()` because it offers the best performance for the end user and really takes advantage of the whole Jamstack, static site generation approach. 
+Most of the time, you'll want to strive for **static generation** using `getStaticProps()` because it offers the best performance for the end user and really takes advantage of the whole Jamstack, static site generation approach.
 
 This is especially key if we're using WordPress because WordPress is already a server-side rendered website out of the box. Part of the reason to decouple WordPress from its own frontend with Next.js is to remove this server business and statically generate our frontend website.
 
-If you're unsure which approach to take you can ask the question: "Can this page be pre-rendered **ahead** of a user's request?" If your answer is 'yes', then static generation is the right choice. 
+If you're unsure which approach to take you can ask the question: "Can this page be pre-rendered **ahead** of a user's request?" If your answer is 'yes', then static generation is the right choice.
 
 ### Accessing external data in Next.js using `getStaticProps()`
 
@@ -577,7 +611,7 @@ Add the following implementation of `getStaticProps` underneath the default expo
       };
     }
 
-And just how simple is that?! This function will be called by Next.js during build time to fetch our data from WordPress, passing it into the `props` of our main Blog component. 
+And just how simple is that?! This function will be called by Next.js during build time to fetch our data from WordPress, passing it into the `props` of our main Blog component.
 
 You could absolutely do all the data fetching right here without issue. However, we've abstracted at lot of the grunt work into our `/lib/api.js` for several reasons:
 
@@ -586,9 +620,9 @@ You could absolutely do all the data fetching right here without issue. However,
 3. It cleans up our components, making them much more maintainable and readable.
 4. It reduces duplication, especially around the main `fetchAPI()` function.
 
-It's important to remember that `getStaticProps()` **has to be named exactly so**. It also **has to return a `props: {}` object**. 
+It's important to remember that `getStaticProps()` **has to be named exactly so**. It also **has to return a `props: {}` object**.
 
-You can read more about static generation and `getStaticProps()` in the [official Next.js documentation](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation "Next.js static generation documentation"). 
+You can read more about static generation and `getStaticProps()` in the [official Next.js documentation](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation "Next.js static generation documentation").
 
 ## Handling dynamic routes like blog posts
 
