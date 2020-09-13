@@ -718,6 +718,8 @@ However, with our blog detail page (i.e. the one that will handle the individual
 
 That's where _dynamic routing_ comes in with Next.js. We've already seen what that looks like earlier in this very article, and I'd recommend reviewing the [excellent documentation on dynamic routing](https://nextjs.org/docs/routing/dynamic-routes 'Dynamic routing documentation from the Next.js website') from Next.js themselves.
 
+[![Follow kendalmintcode on twitter call to action image](/img/twitter_cta.png)](https://twitter.com/kendalmintcode)
+
 ### The basic process for dynamic routing
 
 In order to handle the dynamic route for our blog article page, we need to do four things:
@@ -947,3 +949,5 @@ _Again, your results may vary depending on your chosen styling and where you've 
 Coming up next, in part three, we'll be creating an XML RSS feed as part of the deployment process so that we can publish and syndicate our posts across the web.
 
 This is a common feature on just about any blog out there on the web, but it's not as straightforward as you may think when using Next.js. Don't worry though, it's all covered in part three.
+
+_If you like this article, you'll love the other helpful content I post on Twitter._ [_Find me on Twitter @kendalmintcode_](https://twitter.com/kendalmintcode 'Find me on Twitter @kendalmintcode') _and say hi._
