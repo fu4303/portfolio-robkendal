@@ -101,7 +101,7 @@ export default function Post({ postData, allRelatedPostsData }) {
                     <p className='tags'>
                       {tags.length > 0 &&
                         tags.map(tag => (
-                          <Link href={`/tags/?tag=${tag}`}>
+                          <Link href={`/tags/?tag=${tag}`} key={tag}>
                             <a>
                               <small>#{tag}</small>
                             </a>
