@@ -27,10 +27,6 @@ After what felt like a decade of rummaging through complex documentation and hun
 
 But enough preamble, let's do this thing! Strap in, it's gonna be a long one!!
 
-![Node JS logo](/content/images/2019/03/nodejs-new-pantone-black.png)
-
-Node JS logo
-
 ## 1\. Node API server setup
 
 First things first, you'll need to make sure you have Node.js installed on your machine and preferably an up to date version of NPM.
@@ -41,7 +37,7 @@ OK? Good. So, let's create a new folder and navigate into it:
 
 Drop into the folder and run NPM's `init` script to set up the project with some default files, such as `package.json`.
 
-```
+```js
 cd ~/some/file/path/api-server
 npm init
 ```
@@ -57,7 +53,7 @@ Now, we need to install a few things to get going, namely:
 
 Add a couple of folders and files so that your project structure looks something like this:
 
-```
+```json
 /projectfolder
 --/data
 --/routes
@@ -317,14 +313,11 @@ const userRoutes = (app, fs) => {
   };
 
   // READ
+  // Notice how we can make this 'read' operation much more simple now.
   app.get("/users", (req, res) => {
-    fs.readFile(dataPath, "utf8", (err, data) => {
-      if (err) {
-        throw err;
-      }
-
-      res.send(JSON.parse(data));
-    });
+    readFile(data => {
+      res.send(data);
+    }, true);
   });
 };
 
