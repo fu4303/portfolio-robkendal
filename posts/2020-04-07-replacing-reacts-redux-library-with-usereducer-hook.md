@@ -14,13 +14,13 @@ tags:
   - JavaScript
 ---
 
-![Blog header for the article on replacing Redux libraries with the useReducer Hook](/img/useReducer - blog post.png)
+![Blog header for the article on replacing Redux libraries with the useReducer Hook](/img/useReducer-blog-post.png)
 
 I've been moving over to using React Hooks in my development of late. They offer a much simpler, terser approach to development and are super powerful. They do require a certain mind-shift towards [thinking in React Hooks](https://wattenberger.com/blog/react-hooks) (read that article by Amelia Wattenberger, it's so well written and helpful!), but they really push your development on.
 
 Anyway, up until now, I had been like a lot of developers who wanted to employ a centralised state management system; I had been using the [Redux library](https://redux.js.org/), specifically [React Redux](https://react-redux.js.org/introduction/why-use-react-redux) and the [Redux Toolkit](https://redux-toolkit.js.org/) (which just simplifies things a little I feel).
 
-However, the React core team has [introduced the `useReducer` Hook](https://reactjs.org/docs/hooks-reference.html#usereducer) and I've found it a little nicer to use. It doesn't require additional libraries or tooling, and I feel like it might just take some of the edge of learning the Redux pattern(s) for beginners. It certainly removes a lot of the configuration 'fun' that accompanies a typical Redux setup.
+However, the React core team has [introduced the `useReducer` Hook](https://reactjs.org/docs/hooks-reference.html#usereducer) and I've found it a little nicer to use. It doesn't require additional libraries or tooling, and I feel like it might just take some of the edge off learning the Redux pattern(s) for beginners. It certainly removes a lot of the configuration 'fun' that accompanies a typical Redux setup.
 
 So let's start using it!
 
@@ -169,7 +169,7 @@ dispatch(addUser(user));
 
 There is [a good explanation of the flow of data and the various interaction points](https://redux.js.org/basics/data-flow) in a Redux update cycle available on the Redux JS website. In the meantime, here's a handy diagram that should help cement the concepts at a high level.
 
-![Diagram showing the data flow and connectivity between various Redux components](/img/redux data flow.png)
+![Diagram showing the data flow and connectivity between various Redux components](/img/redux-data-flow.png)
 
 ### Further reading
 
@@ -228,7 +228,7 @@ Nothing too clever here, just a plain old JavaScript object with a couple of pro
 
 Next, we'll create our reducer file, `reducer.js`. It will contain a few items when we're done:
 
-1. **Two React contexts**, one that will contain our dispatch method and one that will contain our state. They will both be wrapped around our React app to be referenced in child components further down the tree.
+1. **A React context**, this will contain our dispatch method and our application state. It will be wrapped around our React app to be referenced in child components further down the tree.
 2. **Action types**: this is just be a simple JS object with string constants. We'll use these to prevent ambiguity or errors when triggering dispatches.
 3. **A reducer function**, the main star of the show that will ultimately affect change in our app's state.
 
@@ -238,12 +238,11 @@ Our new file looks like this:
 // We need React in scope to create our context objects
 import React from "react";
 
-// Contexts
+// Context
 // will be used to pass down the dispatch method and our
 // application state via the Context Provider and consumed
 // in child components using the useContext Hook
-export const StateContext = React.createContext(null);
-export const ShoppingContext = React.createContext(null);
+export const StoreContext = React.createContext(null);
 
 // Action constants
 // we will import this object and use the various properties
@@ -333,7 +332,7 @@ import "./styles.css";
 
 // Data
 import initialState from "./initialstate";
-import { reducer, StateContext, ShoppingContext, actions } from "./reducer";
+import { reducer, StoreContext, actions } from "./reducer";
 
 // Components
 import AddItem from "./components/AddItem";
@@ -421,40 +420,36 @@ export default props => {
     // ...unchanged
 
     return (
-    <ShoppingContext.Provider value={dispatch}>
-        <StateContext.Provider value={state}>
-        <h1>Redux fun with shopping lists</h1>
-        <hr />
-        {state.loadingItems && <div className="loading">...loading</div>}
-        {!state.loadingItems && (
-            <div className="columns">
-            <div className="column">
-                <h2>Add a new item</h2>
-                <AddItem />
-            </div>
-            <div className="column">
-                <h2>Shopping list</h2>
-                <ShoppingList />
-            </div>
-            </div>
-        )}
-        </StateContext.Provider>
-    </ShoppingContext.Provider>
+    <StoreContext.Provider value={{ dispatch, state }}>
+      <h1>Redux fun with shopping lists</h1>
+      <hr />
+      {state.loadingItems && <div className="loading">...loading</div>}
+      {!state.loadingItems && (
+          <div className="columns">
+          <div className="column">
+              <h2>Add a new item</h2>
+              <AddItem />
+          </div>
+          <div className="column">
+              <h2>Shopping list</h2>
+              <ShoppingList />
+          </div>
+          </div>
+      )}
+    </StoreContext.Provider>
     );
 };
 ```
 
-The main take away here is the two context providers that we use to wrap the main App component in.
+The main take away here is the context provider that we use to wrap the main App component in.
 
-The first, `<ShoppingContext.Provider value={dispatch}>` allows us to pass down the dispatch function to child components.
+The line, `<StoreContext.Provider value={{ dispatch, state }}>` allows us to pass down the `dispatch` function and store `state` to child components.
 
-The second `<StateContext value={state}>` is the same, but allows child components to access our application state when they need.
-
-These are a key part of the process as they allow us to access dispatch and state from child components. You can [read more about React's Context on the official documentation](https://reactjs.org/docs/context.html).
+This is a key part of the process as they allow us to access `dispatch` and `state` from child components. You can [read more about React's Context on the official documentation](https://reactjs.org/docs/context.html).
 
 ### Finishing off the App component
 
-Everything else is pretty much standard React stuff. We check to see if the 'loadingItems' property/flag is set to 'true' and either display a loading element, or our AddItem and ShoppingList components.
+Everything else is pretty much standard React stuff. We check to see if the `loadingItems` property/flag is set to 'true' and either display a loading element, or our AddItem and ShoppingList components.
 
 Here's our app's entry point in complete, the App component:
 
@@ -466,7 +461,7 @@ import "./styles.css";
 
 // Data
 import initialState from "./initialstate";
-import { reducer, StateContext, ShoppingContext, actions } from "./reducer";
+import { reducer, StoreContext, actions } from "./reducer";
 
 // Components
 import AddItem from "./components/AddItem";
@@ -489,25 +484,23 @@ export default props => {
     }, []);
 
     return (
-    <ShoppingContext.Provider value={dispatch}>
-        <StateContext.Provider value={state}>
-        <h1>Redux fun with shopping lists</h1>
-        <hr />
-        {state.loadingItems && <div className="loading">...loading</div>}
-        {!state.loadingItems && (
-            <div className="columns">
-            <div className="column">
-                <h2>Add a new item</h2>
-                <AddItem />
-            </div>
-            <div className="column">
-                <h2>Shopping list</h2>
-                <ShoppingList />
-            </div>
-            </div>
-        )}
-        </StateContext.Provider>
-    </ShoppingContext.Provider>
+    <StoreContext.Provider value={{ dispatch, state }}>
+      <h1>Redux fun with shopping lists</h1>
+      <hr />
+      {state.loadingItems && <div className="loading">...loading</div>}
+      {!state.loadingItems && (
+          <div className="columns">
+          <div className="column">
+              <h2>Add a new item</h2>
+              <AddItem />
+          </div>
+          <div className="column">
+              <h2>Shopping list</h2>
+              <ShoppingList />
+          </div>
+          </div>
+      )}
+    </StoreContext.Provider>
     );
 };
 ```
@@ -523,8 +516,7 @@ import React, { useContext } from "react";
 
 // State
 import {
-    ShoppingContext,
-    StateContext,
+    StoreContext,
     actions,
     createAction
 } from "../reducer";
@@ -534,45 +526,46 @@ Next, we'll define the main output for this component:
 
 ```JavaScript
 export default props => {
-    const state = useContext(StateContext);
-    const dispatch = useContext(ShoppingContext);
+  const store = useContext(StoreContext);
+  const state = store.state;
+  const dispatch = store.dispatch;
 
-    const handleRemoveItem = id => {
+  const handleRemoveItem = id => {
     dispatch(createAction(actions.REMOVE_ITEM, id));
-    };
+  };
 
-    return (
+  return (
     <>
-        {!state.shoppingList && <p>no items in list</p>}
-        {state.shoppingList && (
-        <table>
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            {state.shoppingList &&
-                state.shoppingList.map(item => (
-                <tr key={item.id}>
-                    <td>{item.name}</td>
-                    <td>{item.description}</td>
-                    <td>£{item.price}</td>
-                    <td>
-                    <button onClick={() => handleRemoveItem(item.id)}>
-                        remove
-                    </button>
-                    </td>
-                </tr>
-                ))}
-            </tbody>
-        </table>
-        )}
+      {!state.shoppingList && <p>no items in list</p>}
+      {state.shoppingList && (
+      <table>
+          <thead>
+          <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          {state.shoppingList &&
+              state.shoppingList.map(item => (
+              <tr key={item.id}>
+                  <td>{item.name}</td>
+                  <td>{item.description}</td>
+                  <td>£{item.price}</td>
+                  <td>
+                  <button onClick={() => handleRemoveItem(item.id)}>
+                      remove
+                  </button>
+                  </td>
+              </tr>
+              ))}
+          </tbody>
+      </table>
+      )}
     </>
-    );
+  );
 };
 ```
 
@@ -587,13 +580,14 @@ We know from our App component that we're already passing down the Redux dispatc
 Simple: with the `useContext` Hook...
 
 ```JavaScript
-const state = useContext(StateContext);
-const dispatch = useContext(ShoppingContext);
+const store = useContext(StoreContext);
+const state = store.state;
+const dispatch = store.dispatch;
 ```
 
-That's all there is to it. We can now use 'state' to access various properties on our global application state, such as 'shoppingList', which we actually use to display our table.
+That's all there is to it. We can now use `state` to access various properties on our global application state, such as `shoppingList`, which we actually use to display our table.
 
-Similarly, we use 'dispatch' to trigger state changes; in our case to remove items from our list.
+Similarly, we use `dispatch` to trigger state changes; in our case to remove items from our list.
 
 ### Dispatching updates to our shopping list
 
@@ -650,54 +644,55 @@ By now, things should start looking familiar, so we'll take a look at the entire
 import React, { useContext, useState } from "react";
 
 // State
-import { ShoppingContext, actions, createAction } from "../reducer";
+import { StoreContext, actions, createAction } from "../reducer";
 
 export default props => {
     const _defaultFields = {
-    name: "",
-    description: "",
-    price: ""
+      name: "",
+      description: "",
+      price: ""
     };
-    const dispatch = useContext(ShoppingContext);
+    const store = useContext(StoreContext);
+    const dispatch = store.dispatch;
     const [fields, setFields] = useState({ ..._defaultFields });
 
     const handleInputChange = evt => {
-    setFields({
-        ...fields,
-        [evt.target.id]: evt.target.value
-    });
+      setFields({
+          ...fields,
+          [evt.target.id]: evt.target.value
+      });
     };
 
     const handleFormSubmit = evt => {
-    evt.preventDefault();
-    dispatch(createAction(actions.ADD_ITEM, fields));
-    setFields(_defaultFields);
+      evt.preventDefault();
+      dispatch(createAction(actions.ADD_ITEM, fields));
+      setFields(_defaultFields);
     };
 
     return (
     <form onSubmit={handleFormSubmit}>
-        <label htmlFor="name">Name</label>
-        <input
+      <label htmlFor="name">Name</label>
+      <input
         id="name"
         type="text"
         value={fields.name}
         onChange={handleInputChange}
-        />
-        <label htmlFor="description">Description</label>
-        <input
+      />
+      <label htmlFor="description">Description</label>
+      <input
         id="description"
         type="text"
         value={fields.description}
         onChange={handleInputChange}
-        />
-        <label htmlFor="price">Price</label>
-        <input
+      />
+      <label htmlFor="price">Price</label>
+      <input
         id="price"
         type="text"
         value={fields.price}
         onChange={handleInputChange}
-        />
-        <button type="submit">Add item</button>
+      />
+      <button type="submit">Add item</button>
     </form>
     );
 };
@@ -707,7 +702,7 @@ Right at the top, we've got our React and state imports.
 
 Next, in our main output, we have a default state object, `_defaultFields` that we're using to reset the fields in local state when we've finished adding a new item.
 
-We consume the dispatch function using useContext so we can pass a new item into our shopping list. **Notice that we're not consuming the state context, however.** We don't need to use anything from our application's state, so there's no need to consume the context.
+We consume the dispatch function using the `store` variable which consumes the `useContext` Hook so we can pass a new item into our shopping list. **Notice that we're not using the state context, however.** We don't need to use anything from our application's state, so there's no need to grab it and assign it to a variable.
 
 Most everything else is pretty standard React form field handling [using controlled components](https://reactjs.org/docs/forms.html#controlled-components) that is beyond the scope of this article.
 
@@ -732,18 +727,18 @@ export const reducer = (state, action) => {
     switch (action.type) {
     // ...rest of reducer
     case actions.ADD_ITEM:
-        const nextId = Math.max.apply(
+      const nextId = Math.max.apply(
         null,
         state.shoppingList.map(item => item.id)
-        );
-        const newItem = {
+      );
+      const newItem = {
         ...action.payload,
         id: nextId + 1
-        };
-        return {
+      };
+      return {
         ...state,
         shoppingList: [...state.shoppingList, newItem]
-        };
+      };
     // ...rest of reducer
     }
 };
