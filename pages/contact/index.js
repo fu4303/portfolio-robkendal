@@ -25,6 +25,8 @@ const Contact = () => {
           <strong>I'll get back to you within 24 hours</strong>
         </p>
         <ContactForm action='/contact/thanks' />
+        <br />
+        <p><small>listed on <a href="https://www.citationsbooster.co.uk/" target="__blank" noreferrer noopener>Listed in Citations Booster</a> and <a href="https://www.uksmallbusinessdirectory.co.uk/" target="__blank" noreferrer noopener>Business Directory</a></small></p>
       </div>
     </Layout>
   );

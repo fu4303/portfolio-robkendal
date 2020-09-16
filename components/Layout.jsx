@@ -62,6 +62,8 @@ const Layout = ({
         <meta property='twitter:image' content={generateUrl(image)} />
         <meta property='twitter:image:alt' content={title || shortTitle} />
         <meta name='twitter:description' content={description} />
+        // monitisation
+        <meta name='monetization' content='$ilp.uphold.com/9kqwwEykU4B6'></meta>
         // fonts
         <link
           href='https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap'
