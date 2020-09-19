@@ -1,0 +1,8 @@
+.calendly-inline-widget {
+  min-width:320px;
+  height:630px;
+}
+
+.calendly-inline-widget.calendarview {
+  height: 1120px;
+}

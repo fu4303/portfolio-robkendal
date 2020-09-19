@@ -56,3 +56,14 @@
 .home-section-wordpress .media-left img {
   max-width: 100%;
 }
+
+.home-section-ux .box {
+  min-height: 14rem;
+}
+
+.home-section-ux > .columns {
+  max-width: 1450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+

@@ -11,6 +11,7 @@ import '../styles/columns.sass';
 import '../styles/layout.css';
 import '../styles/buttons.css';
 import '../styles/homepage.css';
+import '../styles/overrides.css';
 
 // prism themes
 //import '../styles/prism.tomorrow-night.css';

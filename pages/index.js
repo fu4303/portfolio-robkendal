@@ -14,11 +14,10 @@ export default function Home({ allPostsData }) {
       <section className='section home-hero'>
         <div className='hero-left'>
           <h1>
-            Rob Kendal
-            <br />A freelance web developer who knows his stuff
+            I make websites that deliver more leads for your business
           </h1>
           <p>
-            If you've been searching for a{' '}
+            Hi, I'm Rob Kendal. If you've been searching for a{' '}
             <strong>
               freelance web developer who knows WordPress and frontend web
               development inside and out
@@ -211,6 +210,54 @@ export default function Home({ allPostsData }) {
               src='/img/logos/north-yorkshire-council.png'
               alt='North Yorkshire County Council logo'
             />
+          </div>
+        </div>
+      </section>
+
+      <section className='section is-md home-section-ux'>
+        <h2 className='has-text-centered'>Website design &amp; UX with marketing results in mind</h2>
+        <br />
+        <div className="columns is-multiline">
+          <div className="column is-12-tablet is-12-desktop is-6-widescreen is-6-fullhd">
+            <div className="columns is-multiline">
+              <div className="column is-6">
+                <div className="box is-dark">
+                  <h3 className="title is-size-5 no-margin-top "><span className='icon fas fa-file-alt'></span>&nbsp;&nbsp;Content is king</h3>
+                  <p>Build a website around well-planned content that strikes a chord with your customers.</p>
+                </div>
+              </div>
+              <div className="column is-6">
+                <div className="box is-dark">
+                  <h3 className="title is-size-5 no-margin-top "><span className='icon fas fa-funnel-dollar'></span>&nbsp;&nbsp;CRO</h3>
+                  <p>Maximise leads from your website through conversion rate optimisation.</p>
+                </div>
+              </div>
+              <div className="column is-6">
+                <div className="box is-dark">
+                  <h3 className="title is-size-5 no-margin-top "><span className='icon fas fa-user-alt'></span>&nbsp;&nbsp;Clear user experience</h3>
+                  <p>Give customers the information they need simply and easily without getting in their way.</p>
+                </div>
+              </div>
+              <div className="column is-6">
+                <div className="box is-dark">
+                  <h3 className="title is-size-5 no-margin-top "><span className='icon fas fa-directions'></span>&nbsp;&nbsp;Strong calls to action</h3>
+                  <p>Make it easy for visitors to take next steps to contact you, make a purchase, make their next move.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="column is-12-tablet is-12-desktop is-6-widescreen is-6-fullhd message">
+            <p>Your business website is key to getting your message in front of your customers.</p>
+            <p>A good website should be built with your audience in mind, geared towards their needs and drivers with strong calls to action and properly thought-out UX.</p>
+            <p>I can help your business build that website.</p>
+            <p>
+              <Link href='/contact'>
+                <a className='button is-primary has-icon is-medium'>
+                  <span>book a discovery call</span>
+                  <span className='icon fas fa-chevron-circle-right'></span>
+                </a>
+              </Link>
+            </p>
           </div>
         </div>
       </section>

@@ -202,3 +202,19 @@ main > section + section,
 .author-box .media-left img {
   max-width: 7rem;
 }
+
+.box {
+  background-color: white;
+  border: none;
+  padding: 1em;
+  border-radius: 15px;
+  box-shadow: 2px 2px 3px var(--grey-dark);
+}
+
+.box.is-dark {
+  background-color: var(--text-color);
+  color: white;
+}
+.box.is-dark > .title {
+  color: white;
+}

@@ -66,6 +66,9 @@
   .home-hero .hero-right::after {
     display: none;
   }
+  /*.home-section-ux .message {*/
+  /*  text-align: center;*/
+  /*}*/
 }
 
 @media screen and (max-width: 900px) {
