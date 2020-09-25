@@ -124,7 +124,6 @@ Add the following folders and files within them:
 - File `/pages/blog/[slug].js` - similar to the above, this rather weird looking page will handle individual blog pages, e.g. a domain like `https://yourdomain.com/blog/an-interesting-article/.`
 - File `/styles/Blog.module.css` - this is a standard CSS file that will hold styles for our blog list items.
 - File `/.env.local` - an environment variable file to hold
-- File `/styles/Blog.module.css` - a modular
 
 That odd looking file name, `[slug].js` looks really unfamiliar, but it's how Next.js determines dynamic routes within a folder.
 
@@ -489,6 +488,9 @@ const Blog = ({ allPosts: { edges } }) => (
     </main>
   </div>
 );
+
+// don't forget to export it as the default export!
+export default Blog;
 ```
 
 You'll see we're referencing a specific prop, `allPosts` using the destructuring syntax. This will be a collection of all available Posts returned from the WordPress GraphQL query we defined earlier.
@@ -943,6 +945,15 @@ Navigate to `http://localhost:3000` and view the blog listing page. Now when you
 ![](/img/nextjs-article-blog-detailpage.jpg)
 
 _Again, your results may vary depending on your chosen styling and where you've pulled your data from._
+
+## Demo and repository links
+
+If you'd like to see the WordPress and Next.js demo running, you can [view the demo on CodeSandbox here](https://codesandbox.io/s/wordpress-next-starter-demo-kd20v).
+
+I've also put together [a GitHub repo](https://github.com/bpk68/wordpress-next-starter) for the project if you'd like to fork it and hack it about.
+
+- View the [WordPress and Next.js demo on CodeSandbox](https://codesandbox.io/s/wordpress-next-starter-demo-kd20v)
+- View the GitHub repo for [the WordPress and Next.js starter project](https://github.com/bpk68/wordpress-next-starter)
 
 ## What's next in the series
 
