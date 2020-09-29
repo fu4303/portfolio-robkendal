@@ -3,7 +3,7 @@ templateKey: blog-post
 title: Replacing React's Redux library with the useReducer Hook
 date: 2020-04-07T08:01:00.263Z
 featured: true
-featuredimage: /img/useReducer - blog post.png
+featuredimage: /img/useReducer-blog-post.png
 description: >-
   Redux can be a tricky concept to get. By using React's useReducer Hook
   we can replace complex Redux configurations and still use state management.
