@@ -15,10 +15,13 @@ class MyDocument extends Document {
           <NextScript />
           <div
             id='snipcart'
-            data-api-key='YjFhNDYyNGUtNTVjZS00NWNiLTkyZTQtNjBkYzAzNDIxZGI2NjM3MzI3MjYwNjczMjgyMDYw'
+            data-api-key='ZjIwY2NhOGEtY2M2Zi00Y2JiLThiOTctMmRiMGFhOGZmNDBjNjM3MzI3MjYwNjczMjgyMDYw'
             hidden
           ></div>
-          <script src='https://cdn.snipcart.com/themes/v3.0.20/default/snipcart.js'></script>
+          <script
+            async
+            src='https://cdn.snipcart.com/themes/v3.0.21/default/snipcart.js'
+          ></script>
         </body>
       </Html>
     );
