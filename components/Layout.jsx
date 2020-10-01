@@ -78,6 +78,15 @@ const Layout = ({
         // indie auth meta
         <link href='https://twitter.com/kendalmintcode' rel='me' />
         <link href='https://github.com/bpk68/' rel='me' />
+        // web mentions
+        <link
+          rel='webmention'
+          href='https://webmention.io/robkendal.co.uk/webmention'
+        />
+        <link
+          rel='pingback'
+          href='https://webmention.io/robkendal.co.uk/xmlrpc'
+        />
       </Head>
       <header className={styles.header}>
         <Link href='/'>
