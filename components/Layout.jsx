@@ -75,6 +75,9 @@ const Layout = ({
           rel='stylesheet'
           href='https://cdn.snipcart.com/themes/v3.0.21/default/snipcart.css'
         />
+        // indie auth meta
+        <link href='https://twitter.com/kendalmintcode' rel='me' />
+        <link href='https://github.com/bpk68/' rel='me' />
       </Head>
       <header className={styles.header}>
         <Link href='/'>

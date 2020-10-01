@@ -5,7 +5,7 @@ const SocialLinks = ({ overrideStyles }) => (
     <a
       href='https://twitter.com/kendalmintcode'
       target='_blank'
-      rel='noreferrer noopener'
+      rel='noreferrer noopener me'
     >
       <span className='fab fa-twitter' aria-hidden='true'></span>
       <span className='screen-reader-text'>Follow me on Twitter</span>
@@ -13,7 +13,7 @@ const SocialLinks = ({ overrideStyles }) => (
     <a
       href='https://github.com/bpk68/'
       target='_blank'
-      rel='noreferrer noopener'
+      rel='noreferrer noopener me'
     >
       <span className='fab fa-github' aria-hidden='true'></span>
       <span className='screen-reader-text'>Check out my code on GitHub</span>
@@ -21,7 +21,7 @@ const SocialLinks = ({ overrideStyles }) => (
     <a
       href='https://codepen.io/robkendal/'
       target='_blank'
-      rel='noreferrer noopener'
+      rel='noreferrer noopener me'
     >
       <span className='fab fa-codepen' aria-hidden='true'></span>
       <span className='screen-reader-text'>Have a peek at my Codepen</span>
@@ -29,7 +29,7 @@ const SocialLinks = ({ overrideStyles }) => (
     <a
       href='https://dev.to/kendalmintcode'
       target='_blank'
-      rel='noreferrer noopener'
+      rel='noreferrer noopener me'
     >
       <span className='fab fa-dev' aria-hidden='true'></span>
       <span className='screen-reader-text'>Connect with me on Dev.to</span>
