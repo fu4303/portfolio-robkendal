@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Layout from '../../components/Layout';
 import DateDisplay from '../../components/DateDisplay';
 import CommentsLoader from '../../components/CommentsLoader';
+import Webmentions from '../../components/Webmentions';
 
 // helpers
 import {
@@ -73,6 +74,7 @@ export default function Post({ postData, allRelatedPostsData }) {
           </div>
         </article>
         <div className='container'>
+          <Webmentions url={`blog/${postData.id}`} />
           <CommentsLoader pageUrl={postData.id} pageId={postData.id} />
 
           <h2 className='title is-size-3'>Read more</h2>
