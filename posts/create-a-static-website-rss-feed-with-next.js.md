@@ -69,7 +69,7 @@ If you're looking to host your sites on a different provider, such as Netlify, t
 
 To get around this, Next.js does provide a handy solution, [the export command](https://nextjs.org/docs/advanced-features/static-html-export "Next.js export command documentation").
 
-So, instead of just running `yarn build`, you'll need to use `yarn export` instead. This will still run a build of the site, but it generates entirely static output, instead of the typical hybrid of static with dynamic Node server. **The `yarn export` command generates the site's files in a new folder called `/out` in the project root.**
+So, instead of just running `yarn build`, you'll need to use `next export` instead. This will still run a build of the site, but it generates entirely static output, instead of the typical hybrid of static with dynamic Node server. **The `next export` command generates the site's files in a new folder called `/out` in the project root.**
 
 What it means is that you can't just have a page called `rss.js` and have it render an XML response in the browser on the fly. You'll need a different way to create an XML RSS feed for your site.
 
@@ -85,7 +85,7 @@ In summary, you have a few ways to handle this:
    These can be expensive and require additional faff to set up and maintain.
 2. Generate the XML RSS feed on each request using Next's `getServerSideProps()`
 
-   This won't work for sites that are generated using the `yarn export` command.
+   This won't work for sites that are generated using the `next export` command.
 3. Generate a static XML RSS feed at build time using a separate Node script as part of the build process  
    This is what we'll be doing in this article!
 
@@ -116,7 +116,7 @@ We'll also add in [the Dotenv package](https://www.npmjs.com/package/dotenv "Dot
 Now, we'll need to add a new Node script into the `package.json` file. Open up the `package.json` file and add in the following line to the `"scripts"` section:
 
 ```node
-    "deploy": "yarn build && yarn export && node rss-gen.js"
+    "deploy": "yarn build && next export && node rss-gen.js"
 ```
 
 What we're doing here is a combination Node command that does a few things to build us a finished build directory (located at `/out`) that we can deploy to wherever we wish.
@@ -134,7 +134,7 @@ With that line in place, your `scripts` section in the `package.json` file will 
   "dev": "next dev",
   "build": "next build",
   "start": "next start",
-  "deploy": "yarn build && yarn export && node rss-gen.js"
+  "deploy": "yarn build && next export && node rss-gen.js"
 },
 ```
 
