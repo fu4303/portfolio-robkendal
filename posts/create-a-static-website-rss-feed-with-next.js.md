@@ -12,6 +12,8 @@ tags:
 - JavaScript
 
 ---
+![Blog header for creating an RSS feed with Next.js](/img/nextjs-with-wordpress-part3-blog-post.png "Create RSS feed for Next.js site")
+
 If you've been following along with the series, you'll have come across the previous posts:
 
 * [Configuring WordPress for use as a headless CMS and setting up a Next.js project](https://robkendal.co.uk/blog/configuring-wordpress-as-a-headless-cms-with-next.js "Configuring WordPress as a headless CMS with Next.js")
@@ -41,7 +43,7 @@ By default, Next.js generates a build output that includes a small Node server. 
 
 Hosting your Next.js website [on Vercel's platform](https://vercel.com/ "Next.js hosting on Vercel") (the creators of Next.js) means you won't have to worry about anything; it's perfectly geared up to handling the default Next build output as you might expect.
 
-In this scenario, you'd use the `getServerSideProps` function as part of a `rss.js` page. Then, each time the page is requested, Next.js will fetch the data, build the XML feed and write the results to the response object as XML data. 
+In this scenario, you'd use the `getServerSideProps` function as part of a `rss.js` page. Then, each time the page is requested, Next.js will fetch the data, build the XML feed and write the results to the response object as XML data.
 
 It might look like this:
 
@@ -69,7 +71,7 @@ To get around this, Next.js does provide a handy solution, [the export command](
 
 So, instead of just running `yarn build`, you'll need to use `yarn export` instead. This will still run a build of the site, but it generates entirely static output, instead of the typical hybrid of static with dynamic Node server. **The `yarn export` command generates the site's files in a new folder called `/out` in the project root.**
 
-What it means is that you can't just have a page called `rss.js` and have it render an XML response in the browser on the fly. You'll need a different way to create an XML RSS feed for your site. 
+What it means is that you can't just have a page called `rss.js` and have it render an XML response in the browser on the fly. You'll need a different way to create an XML RSS feed for your site.
 
 For me, this involved running an extra build command that uses Node to create an XML file and move it into the final `/out` folder as part of the build process.
 
@@ -137,6 +139,7 @@ With that line in place, your `scripts` section in the `package.json` file will 
 ```
 
 <a id="create-rss-feed"></a>
+
 ### Creating the RSS generator file
 
 With our new packages added and the `package.json` file updated, we need to create a new file to actually generate us some RSS XML. Let's do it!
