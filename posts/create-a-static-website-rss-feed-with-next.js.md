@@ -1,9 +1,9 @@
 ---
-date: 2020-09-27T07:08:20.000+00:00
-published: false
+date: 2020-10-04T08:08:20
+published: true
 title: Create a Next.js RSS feed for your static website
-description: 'Creating a static website RSS feed with Next.js is straightforward,
-  but gets a little tricky when you''re exporting the project. '
+description: Learn how to create an RSS feed for your Next.js website in  part three
+  in the series of using WordPress as a headless CMS with Next.js
 featuredimage: "/img/nextjs-with-wordpress-part3-blog-post.png"
 featured: true
 tags:
@@ -21,6 +21,8 @@ In part three, we're going to cover an important aspect of any good blogging sit
 
 _If you like this article, you'll love the other helpful content I post on Twitter._ [_Find me on Twitter @kendalmintcode_](https://twitter.com/kendalmintcode "Find me on Twitter @kendalmintcode") _and say hi._
 
+We have a little bit of helpful information on hosting a Next.js site which might dictate how you create the RSS feed, but you can [skip to the code if you'd prefer](#create-rss-feed "Skip to the RSS feed code").
+
 ## Your Next.js website needs an RSS feed
 
 RSS feeds are an important part of any website that has frequently updated content, such as a blog (we are using WordPress after all!) or marketing-led website.
@@ -35,25 +37,27 @@ RSS feeds are a little tricky with statically generated sites because they need 
 
 ### Next.js sites hosted on Vercel
 
+By default, Next.js generates a build output that includes a small Node server. It does this to handle server-side page generation, which is what you'll need to use for RSS feeds, because you can change the response's content type to XML and write the data dynamically.
+
 Hosting your Next.js website [on Vercel's platform](https://vercel.com/ "Next.js hosting on Vercel") (the creators of Next.js) means you won't have to worry about anything; it's perfectly geared up to handling the default Next build output as you might expect.
 
-By default, Next.js generates a build output that includes a small Node server. It does this to handle server-side page generation, which is what you'll need to use for RSS feeds.
-
-Using the `getServerSideProps` function as part of a `rss.js` page, for example, means that each time the page is requested, Next.js will fetch the data, build the XML feed and write the results to the response object as XML data. 
+In this scenario, you'd use the `getServerSideProps` function as part of a `rss.js` page. Then, each time the page is requested, Next.js will fetch the data, build the XML feed and write the results to the response object as XML data. 
 
 It might look like this:
 
-    export async function getServerSideProps(context) {
-    	const res = context.res;
-      	if (!res) {
-    		return;
-      	}
-        // fetch your RSS data from somewhere here
-      	const blogPosts = getRssXml(fetchMyPosts());
-      	res.setHeader("Content-Type", "text/xml");
-      	res.write(blogPosts);
-      	res.end();
-      }
+```js
+export async function getServerSideProps(context) {
+  const res = context.res;
+  if (!res) {
+    return;
+  }
+  // fetch your RSS data from somewhere here
+  const blogPosts = getRssXml(fetchMyPosts());
+  res.setHeader("Content-Type", "text/xml");
+  res.write(blogPosts);
+  res.end();
+}
+```
 
 You can read more about `getServerSideProps` [on the Next.js website](https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering "Nexxt.js documentation on the getServerSideProps").
 
@@ -65,9 +69,9 @@ To get around this, Next.js does provide a handy solution, [the export command](
 
 So, instead of just running `yarn build`, you'll need to use `yarn export` instead. This will still run a build of the site, but it generates entirely static output, instead of the typical hybrid of static with dynamic Node server. **The `yarn export` command generates the site's files in a new folder called `/out` in the project root.**
 
-What it means is that you can't just have a page called `rss.js` and have it render an XML response in the browser. You'll need a different way to create an XML RSS feed for your site. 
+What it means is that you can't just have a page called `rss.js` and have it render an XML response in the browser on the fly. You'll need a different way to create an XML RSS feed for your site. 
 
-For me, that involved running an extra build command that uses Node to create an XML file and copy it into the final `/out` folder as part of the build process.
+For me, this involved running an extra build command that uses Node to create an XML file and move it into the final `/out` folder as part of the build process.
 
 ### Your RSS generation options
 
@@ -103,11 +107,15 @@ The first thing we need to do is install the [axios project](https://github.com/
 
 We'll also add in [the Dotenv package](https://www.npmjs.com/package/dotenv "Dotenv - a package for loading environment variable files"). This will enable us to load in our API URL information from the default `.env.local` file we added in the previous articles.
 
+```node
     yarn add --dev axios dotenv
+```
 
 Now, we'll need to add a new Node script into the `package.json` file. Open up the `package.json` file and add in the following line to the `"scripts"` section:
 
+```node
     "deploy": "yarn build && yarn export && node rss-gen.js"
+```
 
 What we're doing here is a combination Node command that does a few things to build us a finished build directory (located at `/out`) that we can deploy to wherever we wish.
 
@@ -119,23 +127,28 @@ It achieves three things:
 
 With that line in place, your `scripts` section in the `package.json` file will look like this:
 
-     "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "deploy": "yarn build && yarn export && node rss-gen.js"
-      },
+```json
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "deploy": "yarn build && yarn export && node rss-gen.js"
+},
+```
 
+<a id="create-rss-feed"></a>
 ### Creating the RSS generator file
 
 With our new packages added and the `package.json` file updated, we need to create a new file to actually generate us some RSS XML. Let's do it!
 
 Create a new file in the project root called `rss-gen.js` and add the following imports at the top:
 
-    require('dotenv').config({ path: '.env.local' });
-    const fs = require('fs');
-    const path = require('path');
-    const axios = require('axios');
+```js
+require('dotenv').config({ path: '.env.local' });
+const fs = require('fs');
+const path = require('path');
+const axios = require('axios');
+```
 
 Nothing flash so far. We're loading in the `dotenv` package as the **very first thing** so we can grab variables from our `.env.local` file to use later on. By default, Node won't recognise an environment variable file called `.env.local`, hence the need for the `dotenv` helper here.
 
@@ -145,6 +158,7 @@ Next, we're importing the `fs` library to do file system things, `path` to deal 
 
 Next up, let's add the following code that will physically go off to our WordPress instance and grab our post data:
 
+```js
     const getAllPostsXmlData = async () => {
       const query = `
         query AllPosts {
@@ -172,6 +186,7 @@ Next up, let's add the following code that will physically go off to our WordPre
     
       return allPosts.data.data.posts.edges;
     };
+```
 
 We've got a very stripped down GraphQL query here that just grabs an ID, date, title, slug, content, and excerpt.
 
@@ -183,6 +198,7 @@ Next, we simply call axios' post request with the `WP_API_URL`. Once this return
 
 For the next function, we want to create one that takes the fetched WordPress Post data and processes each individual Post's data into an XML feed item. Create a new function, `blogPostsRssXml` and add in the following:
 
+```js
     const blogPostsRssXml = blogPosts => {
       let latestPostDate = '';
       let rssItemsXml = '';
@@ -216,6 +232,7 @@ For the next function, we want to create one that takes the fetched WordPress Po
         latestPostDate
       };
     };
+```
 
 Another function that looks long, but is fairly simple in its operation. We're looping through the available blog posts that WordPress gave us, generating a human readable date, then checking to see if the current post is the latest post and updating the latest post date if that's true.
 
@@ -231,6 +248,7 @@ The penultimate step is to create a function that will outline the bare bones sk
 
 Add the following code to our `rss-gen.js` file.
 
+```js
     const getRssXml = blogPosts => {
       const { rssItemsXml, latestPostDate } = blogPostsRssXml(blogPosts);
     
@@ -254,8 +272,9 @@ Add the following code to our `rss-gen.js` file.
         </channel>
       </rss>`;
     };
+```
 
-Again, this is standard RSS XML feed structure here. It describes the data and the content, gives the feed a title and a meaningful description, as well as identifying the feed's language.
+This is standard RSS XML feed structure here. It describes the data and the content, gives the feed a title and a meaningful description, as well as identifying the feed's language.
 
 Again, notice that you should **replace the link and description with your own information** before you set this feed live!
 
@@ -263,12 +282,13 @@ Again, notice that you should **replace the link and description with your own i
 
 By this point, if we just called the previous function, `getRssXml` on its own, we'd have a perfectly fine RSS feed for our Next.js site...in string format, **not** XML.
 
-Even though the previous functions together make up about 95% of the task, that final 5% is the crucial part; the part that physically writes the RSS feed to a file as XML.
+Even though the previous functions together make up about 95% of the task, the missing final 5% is the crucial part; the part that physically writes the RSS feed to a file as XML.
 
 We're going to finish off the file with a new function `generateRSS` that will gather our blog post data from WordPress, use it to generate all the feed data for us (in string format) and write it out to a file for us.
 
 Here's the last function to create and add at the end of our file:
 
+```js
     async function generateRSS() {
       const allBlogPostData = await getAllPostsXmlData();
       const processedXml = getRssXml(allBlogPostData);
@@ -286,10 +306,11 @@ Here's the last function to create and add at the end of our file:
     
     // kick it all off
     generateRSS();
+```
 
 You can see we fetch the WordPress Post data and supply it to the `getRssXml()` function, which gets us our RSS feed as a string, `processedXml`.
 
-Next, we use the `path` import to work out the current working directory path so we can write a file to i.
+Next, we use the `path` import to work out the current working directory path so we can write a file to it.
 
 Finally, we use Node's `fs` function to write a new file, `rss.xml`, containing our RSS feed string. We're writing this file directly into the root of the `/out` folder, which you'll recall is the folder that Next.js creates for us when we use the special `yarn export` command — it contains all the statically generated files for our site.
 
@@ -297,6 +318,7 @@ Finally, we use Node's `fs` function to write a new file, `rss.xml`, containing 
 
 With all of the above done, the finished `rss-gen.js` file should look like this:
 
+```js
     require('dotenv').config({ path: '.env.local' });
     const fs = require('fs');
     const path = require('path');
@@ -405,6 +427,7 @@ With all of the above done, the finished `rss-gen.js` file should look like this
     
     // kick it all off
     generateRSS();
+```
 
 And that's about it. Not a tiny file, but not a behemoth either. In just over 100 lines of code, we've managed to create a reusable RSS feed generator for Next.js that collects data from WordPress and creates an XML file for our blog posts.
 
