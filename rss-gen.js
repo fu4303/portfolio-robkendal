@@ -31,7 +31,11 @@ const getAllPostsXmlData = async () => {
       const processedContent = await remark()
         .use(html)
         .process(matterResult.content);
-      const contentHtml = processedContent.toString();
+
+      // process any CDATA trailing tags (i.e. ']]>') as they break the feed...
+      const contentHtml = processedContent
+        .toString()
+        .replace(/]]>/g, ']]]]><![CDATA[>');
 
       // Combine the data with the id
       return {
