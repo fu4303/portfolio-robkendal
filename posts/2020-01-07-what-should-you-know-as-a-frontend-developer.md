@@ -4,6 +4,7 @@ title: What should you know as a frontend developer?
 date: 2020-01-07T12:32:00.302Z
 featured: false
 featuredimage: /img/what-should-you-know-as-a-frontend-developer-blog-post.png
+cta: aspire_to_hired
 description: >-
   Whether you're a budding frontend developer or have been coding a while, what
   exactly should you know as a frontend developer?
@@ -173,7 +174,7 @@ These include:
 - **Learning learning learning**
   Life happens, things move on, stuff changes. Especially in the tech industry. If you don't have a love of learning new things (not just for the sake of it) then you'll get left behind quickly. Being able to find joy in a new challenge and enjoying keeping up with the changes in our field is helpful in bringing new ideas to the collective table and solving all sorts of problems.
 
-## How deep is your ~~love~~ knowledge?
+## How deep is your ~~love~~ knowledge
 
 I have seen interviewers probing the depths of a candidate's knowledge of browsers and the intricate in's and out's of how a web page is physically rendered on a page and sometimes this feels a little unfair or 'trappy'.
 
@@ -189,6 +190,6 @@ For me, I think it's good to have a broad understanding of the major players in 
 
 That said, it's all about levels and experience. If you're a senior dev, you'll likely have more experience with certain things and be able to build on that base knowledge, adding more advanced learning on top in layers.
 
-## What's on your 'things frontend developers should know' list?
+## What's on your 'things frontend developers should know' list
 
 Let me know if I've missed anything or what your list would look like.

@@ -91,15 +91,15 @@ Open up `server.js` and add in the following code:
 
 ```javascript
 // load up the express framework and body-parser helper
-const express = require("express");
-const bodyParser = require("body-parser");
+const express = require('express');
+const bodyParser = require('body-parser');
 
 // create an instance of express to serve our end points
 const app = express();
 
 // we'll load up node's built in file system helper library here
 // (we'll be using this later to serve our JSON files
-const fs = require("fs");
+const fs = require('fs');
 
 // configure our express instance with some body-parser settings
 // including handling JSON data
@@ -107,11 +107,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // this is where we'll handle our various routes from
-const routes = require("./routes/routes.js")(app, fs);
+const routes = require('./routes/routes.js')(app, fs);
 
 // finally, launch our server on port 3001.
 const server = app.listen(3001, () => {
-  console.log("listening on port %s...", server.address().port);
+  console.log('listening on port %s...', server.address().port);
 });
 ```
 
@@ -120,7 +120,7 @@ There's a lot going on in there for a relatively small file. To unpack it a litt
 The next part is loading our routing file:
 
 ```javascript
-const routes = require("./routes/routes.js")(app, fs);
+const routes = require('./routes/routes.js')(app, fs);
 ```
 
 This achieves a couple of things:
@@ -190,11 +190,11 @@ Next, create a new file under `/routes` called `users.js` and fill it with the f
 ```javascript
 const userRoutes = (app, fs) => {
   // variables
-  const dataPath = "./data/users.json";
+  const dataPath = './data/users.json';
 
   // READ
-  app.get("/users", (req, res) => {
-    fs.readFile(dataPath, "utf8", (err, data) => {
+  app.get('/users', (req, res) => {
+    fs.readFile(dataPath, 'utf8', (err, data) => {
       if (err) {
         throw err;
       }
@@ -211,8 +211,8 @@ Hurrah, our very first route is almost ready. Whilst not much to look at, notice
 
 A couple of other points to mention here:
 
-1.  We're using the ES6 formatting within our JavaScript files, including arrow function ([I have another article about arrow functions](/arrow-functions-in-javascript/) right here).
-2.  Within the body of the GET handler, we're calling the Node `fs` library we passed in to call the `readFile()` method. This helps us to access the underlying file system and load up a file
+1. We're using the ES6 formatting within our JavaScript files, including arrow function ([I have another article about arrow functions](/arrow-functions-in-javascript/) right here).
+2. Within the body of the GET handler, we're calling the Node `fs` library we passed in to call the `readFile()` method. This helps us to access the underlying file system and load up a file
 
 ### Hook up our first route to the main route handler
 
@@ -220,13 +220,13 @@ Although complete, our first route won't do anything unless the main routing fil
 
 ```javascript
 // load up our shiny new route for users
-const userRoutes = require("./users");
+const userRoutes = require('./users');
 
 const appRouter = (app, fs) => {
   // we've added in a default route here that handles empty routes
   // at the base API url
-  app.get("/", (req, res) => {
-    res.send("welcome to the development api-server");
+  app.get('/', (req, res) => {
+    res.send('welcome to the development api-server');
   });
 
   // run our user route module here to complete the wire up
@@ -286,7 +286,7 @@ const userRoutes = (app, fs) => {
     callback,
     returnJson = false,
     filePath = dataPath,
-    encoding = "utf8"
+    encoding = 'utf8'
   ) => {
     fs.readFile(filePath, encoding, (err, data) => {
       if (err) {
@@ -301,9 +301,9 @@ const userRoutes = (app, fs) => {
     fileData,
     callback,
     filePath = dataPath,
-    encoding = "utf8"
+    encoding = 'utf8'
   ) => {
-    fs.writeFile(filePath, fileData, encoding, (err) => {
+    fs.writeFile(filePath, fileData, encoding, err => {
       if (err) {
         throw err;
       }
@@ -314,7 +314,7 @@ const userRoutes = (app, fs) => {
 
   // READ
   // Notice how we can make this 'read' operation much more simple now.
-  app.get("/users", (req, res) => {
+  app.get('/users', (req, res) => {
     readFile(data => {
       res.send(data);
     }, true);
@@ -346,15 +346,15 @@ We'll start with the create part of the CRUD, creating a new user. Add in the fo
 // ...
 
 // CREATE
-app.post("/users", (req, res) => {
-  readFile((data) => {
+app.post('/users', (req, res) => {
+  readFile(data => {
     const newUserId = Object.keys(data).length + 1;
 
     // add the new user
-    data[newUserId] = JSON.parse(req.body.data);
+    data[newUserId] = req.body;
 
     writeFile(JSON.stringify(data, null, 2), () => {
-      res.status(200).send("new user added");
+      res.status(200).send('new user added');
     });
   }, true);
 });
@@ -366,7 +366,7 @@ It's quite a simple operation here. Note that we've changed the `app` function c
 
 First, we call our new read method and pass a callback function in. When the file is read and we get a JSON object, `data` back, we need to create a new `user` object. For this, we'll grab the number of objects in the file at the moment using `Object.keys(data)` and increment it by one.
 
-Next, we add the new user, `JSON.parse(req.body.data)` to the users object using the new user ID we created – notice that we need to wrap it in `JSON.parse` to coerce the incoming request body into a format we can read and add to our current data.
+Next, we add the new user, `req.body` to the users object using the new user ID we created – note that you may need to wrap this in `JSON.parse` to coerce the incoming request body into a format we can read and add to our current data. This will depend on how you're calling the API and supplying data to it.
 
 Finally, we call our refactored `writeFile()` method, stringifying our new user data and passing it in. Once the file has been sucessfully written, we tell the response object to go back to the API caller with this line, `res.status(200).send('new user added')` – we also add a nice message to the caller to let them know it succeeded.
 
@@ -380,11 +380,11 @@ Here's our update function:
 
 ```javascript
 // UPDATE
-app.put("/users/:id", (req, res) => {
-  readFile((data) => {
+app.put('/users/:id', (req, res) => {
+  readFile(data => {
     // add the new user
-    const userId = req.params["id"];
-    data[userId] = JSON.parse(req.body.data);
+    const userId = req.params['id'];
+    data[userId] = req.body;
 
     writeFile(JSON.stringify(data, null, 2), () => {
       res.status(200).send(`users id:${userId} updated`);
@@ -397,7 +397,7 @@ The main differences here are the route we call and grabbing the parameters out 
 
 - The route has changed from `/users` to `/users/:id`. The `:id` portion is a variable parameter that we can append to our API URL. So, you could call `/users/4` which would match against this route if you used a PUT request – the accepted RESTful way of handling updates
 - We grab this `:id` value to help us find the correct user to edit using `req.params[id]`
-- Then we update the matching user from our users list by grabbing a JSON version of our request body – `JSON.parse(req.body.data)`
+- Then we update the matching user from our users list by grabbing a the `req.body` contents (again, you may need to get a JSON version of the request body in which case can you do this `JSON.parse(req.body.data)`)
 
 **Note,** we're not adding the extra complexity of validating the incoming data here. This is a **necessary part of production API development**, but for simplicities sake, we're trusting you to send the right data into the API request!
 
@@ -405,10 +405,10 @@ To round things off, here is our delete function:
 
 ```javascript
 // DELETE
-app.delete("/users/:id", (req, res) => {
-  readFile((data) => {
+app.delete('/users/:id', (req, res) => {
+  readFile(data => {
     // add the new user
-    const userId = req.params["id"];
+    const userId = req.params['id'];
     delete data[userId];
 
     writeFile(JSON.stringify(data, null, 2), () => {

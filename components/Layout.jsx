@@ -18,8 +18,8 @@ const generateUrl = url => `${baseUrl}${url}`;
 const Layout = ({
   children,
   url,
-  title = 'Freelance WordPress Developer | Jamstack developer | Rob Kendal',
-  description = 'A friendly, reliable, remote freelance WordPress developer and website consultant with 15 years experience based in Selby, Yorkshire',
+  title = 'Freelance WordPress Developer',
+  description = 'Freelance Jamstack and WordPress developer and website consultant with 15 years experience based in Selby, Yorkshire',
   image = '/img/alt-logo.png'
 }) => {
 
@@ -36,7 +36,7 @@ const Layout = ({
           content='width=device-width, initial-scale=1, shrink-to-fit=no'
         />
         // site SEO
-        <title>{title}</title>
+        <title>{title} | Jamstack developer | Rob Kendal</title>
         <meta name='description' content={description} />
         // sitemap and RSS feeds
         <link rel='sitemap' type='application/xml' href='/sitemap.xml' />
