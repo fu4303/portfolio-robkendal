@@ -11,13 +11,14 @@ description: >-
 tags:
   - Thoughts
 ---
-![Blog header image with imposter syndrome title](/img/imposter-syndrome-blog-post.png "Fighting imposter syndrome as a developer")
 
-Imposter syndrome: it's an affliction that snares a lot more people than you think, especially (and ironically) quite successful people. 
+![Blog header image with imposter syndrome title](/img/imposter-syndrome-blog-post.png 'Fighting imposter syndrome as a developer')
 
-It may happen to you from time to time and it can be a very lonely curse to fight, holding you back and hindering you from truly becoming your best. Those nagging doubt's at the milder end, out and out feelings of unworthiness or not being good enough at the worse end. 
+Imposter syndrome: it's an affliction that snares a lot more people than you think, especially (and ironically) quite successful people.
 
-It's something that I've fought with and I know from my Twitter feed alone that some of the most successful people you'll follow on there will all feel far from the top-of-there-game peers that you believe them to be. 
+It may happen to you from time to time and it can be a very lonely curse to fight, holding you back and hindering you from truly becoming your best. Those nagging doubt's at the milder end, out and out feelings of unworthiness or not being good enough at the worse end.
+
+It's something that I've fought with and I know from my Twitter feed alone that some of the most successful people you'll follow on there will all feel far from the top-of-their-game peers that you believe them to be.
 
 Let's get to it!
 
@@ -33,37 +34,37 @@ There's tons of articles in the wild about imposter syndrome in general, such as
 
 ## How to recognise it
 
-Whilst imposter syndrome comes in a few forms, at both ends of the extreme spectrum, usually it manifests itself in doubts and feelings of fraud and not belonging. 
+Whilst imposter syndrome comes in a few forms, at both ends of the extreme spectrum, usually it manifests itself in doubts and feelings of fraud and not belonging.
 
 This occurs quite commonly because, generally, we're very good at voicing our fears and doubts privately and internally, whilst hiding them away from public eyes and ears. Of course, with most people doing this, its easy to feel alone in these thoughts.
 
 Some common things to look out for include:
 
-* Insecurities around your job, work
-* Feeling as if you don't deserve your accomplishments
-* The foreboding sense that you will be 'found out' at any moment
-* Constant or frequent comparisons to peers resulting in personal unworthiness
-* Feeling inferior to your peers, despite your accomplishments
+- Insecurities around your job, work
+- Feeling as if you don't deserve your accomplishments
+- The foreboding sense that you will be 'found out' at any moment
+- Constant or frequent comparisons to peers resulting in personal unworthiness
+- Feeling inferior to your peers, despite your accomplishments
 
-I used to have this a lot in my earlier career as I would take a job at a company and then feel like I wasn't good enough to be there. Of course, the fact that other employees had been at the company for years working within the same codebase would never register in my mind — obviously they would have a better handle on things; they were already further along the learning curve! 
+I used to have this a lot in my earlier career as I would take a job at a company and then feel like I wasn't good enough to be there. Of course, the fact that other employees had been at the company for years working within the same codebase would never register in my mind — obviously they would have a better handle on things; they were already further along the learning curve!
 
-Later in life, during my time as a business owner, I really struggled in the beginning as I would be surrounded by successful business people who had run their own businesses for many years. How could I hope to join in or compete with them? Me, this newcomer with almost zero business experience, what could I offer? 
+Later in life, during my time as a business owner, I really struggled in the beginning as I would be surrounded by successful business people who had run their own businesses for many years. How could I hope to join in or compete with them? Me, this newcomer with almost zero business experience, what could I offer?
 
 ![Still from Terminator 3 with a quote](/img/anger-is-more-useful-than-despair..jpg)
 
 These sorts of feelings aren't helpful whatsoever and, in fact, can quickly become detrimental. Think about it, have you ever held yourself back in these familiar ways:
 
-* Kept quiet in meetings for fear of being laughed at for your ideas?
-* Not gone for that job because you didn't think you were ready or good enough?
-* Been afraid to hit publish on that blog post because it's not as in-depth or popular as CSS Tricks?
-* Not started that open source project you've been meaning to because who'd use it?
-* Put off starting your own business?
+- Kept quiet in meetings for fear of being laughed at for your ideas?
+- Not gone for that job because you didn't think you were ready or good enough?
+- Been afraid to hit publish on that blog post because it's not as in-depth or popular as CSS Tricks?
+- Not started that open source project you've been meaning to because who'd use it?
+- Put off starting your own business?
 
-Thankfully, whilst those feelings do occasionally kick in, I've got much better at dealing with imposter syndrome and **so can you!** 
+Thankfully, whilst those feelings do occasionally kick in, I've got much better at dealing with imposter syndrome and **so can you!**
 
 I've learned to quickly recognise them and almost reverse them using some tried and tested coping mechanisms we'll cover next.
 
-## How can you tackle imposter syndrome?
+## How can you tackle imposter syndrome
 
 A big part of dealing with imposter syndrome is about recognising it for what it is, talking about it and handling it when it comes up. It's an ongoing process that you get better at by practicing. Here are some of the best approaches to dealing with imposter syndrome that have helped me squash it.
 
@@ -71,11 +72,11 @@ A big part of dealing with imposter syndrome is about recognising it for what it
 
 One of the best bits of advice and motivation I've ever seen is to compare yourself with other versions of yourself _**not**_ other people!
 
-You're the only one who you have full control over and, really, you can only _influence_ other people at best. You don't know their journey, struggles, how hard they work, what challenges they have with their work, nor what sacrifices they make. 
+You're the only one who you have full control over and, really, you can only _influence_ other people at best. You don't know their journey, struggles, how hard they work, what challenges they have with their work, nor what sacrifices they make.
 
-Life's funny like that: it's easy (and often disheartening) to compare ourselves to others in a similar position and think that they're more worthy than us. 
+Life's funny like that: it's easy (and often disheartening) to compare ourselves to others in a similar position and think that they're more worthy than us.
 
-However, we're all running a different race or playing a different game altogether and we shouldn't try to compare ourselves to other people. 
+However, we're all running a different race or playing a different game altogether and we shouldn't try to compare ourselves to other people.
 
 Instead, use them as inspiration for your goals. Once you have a goal in mind, compare yourself to the previous version of yourself and measure your progress that way.
 
@@ -83,11 +84,11 @@ For example, if you've just [scored your first job as a developer](https://robke
 
 ### Recognise your strengths and acknowledge your weaknesses
 
-When you focus on the negatives, the critical, it's easy to eclipse your strengths and truly acknowledge your accomplishments. 
+When you focus on the negatives, the critical, it's easy to eclipse your strengths and truly acknowledge your accomplishments.
 
-Try to look objectively at what you're good at and what you're not and turn it into an action plan to continue the strengths and improve the weaknesses. 
+Try to look objectively at what you're good at and what you're not and turn it into an action plan to continue the strengths and improve the weaknesses.
 
-For example, I really admire [Sarah Drasner](https://twitter.com/sarah_edo). She's a hugely popular and successful developer at Netlify and talks a lot about front-end development topics. Her knowledge of SVG animations is immense (seriously, she has an [epic book on the subject](https://t.co/bV6mBteksH?amp=1)) and far greater than mine. 
+For example, I really admire [Sarah Drasner](https://twitter.com/sarah_edo). She's a hugely popular and successful developer at Netlify and talks a lot about front-end development topics. Her knowledge of SVG animations is immense (seriously, she has an [epic book on the subject](https://t.co/bV6mBteksH?amp=1)) and far greater than mine.
 
 However, that doesn't mean that I don't belong as a front-end developer. It shouldn't mean that I don't deserve the role I have or any awards I've won. It just means I have a gap in my knowledge.
 
@@ -97,9 +98,9 @@ By recognising this as an opportunity to improve an area of my understanding, I 
 
 ### Talk about it
 
-Being ignorant of how other people think or feel is a large underpinning of the entire imposter syndrome. Internalising your fears and thoughts and at the same time not being aware of similar thoughts in your peers makes everything worse. 
+Being ignorant of how other people think or feel is a large underpinning of the entire imposter syndrome. Internalising your fears and thoughts and at the same time not being aware of similar thoughts in your peers makes everything worse.
 
-It is absolutely not an easy thing to do, but believe me, other people feel the same. Even if they don't share a sense of fraud, they certainly will rarely have a superiority complex and not understand where you're coming from. 
+It is absolutely not an easy thing to do, but believe me, other people feel the same. Even if they don't share a sense of fraud, they certainly will rarely have a superiority complex and not understand where you're coming from.
 
 Find a sympathetic ear or two and bring up your feelings of not belonging and you'll soon find that other people will share how they've felt that that too.
 
@@ -115,7 +116,7 @@ If this article alone doesn't help you realise that you're not alone, let me spe
 
 You. Are. Not. Alone!
 
-I can tell you that a lot of developers I've spoken to during my career have felt like an imposter at least once in their time, if not on a regular basis. 
+I can tell you that a lot of developers I've spoken to during my career have felt like an imposter at least once in their time, if not on a regular basis.
 
 Keep sharing your experiences and make a habit of talking to your colleagues and peers about theirs, talk about your collective challenges and you'll see that you're absolutely not alone.
 
@@ -125,7 +126,7 @@ OK, this is the more blunt end of the tool, but sometimes you can't quiet the vo
 
 I can tell you that I have read a job spec and felt inadequate, not good enough for that role. But then I applied anyway. After all, that's what a job application process if for isn't it? For you and the company to work out if your a fit for each other. If you're open and honest about your experiences, then it's up to the hiring company to decide if you're up to the task, not you!
 
-Sometimes, you just have to own your accomplishments and abilities and say 'no matter how I feel, I'm not letting it hold me back'. 
+Sometimes, you just have to own your accomplishments and abilities and say 'no matter how I feel, I'm not letting it hold me back'.
 
 ## Share your experiences
 

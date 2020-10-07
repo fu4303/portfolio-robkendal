@@ -5,6 +5,7 @@ import Layout from '../../components/Layout';
 import DateDisplay from '../../components/DateDisplay';
 import CommentsLoader from '../../components/CommentsLoader';
 import Webmentions from '../../components/Webmentions';
+import CallToAction from '../../components/CallToAction';
 
 // helpers
 import {
@@ -12,8 +13,11 @@ import {
   getPostData,
   getSortedPostsData
 } from '../../lib/posts';
+import ctas from '../../lib/ctas';
 
 export default function Post({ postData, allRelatedPostsData }) {
+  const ctaData = postData.cta ? ctas[postData.cta] : ctas.default;
+
   return (
     <Layout
       description={postData.description}
@@ -34,6 +38,7 @@ export default function Post({ postData, allRelatedPostsData }) {
             className='post-content'
             dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
           />
+          <CallToAction {...ctaData} />
           <div className='author-box section'>
             <div className='media is-small'>
               <div className='media-left'>

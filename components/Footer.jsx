@@ -40,6 +40,11 @@ const Footer = () => (
           <a>recruitment FAQ</a>
         </Link>
       </li>
+      <li>
+        <Link href='/freelance-jamstack-developer'>
+          <a>freelance Jamstack developer</a>
+        </Link>
+      </li>
     </ul>
 
     <div className={styles['social-links']}>
