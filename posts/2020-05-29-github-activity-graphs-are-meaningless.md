@@ -25,6 +25,7 @@ A couple of the recent tweets that kicked this all off include these two:
 A commendable tweet by Laurie Barth ([@laurieontech](https://twitter.com/laurieontech)) calling for GitHub graphs to be removed altogether.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">GitHub graphs should be removed.<br><br>They do far more harm than good.<br><br>A completely green graph should not be anyone’s goal. Balance is important.</p>— Laurie (@laurieontech) <a href="https://twitter.com/laurieontech/status/1265762973202726912?ref_src=twsrc^tfw">May 27, 2020</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 And a very satirical one by Jacob Paris ([@jacobmparis](https://twitter.com/jacobmparis)), who was parodying a popular tweet asking what was stopping men looking really buff.
 

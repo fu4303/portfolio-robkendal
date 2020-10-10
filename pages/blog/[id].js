@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { useEffect } from 'react';
+import Prism from 'prismjs';
 
 // components
 import Layout from '../../components/Layout';
@@ -14,6 +16,10 @@ import {
 } from '../../lib/posts';
 
 export default function Post({ postData, allRelatedPostsData }) {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+
   return (
     <Layout
       description={postData.description}
