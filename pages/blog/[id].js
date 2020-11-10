@@ -29,17 +29,32 @@ export default function Post({ postData, allRelatedPostsData }) {
     >
       <>
         <article className='container article'>
-          <div className='post-meta'>
-            <DateDisplay
-              dateString={postData.date}
-              className='has-text-grey-light'
-            />
-            <h1>{postData.title}</h1>
+          <div className="columns is-vcentered">
+            <div className="column">
+              <div className='post-meta'>
+                <DateDisplay
+                    dateString={postData.date}
+                    className='has-text-grey-light'
+                />
+                <h1>{postData.title}</h1>
+              </div>
+            </div>
+            <div className="column is-narrow">
+              <div
+                  data-ea-publisher="robkendal-co-uk"
+                  className="bordered"
+                  data-ea-type="image"
+                  id={`ea_text_id_${postData.id}`}
+                  data-ea-keywords={postData.tags.join('|')}
+              />
+            </div>
           </div>
           <div
-            className='post-content'
-            dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+              className='post-content'
+              dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
           />
+        </article>
+        <div className="container">
           <div className='author-box section'>
             <div className='media is-small'>
               <div className='media-left'>
@@ -78,7 +93,7 @@ export default function Post({ postData, allRelatedPostsData }) {
               </div>
             </div>
           </div>
-        </article>
+        </div>
         <div className='container'>
           <Webmentions url={`blog/${postData.id}`} />
           <CommentsLoader pageUrl={postData.id} pageId={postData.id} />

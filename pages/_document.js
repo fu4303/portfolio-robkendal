@@ -13,6 +13,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script async src="https://media.ethicalads.io/media/client/ethicalads.min.js"/>
         </body>
       </Html>
     );
