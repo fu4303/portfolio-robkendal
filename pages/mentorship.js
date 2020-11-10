@@ -4,9 +4,6 @@ import Link from 'next/link';
 import Layout from '../components/Layout';
 import Testimonials from '../components/Testimonials';
 
-// utils
-import { Config } from '../lib/utils';
-
 const Mentorship = () => {
   return (
     <Layout
@@ -85,18 +82,9 @@ const Mentorship = () => {
                     <li>Access to coding challenges</li>
                   </ul>
                   <p className='has-text-centered'>
-                    <button
-                      data-item-id='mentorship-level-1'
-                      data-item-price='49.00'
-                      data-item-max-quantity='1'
-                      data-item-url={`${Config.baseSiteUrl}/mentorship`}
-                      data-item-description='Rob Kendal mentorship subscription option level 1'
-                      data-item-image='/img/mentorship/level1.png'
-                      data-item-name='Mentorship Level 1'
-                      className='button is-primary is-md snipcart-add-item'
-                    >
+                    <a href="https://pay.gocardless.com/AL000374P14DRK" className="button is-primary is-md">
                       Sign me up!
-                    </button>
+                    </a>
                   </p>
                 </div>
               </div>
@@ -133,18 +121,9 @@ const Mentorship = () => {
                     <li>Collaborative work on larger coding projects</li>
                   </ul>
                   <p className='has-text-centered'>
-                    <button
-                      data-item-id='mentorship-level-2'
-                      data-item-price='99.00'
-                      data-item-max-quantity='1'
-                      data-item-url={`${Config.baseSiteUrl}/mentorship`}
-                      data-item-description='Rob Kendal mentorship subscription option level 2'
-                      data-item-image='/img/mentorship/level2.png'
-                      data-item-name='Mentorship Level 2'
-                      className='button is-primary is-md snipcart-add-item'
-                    >
+                    <a href="https://pay.gocardless.com/AL00039PXAH73Q" className="button is-primary is-md">
                       Sign me up!
-                    </button>
+                    </a>
                   </p>
                 </div>
               </div>
