@@ -3,7 +3,7 @@ templateKey: blog-post
 title: Funky text backgrounds with background-clip CSS
 date: 2020-04-02T09:01:00.263Z
 featured: true
-featuredimage: /img/css background-clip - blog post.png
+featuredimage: /img/css-background-clip-blog-post.png
 description: >-
   Want to spice up your text-effects in CSS? Check out this quick tip on
   creating funky text backgrounds with the CSS background-clip property.
@@ -14,7 +14,7 @@ tags:
   - Tips
 ---
 
-![Blog header for the article on background-clip CSS property](/img/css background-clip - blog post.png)
+![Blog header for the article on background-clip CSS property](/img/css-background-clip-blog-post.png)
 
 Once of the best ways to learn new things is to see them in the wild, take an interest and give them a hack about, see what makes them tick. It's [how I got started in development](https://thefrontendpodcast.site/episodes/episode-1/) way back in the old days of MySpace; editing the CSS in your profile and changing things up.
 
