@@ -12,7 +12,7 @@ tags:
 - Advice
 
 ---
-I've been a developer for over 15 years and I've loved almost every minute of it. I can't imagine doing anything different but there are moments when I think back to starting out and how different the development landscape was, especially when it comes to learning how to code.
+I've been a developer for over fifteen years and I've loved almost every minute of it. I can't imagine doing anything different but there are moments when I think back to starting out and how different the development landscape was, especially when it comes to learning how to code.
 
 I'm really _not_ that old, but things in the tech world move fast and there weren't as many resources around to help people get into frontend development and learn how to build something from HTML, CSS, JavaScript, etc. There wasn't as many great communitys like Dev or Hashnode or WeStryve, not learning platforms such as Free Code Camp or The Odin Project.
 
@@ -111,21 +111,83 @@ It's not about ego or vanity, but it's about celebrating your victories and reme
 
 ## You don't have to know everything
 
+The world of deveopment is HUGE. I mean seriously almost infinite. Between languages, frameworks, patterns, platforms, frontend, backend, the list goes on. 
+
+When you're starting out there can be an overwhelming urge to have to know everything all at once. But I'm here to tell you that you don't need to know everything and, in reality, you can't or won't ever know it all q-- the landscape is just too vast.
+
+Of course, as a frontend developer starting out, I'd recommend focussing on the three core pillars of HTML, CSS, and JavaScript, but once you're getting into the swing of things, start to add bits and pieces to your knowledge depending on what takes your fancy. 
+
 ## Senior doesn't mean encylopedia
 
+Just because someone is a senior developer or an architect or principle, or has been programming for 100's of years, does not automatically make them the all knowing beasts you think they may be. 
+
+I'll let you into a secret: I've been developing in a fullstack fashion for over fifteen years and I still have to look up some of the most trivial snippets of code; I still miss semicolons out of things and I still make mistakes. 
+
+Sure, I know a lot about a lot, but there's oceans of knowledge I haven't even sailed upon. Just because people have been around the block doesn't directly equate to an infallible, all-knowing knowledge. Neither does it mean they're always automatically right or know better.
+
+The point I'm driving at here is that just because you're less experienced or starting out doesn't mean your ideas are less valuable or that you have less to contribute. 
+
+It's also why adopting a life long approach to learning is so important as a developer. 
+
 ## Titles don't really mean much in the long run
+
+Another thing to bear in mind is that some people get caught up in a title race and it's easy to think that becoming a 'principle developer' or 'lead architect' is the end goal. Yes, titles and recognition are nice and there's money and rewards that come with more senior titles, but they don't always reflect the abilities of the holder nor 
+
+I'm not saying that it's not OK to have 'become a lead developer' as a goal, but don't set your standards by the titles that you, or others, hold. It's your attitude, actions, and what you contribute to the development community that will ultimately shape your legacy.
 
 ## Networking is essential!!
 
 It really is _who you know_ not always _what you know_.
 
+I wish I'd spent more time making connections with other developers, recruiters, leaders, and makers on social media, in real life. I think I've made up for it over the years, but had I started sooner, who knows what doors it could have opened up.
+
+Make yourself a Twitter profile and register on LinkedIn. These are both excellent platforms for connecting with your fellow devs and growing your network. It's not about a popularity contest, but it'll help you with a number of areas in your career:
+
+* Finding a new job.
+* Starting a freelance business.
+* Launching a product or service.
+* Selling content, ebooks, courses, and more.
+* Make new friends.
+* Helping other to learn.
+* Contributing to open source.
+
+And it doesn't have to involve hours and hours of work, but just regular little interactions with people, making connections, being helpful and honest, being yourself. Over time, your network will grow and you'll get as much out of it as you give.
+
+[![Call to action banner pointing people to my twitter account](/img/twitter_cta.png "follow me on twitter for more great content")](https://twitter.com/kendalmintcode "Follow me on twitter")
+
 ## Ignore the gatekeepers
+
+As with all life, you're going to come across people who, for whatever reason, just aren't great. There's a lot of gatekeeping in a lot of industries, but it's especially rife in the tech world. 
+
+You can avoid a lot of it by just not engaging, and I'd strongly suggest that you do avoid as much as possible. I come across a lot of developers who have been put off before they've even started because of trolls, haters, negative attitudes, condescension, and don't get me started on how women in tech can be treated.
+
+Development is one of those few things in life that's truly open for _everyone_. It's about your mental attitude and looking at problems, breaking them down, solving for others. Everything else is just tools, time, practice and approach. 
+
+I don't like CSS-in-JS, but you know what, it's a valid approach and if it helps some people build something awesome for others then that's OK by me. 
+
+Sure, there's better ways of doing things and some tried and tested approaches that work smoother than others, but a lot of development is opinions, nothing more. 
+
+So don't let others tell you you can't or let them intimidate you of course. Similarly, don't shame people when they share something of theirs. 
 
 ## Recruiters are both the devil and angels in disguise
 
+I love recruiters. Well, _some_, recruiters. In fact, I owe a lot of my success to the good ones. 
+
+If you want to get your foot in the doors of places you might not ordinarily be able to, get in touch with some recruiters and share with them your career aspirations. This is an essential part of networking for me. 
+
+It's increasingly important as a junior developer starting out to grow a connection base that includes at least a handful of trusted recruiters that take a genuine interest in you. They good ones will put the work in, take the time to get to know you and your skills and really talk you up to their clients (the employers). 
+
+Don't be put off by the chancers, the glorified mobile phone salesmen, and the ones that don't have your interests at heart. 
+
 ## Everyone feels like imposter
 
-[![Call to action banner pointing people to my twitter account](/img/twitter_cta.png "follow me on twitter for more great content")](https://twitter.com/kendalmintcode "Follow me on twitter")
+I have [an article on fighting imposter syndrome](https://robkendal.co.uk/blog/2019-05-10-fighting-imposter-syndrome-as-a-developer "Fighting imposter syndrome as a developer") as a developer which is worth a read, but there's bound to be a few points in your career where you'll feel down, feel a little worthless like your contributions don't matter, and wonder what the hell you're doing with your career. 
+
+That's OK. That's normal and it's more common than you think. In fact, it's very common in high-functioning, intelligent people. That feeling of not belonging, where you're simply blagging it and faking it and people will eventually find you out. 
+
+This is where little tips like talking about it helps, as does keeping that accomplishments journal we talked about earlier. Believe me, everyone suffers from it here and there and I'm no exception.
+
+Just remember that you can combat it and you should push ahead with your goals regardless. 
 
 ## Other helpful career articles
 
