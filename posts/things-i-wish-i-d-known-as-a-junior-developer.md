@@ -12,6 +12,8 @@ tags:
 - Advice
 
 ---
+![](/img/what-i-wish-i-knew-as-a-junior-dev.png)
+
 I've been a developer for over fifteen years and I've loved almost every minute of it. I can't imagine doing anything different but there are moments when I think back to starting out and how different the development landscape was, especially when it comes to learning how to code.
 
 I'm really _not_ that old, but things in the tech world move fast and there weren't as many resources around to help people get into frontend development and learn how to build something from HTML, CSS, JavaScript, etc. There wasn't as many great communitys like Dev or Hashnode or WeStryve, not learning platforms such as Free Code Camp or The Odin Project.
@@ -31,6 +33,8 @@ This very blog you're reading now (whether it's on my own website or my Dev or H
 Honestly, blogging is such a great way to cement what you've learned _as you're learning it_. You absolutely do not have to be a developer with X years in the business, nor do you have to be an expert. 
 
 All you need is a curios mind and to think about writing for your past self: write the article you wish you'd had on the subject.
+
+![](/img/workplace-2303851_640.jpg)
 
 As a bonus, if you fix something particularly tricky, you'll be able to refer back to your own article to help you solve it in the future!
 
@@ -68,6 +72,8 @@ With all of the above said, please don't put pressure on yourself to decide too 
 I was supremely fortunate to have worked with some amazing developers back when I started. They were experienced, knowledgable, helpful and humble and really took me under their wing. I'll never be able to thank them enough. 
 
 Therefore, I'd highly recommend getting yourself a mentor to help with your development journey. 
+
+![](/img/people-2569234_640.jpg)
 
 This is different from a teacher or tutor (although there is overlap at the edges of the roles): a mentor is a guiding light to help give you focus and direction, to answer questions and point you along the right path for your particular journey. 
 
@@ -114,6 +120,8 @@ It's not about ego or vanity, but it's about celebrating your victories and reme
 The world of deveopment is HUGE. I mean seriously almost infinite. Between languages, frameworks, patterns, platforms, frontend, backend, the list goes on. 
 
 When you're starting out there can be an overwhelming urge to have to know everything all at once. But I'm here to tell you that you don't need to know everything and, in reality, you can't or won't ever know it all q-- the landscape is just too vast.
+
+![](/img/magic-cube-1976725_640.jpg)
 
 Of course, as a frontend developer starting out, I'd recommend focussing on the three core pillars of HTML, CSS, and JavaScript, but once you're getting into the swing of things, start to add bits and pieces to your knowledge depending on what takes your fancy. 
 
