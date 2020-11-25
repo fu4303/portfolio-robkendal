@@ -1,18 +1,18 @@
 ---
 templateKey: blog-post
-title: ' Creating a React code editor and syntax highlighter'
-date: 2020-02-20T08:02:21.235Z
+title: " Creating a React code editor and syntax highlighter"
+date: 2020-02-20T08:02:21.235+00:00
 featured: true
-featuredimage: /img/React syntax highlighter - blog post.png
-description: >-
-  Can you build a simple, lightweight code and syntax highlighter using Prism JS
-  and React? Sure you can. I'll show how I did it in no time flat.
+featuredimage: "/img/react-syntax-highlighter-blog-post.png"
+description: Can you build a simple, lightweight code and syntax highlighter using
+  Prism JS and React? Sure you can. I'll show how I did it in no time flat.
 tags:
-  - Development
-  - Tutorials
-  - React
+- Development
+- Tutorials
+- React
+
 ---
-![Building a React-based syntax highlighter blog article header image](/img/React syntax highlighter - blog post.png)
+![](/img/react-syntax-highlighter-blog-post.png)
 
 Fuelled by a workplace conundrum about finding a reliable, efficient means to do a simple job, without needing to bring in the heavy hammer of another dependency, I recently created a React-based code syntax highlighter.
 
@@ -95,7 +95,7 @@ export default function App() {
 }
 ```
 
-Nothing too tricky going on here. We're adding `useState` from React to keep track of our language selection. Speaking of which, we've also got some simple radio button elements that update our language selection into state. 
+Nothing too tricky going on here. We're adding `useState` from React to keep track of our language selection. Speaking of which, we've also got some simple radio button elements that update our language selection into state.
 
 When a user selects a different language, we update their choice in state and then pass this along to our CodeEditor component which will, eventually, call Prism to update the syntax highlighting.
 
@@ -162,11 +162,11 @@ const CodeEditor = props => {
 export default CodeEditor;
 ```
 
-It's not too big or complex of a component, but let's break it down. 
+It's not too big or complex of a component, but let's break it down.
 
-First, we import the `useEffect` and `useState` hooks from React as well as importing the PrismJS module. 
+First, we import the `useEffect` and `useState` hooks from React as well as importing the PrismJS module.
 
-We're using `useState` to track updates to our input, for which we're using a text area element. We also output the Prism-styled *input* into a `pre` block as per Prism JS's documentation.
+We're using `useState` to track updates to our input, for which we're using a text area element. We also output the Prism-styled _input_ into a `pre` block as per Prism JS's documentation.
 
 ```javascript
 <pre className="code-output">
@@ -210,7 +210,7 @@ const handleKeyDown = evt => {
 
 In a nutshell, whenever the user hits a key, we check to see if it's the tab key. If it is, we alter the current state value from our input and add in some spacing, updating the selection point of the cursor along the way. This almost makes it feel like a genuine code editor.
 
-And that's it. All done. But wait, things are looking a bit weird. 
+And that's it. All done. But wait, things are looking a bit weird.
 
 ![Screen capture of a weird styling issue in Code Sandbox from our React syntax highlighter](/img/Screenshot_2020-02-19 CodeSandbox.png)
 
@@ -284,19 +284,20 @@ code {
 }
 ```
 
-The main take away is that we create comparative text styling (font size, line-heights, etc.) between the text area input and the code output, and then layer the Prism-styled output *over* the text area input. 
+The main take away is that we create comparative text styling (font size, line-heights, etc.) between the text area input and the code output, and then layer the Prism-styled output _over_ the text area input.
 
 Finally, we have to add a few Prism overrides to just neaten everything up.
 
 ## React code syntax highlighter in action
 
 <iframe
-     src="https://codesandbox.io/embed/focused-forest-y9re6?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="focused-forest-y9re6"
-     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
-   ></iframe>
+src="https://codesandbox.io/embed/focused-forest-y9re6?fontsize=14&hidenavigation=1&theme=dark"
+style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+title="focused-forest-y9re6"
+allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+
+> </iframe>
 
 ## Helpful links
 
