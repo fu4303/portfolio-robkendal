@@ -138,10 +138,6 @@ const CodeEditor = props => {
 
   useEffect(() => {
     Prism.highlightAll();
-  }, []);
-
-  useEffect(() => {
-    Prism.highlightAll();
   }, [props.language, content]);
 
   return (
@@ -212,7 +208,7 @@ In a nutshell, whenever the user hits a key, we check to see if it's the tab key
 
 And that's it. All done. But wait, things are looking a bit weird.
 
-![Screen capture of a weird styling issue in Code Sandbox from our React syntax highlighter](/img/Screenshot_2020-02-19 CodeSandbox.png)
+![Screen capture of a weird styling issue in Code Sandbox from our React syntax highlighter](/img/screenshot-2020-02-19-codesandbox.png)
 
 Let's create some nice styles to join up the dots.
 
