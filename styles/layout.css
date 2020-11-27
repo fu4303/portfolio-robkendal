@@ -25,8 +25,8 @@ main > section,
   border-top: 1px solid var(--grey-light);
   border-bottom: 1px solid var(--grey-light);
 }
-main > section + section,
-.section + .section {
+main > section + section:not(.has-border-top),
+.section + .section:not(.has-border-top) {
   border-top: 0;
   padding-top: 1em;
   padding-bottom: 2em;
@@ -68,6 +68,10 @@ main > section + section,
   background-color: var(--brand-alt);
 }
 
+main > section:last-of-type {
+  border-bottom: none;
+}
+
 /* ---------------------------------------------------------------------- */
 /* media items */
 /* ---------------------------------------------------------------------- */
@@ -86,8 +90,6 @@ main > section + section,
 .media-left img {
   max-width: 15rem;
 }
-.media-content {
-}
 
 /* ---------------------------------------------------------------------- */
 /* containers */
@@ -101,11 +103,6 @@ main > section + section,
 /* ---------------------------------------------------------------------- */
 /* articles */
 /* ---------------------------------------------------------------------- */
-.article {
-}
-
-.article .post-meta {
-}
 .article .post-meta h1 {
   margin-top: 0;
 }
@@ -174,17 +171,12 @@ main > section + section,
   color: var(--text-color);
   position: relative;
 }
-.card .card-image {
-}
 .card .card-image img {
   border-radius: 4px 4px 0 0;
 }
 .card .card-content {
   padding: 1em;
 }
-.card .card-content p {
-}
-
 .card.is-fullheight {
   height: 100%;
 }

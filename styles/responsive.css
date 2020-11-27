@@ -1,3 +1,9 @@
+@media screen and (max-width: 1750px) {
+  .home-section-wordpress .media-left {
+    max-width: 36rem;
+  }
+}
+
 @media screen and (max-width: 1570px) {
   .home-section-wordpress {
     flex-direction: column;
@@ -8,10 +14,6 @@
     align-items: center;
     max-width: initial;
     margin: 0 0 2em 0;
-  }
-
-  .home-section-wordpress .media-left video {
-    max-width: 50%;
   }
 
   .home-section-wordpress .media-left img {
@@ -35,19 +37,29 @@
   }
 }
 
-@media screen and (max-width: 1260px) {
-  .home-hero {
+@media screen and (max-width: 1340px) {
+  .serviceblock-columns .column {
+      width: 50%;
   }
+}
+
+@media screen and (max-width: 1260px) {
   .home-hero .hero-right img {
     max-width: 13rem;
   }
 
-  .home-section-wordpress .media-left video {
+  .home-section-wordpress .media-left img:first-of-type {
     max-width: 100%;
   }
 
-  .home-section-wordpress .media-left img {
+  .home-section-wordpress .media-left img + img {
     display: none;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .home-service-blocks {
+    display: block !important;
   }
 }
 
@@ -66,16 +78,15 @@
   .home-hero .hero-right::after {
     display: none;
   }
-  /*.home-section-ux .message {*/
-  /*  text-align: center;*/
-  /*}*/
 }
 
 @media screen and (max-width: 900px) {
-  .project-item {
-  }
   .project-item .media-left img {
     max-width: 9rem;
+  }
+  
+  .serviceblock-columns .column {
+      width: 100%;
   }
 }
 

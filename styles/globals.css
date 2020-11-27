@@ -167,10 +167,6 @@ h5 {
   font-size: var(--font-size-5);
 }
 
-.title {
-}
-.subtitle {
-}
 .title + .subtitle,
 .subtitle + .title {
   margin-top: 0;

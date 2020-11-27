@@ -5,61 +5,43 @@ import Layout from '../components/Layout';
 import Testimonials from '../components/Testimonials';
 import ServiceBlock from '../components/ServiceBlock';
 
-const WordPressConsultancy = () => {
+const SmallBusinessWebsites = () => {
   return (
     <Layout
-      title='Freelance WordPress developer | WordPress consultancy | Rob Kendal, freelance WordPress developer'
-      description='As a freelance WordPress consultant I work with local and national brands to develop their WordPress marketing websites. Talk to me about your website development project today.'
+      title='Freelance web designer | Freelance web developer Selby | Rob Kendal, small business websites'
+      description='As a freelance web designer based in Selby, south of York, I build marketing websites for small businesses that generate leads'
     >
       <section className='section home-hero'>
         <div className='hero-left'>
-          <h1>A freelance WordPress consultant who puts you first</h1>
+          <h1>A freelance web developer for small business websites</h1>
           <p>
-            Are you looking for help building your next WordPress website
-            project? I'm a <strong>freelance WordPress developer</strong> with
-            over 15 years experience in delivering enterprise websites for
-            clients big and small.
+            If you've been searching for a <strong>freelance web developer</strong> based in York, that builds small business websites to generate 
+            more leads for your business, then hello 👋🏻, I'm Rob.
           </p>
           <p>
-            My WordPress consultancy services can help you in many situations:
+            My small business wesite design services help in lots of ways:
           </p>
           <ul style={{ lineHeight: '1.9' }}>
             <li>
-              You're looking to build a new WordPress project and need planning
+              You want to launch a new website for your business and need planning
               and development advice to get started.
             </li>
             <li>
-              You have an existing WordPress website but it's not performing as
-              well as it could.
+              You're current website is not generating leads or performing as well as could be.
             </li>
             <li>
-              You want to use WordPress as a core part of your marketing
-              strategy and need support to develop a solution.
+              You want to take your sales online with a conversion-focussed ecommerce website.
             </li>
             <li>
-              You want to migrate your WordPress website to another host or
-              you're looking for WordPress hosting services.
+              You want to skyrocket your site's performance by developing a headless CMS solution that powers a static site 
+              generator such as Gatsby or Next.js.
             </li>
             <li>
-              You have a number of third-party platforms, such as HubSpot, and
-              want to integrate them with WordPress
-            </li>
-            <li>
-              You want the performance benefits of using WordPress as a headless
-              CMS to power a static site generator such as Gatsby or Next.js.
-            </li>
-            <li>
-              You want to improve your search engine rankings and need a Search
-              engine optimisation (SEO) audit and regular WordPress SEO support.
-            </li>
-            <li>
-              You're looking for regular technical and support services from a
-              reliable WordPress expert
+              You want simple, straightforward SEO advice to improve your search rankings.
             </li>
           </ul>
           <p>
-            Let's get your WordPress project done properly; all it costs is a
-            quick message to start!
+            Tell me about your project and let's see how we can work together.
           </p>
           <br />
           <p>
@@ -79,8 +61,8 @@ const WordPressConsultancy = () => {
         </div>
         <div className='hero-right'>
           <img
-            src='/img/wordpress-logo-alt.png'
-            alt='Rob Kendal freelance wordpress developer'
+            src='/img/rob-kendal.jpg'
+            alt='Rob Kendal freelance website developer'
             className='fancy-img is-lg filter'
           />
         </div>
@@ -88,53 +70,53 @@ const WordPressConsultancy = () => {
 
       <section className='section is-md has-border-top'>
         <h2 className='has-text-centered'>
-          How I can help with your WordPress project
+          How I can help with your business website
         </h2>
         <p className='has-text-centered'>
-          I have a wealth of experience with a range of WordPress websites and can help your business with the following common project types.
+          As an experienced freelance web designer, I have the expertise to assist with a range of small business website projects.
         </p>
         <br />
         <div className="columns is-centered is-multiline serviceblock-columns">
           <div className="column is-4-desktop is-12-tablet">
             <ServiceBlock
               icon="far fa-hand-pointer"
-              title="WordPress website"
-              blurb="WordPress is a great choice for a new business website. From simple websites to complex enterprise solutions, you're in good hands from start to finish."
+              title="Bespoke websites"
+              blurb="A well-planned and well-designed custom website will work best for you business to generate more leads and delight customers."
             />
           </div>
           <div className="column is-4-desktop is-12-tablet">
             <ServiceBlock
               icon="fas fa-suitcase-rolling"
               title="Migrations &amp; moves"
-              blurb="Moving websites can be daunting. Let me take the stress out of this process and migrate your website between hosts or to WordPress from another supplier."
+              blurb="Don't be stuck with a sub-par website provider. Let me tackle the hard work and migrate you to a better hosting environment."
             />
           </div>
           <div className="column is-4-desktop is-12-tablet">
             <ServiceBlock
               icon="fas fa-cash-register"
-              title="WordPress ecommerce"
-              blurb="Take your sales online via WordPress + Woocommerce. Whether you want to sell £100's or £100,000's let's launch your ecommerce website together."
+              title="Ecommerce sites"
+              blurb="If you want to sell online, you need an ecommerce website that's designed to convert customers and drive sales."
             />         
           </div>
           <div className="column is-4-desktop is-12-tablet">
             <ServiceBlock
               icon="fas fa-rocket"
-              title="Optimisation &amp; SEO"
-              blurb="Current site running a bit slow? A speedy, well-optimised WordPress site is better for users and helps you climb those search engine rankings."
+              title="SEO &amp; marketing"
+              blurb="Whether it's strategy, planning, or optimising an existing presence, my straightforward advice will help you climb those rankings."
             />
           </div>
           <div className="column is-4-desktop is-12-tablet">
             <ServiceBlock
-              icon="fas fa-server"
-              title="WordPress hosting"
-              blurb="I offer reliable, fast web hosting for WordPress websites including site optimisation, caching, security controls, 99% uptime and free SSL certificates."
+              icon="fas fa-users"
+              title="UX/UI consultancy"
+              blurb="Simple advice on how to convert more leads from your website and how to improve your website for better customers experiences."
             />
           </div>
           <div className="column is-4-desktop is-12-tablet">
             <ServiceBlock
-              icon="fab fa-wordpress"
-              title="Theme development"
-              blurb="Whether it's custom WordPress theme development, additions to existing themes or advice on your current WordPress site setup and theme."
+              icon="fas fa-clipboard-check"
+              title="Website audits"
+              blurb="If you want to know where you stand before you start, a thorough audit of your existing website helps power more informed decisions."
             />
           </div>
         </div>
@@ -153,91 +135,77 @@ const WordPressConsultancy = () => {
         <article className='home-section-wordpress media'>
           <figure className='media-left'>
             <img
-              src='/img/example-wp.png'
-              alt='WordPress website designed and built by Rob Kendal'
+              src='/img/example-shopify.png'
+              alt='Example small business website displayed on a laptop'
               className='unstyled'
             />
             <img
-              src='/img/wordpress-logo.png'
-              alt='WordPress logo'
+              src='/img/react-logo-white.png'
+              alt='React JS logo'
               className='unstyled'
             />
           </figure>
           <div className='media-content'>
-            <h2 className='is-white'>WordPress development services</h2>
+            <h2 className='is-white'>Website development services</h2>
             <p>
-              I specialise in delivering WordPress websites and WordPress
+              I specialise in delivering small business websites and website 
               consultancy services to a range of clients of all sizes.
             </p>
             <p>
-              With me, as well as a reliable freelance WordPress consultant, you'll always
+              With me, as well as a reliable freelance web developer, you'll always
               get:
             </p>
             <ul className='unstyled'>
               <li className='flex has-padding-bottom-sm'>
                 <span className='fa fa-thumbs-up has-padding-right-sm'></span>
                 <span>
-                  A professional fullstack developer with over 15 years
-                  experience.
+                  Straightforward knowledge and advice from a professional freelance developer more than 15 years in the business.
                 </span>
               </li>
               <li className='flex has-padding-bottom-sm'>
                 <span className='fa fa-thumbs-up has-padding-right-sm'></span>
                 <span>
-                  A reliable point of contact who believes in straightforward,
-                  honest advice.
+                  Honest, reliable suggestions that always keep your business in mind.
                 </span>
               </li>
               <li className='flex has-padding-bottom-sm'>
                 <span className='fa fa-thumbs-up has-padding-right-sm'></span>
                 <span>
-                  A marketing-led and business-focussed approach to help maxmise
-                  your return on investment
+                  An approach that is built upon marketing-led websites and driving leads for your business.
                 </span>
               </li>
               <li className='flex has-padding-bottom-sm'>
                 <span className='fa fa-thumbs-up has-padding-right-sm'></span>
                 <span>
-                  First class support from strategy and planning, through to
-                  development, project launch and beyond!
+                  First-class support from day 1: from planning, development, delivery and beyond!
                 </span>
               </li>
               <li className='flex has-padding-bottom-sm'>
                 <span className='fa fa-thumbs-up has-padding-right-sm'></span>
                 <span>
-                  Award-winning marketing and Search Engine Optimisation (SEO)
-                  services
+                  Simple marketing and Search Engine Optimisation (SEO) services set for growth.
                 </span>
               </li>
               <li className='flex has-padding-bottom-sm'>
                 <span className='fa fa-thumbs-up has-padding-right-sm'></span>
                 <span>
-                  Expert WordPress services and modern development approaches
-                  including Gatsby, Next.js, the WordPress REST API, GraphQL and
-                  the Jamstack.
-                </span>
-              </li>
-              <li className='flex has-padding-bottom-sm'>
-                <span className='fa fa-thumbs-up has-padding-right-sm'></span>
-                <span>
-                  Enterprise-level HubSpot capaign management and WordPress
-                  integrations
+                  Expert website design services and modern website development practices 
+                  including, Next.js, GraphQL and the Jamstack for superb customer experiences.
                 </span>
               </li>
               <li className='flex has-padding-bottom-sm'>
                 <span className='fa fa-thumbs-up has-padding-right-sm'></span>
                 <span>
                   Help and support launching super fast, accessible, static
-                  websites that rank well on search engines
+                  websites that rank well on search engines.
                 </span>
               </li>
             </ul>
-            <p>Tell me about your WordPress project and how I can help</p>
-            <br />
+            <p>Let's talk about your sall business website project and how we can hit your goals.</p>
             <p>
               <Link href='/contact'>
                 <a className='button is-default has-icon is-medium'>
-                  <span>discuss my project</span>
+                  <span>discuss your project</span>
                   <span className='icon fas fa-chevron-circle-right'></span>
                 </a>
               </Link>
@@ -248,12 +216,11 @@ const WordPressConsultancy = () => {
 
       <section className='section is-md'>
         <h2 className='has-text-centered'>
-          I've worked with some great brands
+          Brands of all sizes
         </h2>
         <p className='has-text-centered'>
-          As a freelance WordPress developer, I've worked with some amazing
-          local and national brands, as well as a host of local Yorkshire
-          businesses
+          As a freelance web developer, I've loved working with some superb
+          brands, nationally and local to York.
         </p>
         <div className='columns is-multiline'>
           <div className='column is-12-tablet is-4-desktop is-2-widescreen is-offset-1-widescreen has-text-centered'>
@@ -285,10 +252,9 @@ const WordPressConsultancy = () => {
 
       <section className='section is-md'>
         <div className='container'>
-          <h2 className='has-text-centered'>Kind words from great clients</h2>
+          <h2 className='has-text-centered'>What my clients say</h2>
           <p className='has-text-centered'>
-            From WordPress website development services to code mentoring,{' '}
-            <br /> here's what some of my clients have to say.
+            From small business web design services to digital marketing and support, here's what some of my clients have to say.
           </p>
           <br />
           <Testimonials />
@@ -297,11 +263,10 @@ const WordPressConsultancy = () => {
 
       <section className='section is-md'>
         <div className='container has-text-centered'>
-          <h2>How can I help?</h2>
+          <h2>How I can help your business</h2>
           <p>
-            If you need a freelance WordPress consultant, want to discuss
-            WordPress website development or want to hear some straightforward
-            advice on how to start your next WordPress website project, I'd love to have a quick chat!
+            If you're in need of a freelance web developer, looking for advice on your existing website 
+            or in need of a complete custom website build for your business, it costs nothing to start a conversation. 
           </p>
           <br />
           <Link href='/contact'>
@@ -316,4 +281,4 @@ const WordPressConsultancy = () => {
   );
 };
 
-export default WordPressConsultancy;
+export default SmallBusinessWebsites;

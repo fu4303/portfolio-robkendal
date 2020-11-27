@@ -75,7 +75,7 @@ const Favicon = () => (
       type='image/png'
       sizes='16x16'
       href='/img/icons/favicon-16x16.png'
-    />
+    /> 
     <link rel='icon' href='/img/icons/favicon.ico' />
     <link rel='manifest' href='/img/icons/manifest.json' />
     <meta name='msapplication-TileColor' content='#ffffff' />

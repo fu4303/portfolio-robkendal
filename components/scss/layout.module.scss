@@ -7,9 +7,6 @@
 
   .logo {
     max-width: 5em;
-
-    img {
-    }
   }
 }
 
@@ -79,11 +76,6 @@
 
 .content-container {
   padding: 2em 2em 0;
-  .content {
-    //max-width: 36rem;
-    //padding: 0 1rem;
-    //margin: 3rem auto 6rem;
-  }
 }
 
 .footer {
@@ -94,6 +86,12 @@
 .sidebar {
   flex-grow: 1;
   order: 1;
+}
+
+@media screen and (max-width: 1260px) {
+  .content-container {
+    padding: 2em 1.5em 0;
+  }
 }
 
 @media screen and (max-width: 1150px) {

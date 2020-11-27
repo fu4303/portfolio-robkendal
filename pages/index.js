@@ -7,6 +7,7 @@ import DateDisplay from '../components/DateDisplay';
 
 // helpers
 import { getSortedPostsData } from '../lib/posts';
+import ServiceBlockHome from '../components/ServiceBlockHome';
 
 export default function Home({ allPostsData }) {
   return (
@@ -19,7 +20,7 @@ export default function Home({ allPostsData }) {
           <p>
             Hi, I'm Rob Kendal. If you've been searching for a{' '}
             <strong>
-              freelance web developer who knows WordPress and frontend web
+              freelance web developer who knows Shopify, WordPress and frontend web
               development inside and out
             </strong>
             , you've come to the right place.
@@ -37,6 +38,18 @@ export default function Home({ allPostsData }) {
               <span>
                 A reliable development professional who will always give you
                 straightforward, honest advice.
+              </span>
+            </li>
+            <li className='flex has-padding-bottom-sm'>
+              <span className='fa fa-thumbs-up has-text-secondary has-padding-right-sm'></span>
+              <span>
+                A freelancer with expert skills in &nbsp;
+                <Link href="/freelance-shopify-developer">
+                  <a>Shopify development</a>
+                </Link> and &nbsp;
+                <Link href="/wordpress-consultancy">
+                  <a>WordPress websites</a>
+                </Link> 
               </span>
             </li>
             <li className='flex has-padding-bottom-sm'>
@@ -106,78 +119,39 @@ export default function Home({ allPostsData }) {
       </section>
 
       <section className='section is-secondary'>
-        <article className='home-section-wordpress media'>
-          <figure className='media-left'>
-            <video
-              playsInline=''
-              autoPlay=''
-              muted=''
-              loop=''
-              poster='/img/videos/wp-demo.jpg'
-              className='img-present'
-            >
-              <source src='/img/videos/wp-demo.webm' type='video/webm' />
-              <source src='/img/videos/wp-demo.mp4' type='video/mp4' />
-            </video>
-            <img
-              src='/img/wordpress-logo.png'
-              alt='WordPress logo'
-              className='unstyled'
+        <h2 className='has-text-centered is-white'>How can I help?</h2>
+        <p className='has-text-centered'>
+          As a freelance WordPress developer and freelance Shopify Partner, I can help build your next business website or ecommerce website
+        </p>
+        <div className="columns is-centered home-service-blocks is-desktop">
+          <div className="column">
+            <ServiceBlockHome
+              title="Shopify development"
+              img="/img/shopify_logo_white.png"
+              imgAlt="Shopify logo"
+              link="/freelance-shopify-developer"
+              blurb="As a Shopify Partner, I can help with ecommerce websites on Shopify, store migrations, Shopify theme development and more."
             />
-          </figure>
-          <div className='media-content'>
-            <h2 className='is-white'>WordPress Consultancy</h2>
-            <p>
-              I specialise in delivering WordPress websites for clients ranging
-              from small local businesses, through to enterprise level
-              organisations.
-            </p>
-            <p>
-              I offer WordPress consultancy services to help with a range of
-              projects and needs including:
-            </p>
-            <ul style={{ lineHeight: '1.7' }}>
-              <li>
-                Building enterprise-level marketing-led business websites using
-                WordPress.
-              </li>
-              <li>
-                Creating an ecommerce platform with WordPress, WooCommerce,
-                Snipcart or Stripe.
-              </li>
-              <li>WordPress migrations between hosts.</li>
-              <li>HubSpot to WordPress integrations and campaign setups.</li>
-              <li>
-                Help and support with using WordPress as a headless CMS with
-                React and Gatsby or Next.
-              </li>
-              <li>
-                Designing, developing and deploying static frontend websites
-                using a WordPress-powered backend on Netlify, Vercel, or the AWS
-                platform.
-              </li>
-              <li>
-                Improving WordPress performance and Search Engine Optimisation
-                (SEO).
-              </li>
-              <li>
-                UX or UI consultancy support to plan out your WordPress-powered
-                website.
-              </li>
-            </ul>
-            <p>
-              Let's discuss your WordPress project and find out how I can help.
-            </p>
-            <p>
-              <Link href='/contact'>
-                <a className='button is-default has-icon is-medium'>
-                  <span>hire me</span>
-                  <span className='icon fas fa-chevron-circle-right'></span>
-                </a>
-              </Link>
-            </p>
           </div>
-        </article>
+          <div className="column">
+            <ServiceBlockHome
+                title="WordPress development"
+                img="/img/wordpress-logo.png"
+                imgAlt="WordPress logo"
+                link="/wordpress-consultancy"
+                blurb="As a freelance WordPress developer, I can design and build WordPress themes, optimise your WordPress site, and help with SEO."
+            />
+          </div>
+          <div className="column">
+            <ServiceBlockHome
+                title="Business websites"
+                img="/img/react-logo-white-home.png"
+                imgAlt="React JS logo"
+                link="/small-business-websites"
+                blurb="You need a marketing-led website that delights your users and drives more leads for your busienss. I can help with this."
+              />
+          </div>
+        </div>
       </section>
 
       <section className='section is-md'>
@@ -247,6 +221,7 @@ export default function Home({ allPostsData }) {
             </div>
           </div>
           <div className="column is-12-tablet is-12-desktop is-6-widescreen is-6-fullhd message">
+            <img src="/img/wordpress-shopify-combined.png" alt="WordPress, Shopify and website logos" className="unstyled" />
             <p>Your business website is key to getting your message in front of your customers.</p>
             <p>A good website should be built with your audience in mind, geared towards their needs and drivers with strong calls to action and properly thought-out UX.</p>
             <p>I can help your business build that website.</p>
