@@ -2,20 +2,18 @@
 templateKey: blog-post
 title: Are tech tests still relevant in today's hiring landscape?
 featured: false
-featuredimage: /img/nathan-dumlao-572049-unsplash.jpg
-date: 2019-02-05T15:30:32.539Z
-description: >-
-  After applying for development jobs, I've been thinking a lot about how
-  relevant are tech tests? Are they still a useful tool to make a hiring
-  decision?
+featuredimage: "/img/nathan-dumlao-572049-unsplash.jpg"
+date: 2019-02-05T15:30:32.539+00:00
+description: After applying for development jobs, I've been thinking a lot about how
+  relevant are tech tests? Are they still a useful tool to make a hiring decision?
 tags:
-  - Controversial
-  - Thoughts
----
+- Controversial
+- Thoughts
 
+---
 ![Row of seats in a lecture hall](/img/nathan-dumlao-572049-unsplash.jpg)
 
-I recently wrote about [job hunting in today's tech landscape](https://robkendal.co.uk/how-to-land-that-dev-job-youve-always-wanted/) (mainly development) and shared my experiences, tips and tricks. Following on from that article and several discussions with ex-colleagues and other friends who are now in a job hunting position, the topic always drifts back to one stage in the hiring process in particular: the dreaded technical tests...\*queue the foreboding music\*.
+I recently wrote about [job hunting in today's tech landscape](https://robkendal.co.uk/blog/job-hunting-in-the-tech-industry-tips-tricks-and-experiences "Job hunting in the tech industry") (mainly development) and shared my experiences, tips and tricks. Following on from that article and several discussions with ex-colleagues and other friends who are now in a job hunting position, the topic always drifts back to one stage in the hiring process in particular: the dreaded technical tests...*queue the foreboding music*.
 
 This got me to thinking: 'how relevant are tech tests in today's market, and are they still a useful tool to make a hiring decision?'
 
@@ -23,22 +21,20 @@ This got me to thinking: 'how relevant are tech tests in today's market, and are
 
 Photo by [Helloquence](https://unsplash.com/@helloquence?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit) / [Unsplash](https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit)
 
-The problem with tech tests
----------------------------
+## The problem with tech tests
 
 At some point, someone decided that technical tests should be slid into the developer hiring process as a good measure of the candidate in question's ability to write some code in a relevant language - to gauge their technical knowledge.
 
 The problem is, most tech tests don't seem quite thought through and can suffer from a number of problems:
 
-*   They're used as a sole (or very large bias) measure in the hiring decision
-*   They don't have good skills coverage or highlight language depth
-*   They're cursory at best
-*   They're too big of an ask
-*   They don't recognise nor measure other vital skills, such as empathy, communication or (sometimes) even logic and problem solving.
-*   They are unforgivingly strict and don't represent how it works in the real-world
+* They're used as a sole (or very large bias) measure in the hiring decision
+* They don't have good skills coverage or highlight language depth
+* They're cursory at best
+* They're too big of an ask
+* They don't recognise nor measure other vital skills, such as empathy, communication or (sometimes) even logic and problem solving.
+* They are unforgivingly strict and don't represent how it works in the real-world
 
-When good tech tests go bad
----------------------------
+## When good tech tests go bad
 
 There are other problems, of course, as with any process or its parts. But there are a couple of points in the previous list that I'd like to highlight as I believe they fundamentally undermine the very goal that tech tests seek to achieve.
 
@@ -80,8 +76,8 @@ This knowledge should be gained largely from discussions around those very topic
 
 The hiring decision, for me, has everything to do with the following two qualities:
 
-1.  How well will this person fit within our company - can we all work together?
-2.  Can this person learn, develop and grow?
+1. How well will this person fit within our company - can we all work together?
+2. Can this person learn, develop and grow?
 
 This can't apply to all industries, obviously. I wouldn't expect someone to be hired as a heart surgeon based solely on a plucky attitude and can-do spirit. But a seasoned developer with an analytical mind shouldn't be passed over, just because she doesn't know ReactJS.
 
@@ -98,8 +94,7 @@ Yes, you need some sort of limits - time-boxing the test, for example - but by p
 
 I mean, who hasn't looked for help on [Stack Overflow](https://www.stackoverflow.com) or referred back to a set of docs because they can't possibly keep the entire JestJS api in their head?
 
-Where tech tests can help
--------------------------
+## Where tech tests can help
 
 Where they _can_ help immensely is giving an overview, an objective assessment of a candidate's approach to problem solving and task management _beyond_ literal attributes of their code skills - how they comment their code, or how efficient they are in writing functions, their coding style, etc.
 
@@ -107,14 +102,13 @@ They can highlight strengths and weaknesses in a language or a framework, or eve
 
 Good tech tests should be:
 
-*   Deep enough to gather the relevant data for which they exist
-*   Reimbursing the candidate for their time and expenses (for larger tests)
-*   Taken as a part-measure of a candidate's profile - not the final word
-*   Given fair boundaries within which to work, not confined to unrealistic rules
-*   Not viewed as the only indicator of a particular level of skill
+* Deep enough to gather the relevant data for which they exist
+* Reimbursing the candidate for their time and expenses (for larger tests)
+* Taken as a part-measure of a candidate's profile - not the final word
+* Given fair boundaries within which to work, not confined to unrealistic rules
+* Not viewed as the only indicator of a particular level of skill
 
-Tech tests still have a place, _but..._
----------------------------------------
+## Tech tests still have a place, _but..._
 
 Technical tests have their place and can **work well to round out the overall picture of a person**, but they're a delicate balance to get right: big enough to be worth the effort; small enough to not consume the hiring process; designed to work well as part of the bigger picture.
 
