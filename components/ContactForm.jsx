@@ -11,7 +11,7 @@ const encode = data => {
     .join('&');
 };
 
-const ContactForm = ({formName = "contact-form", action="/contact/thanks"}) => {
+const ContactForm = ({formName = "contact-form", action="/contact/thanks", pageLocation =""}) => {
   //const [isValidated, setIsValidated] = useState(false);
   const [fields, setFields] = useState({});
   const router = useRouter();
@@ -19,7 +19,7 @@ const ContactForm = ({formName = "contact-form", action="/contact/thanks"}) => {
     const handleChange = e => {
         setFields({
           ...fields,
-           [e.target.name]: e.target.value 
+           [e.target.name]: e.target.value
         });
     }
 
@@ -49,7 +49,8 @@ const ContactForm = ({formName = "contact-form", action="/contact/thanks"}) => {
       className={styles.form}
     >
       {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-      <input type='hidden' name='form-name' value='newsletter' />
+      <input type='hidden' name='form-name' value={formName} />
+      <input type='hidden' name='page-sent-from' value={pageLocation} />
       <div hidden>
         <label>
           Don’t fill this out:{' '}

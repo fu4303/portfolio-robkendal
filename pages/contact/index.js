@@ -22,7 +22,7 @@ const Contact = () => {
       <div className='container'>
         <h1>Let's talk!</h1>
         <p>
-          Ready to talk about your WordPress project? Need help with a web
+          Ready to talk about your WordPress or Shopify project? Need help with a web
           development project? Or want to know more about my{' '}
           <Link href='/mentorship'>
             <a>coding mentorship support</a>
@@ -45,7 +45,7 @@ const Contact = () => {
         </p>
         <ContactForm action='/contact/thanks' />
         <br />
-        <p><small>listed on <a href="https://www.citationsbooster.co.uk/" target="__blank" noreferrer noopener>Listed in Citations Booster</a> and <a href="https://www.uksmallbusinessdirectory.co.uk/" target="__blank" noreferrer noopener>Business Directory</a></small></p>
+        {/*<p><small>listed on <a href="https://www.citationsbooster.co.uk/" target="__blank" noreferrer noopener>Listed in Citations Booster</a> and <a href="https://www.uksmallbusinessdirectory.co.uk/" target="__blank" noreferrer noopener>Business Directory</a></small></p>*/}
       </div>
     </Layout>
   );

@@ -68,7 +68,8 @@ main > section + section:not(.has-border-top),
   background-color: var(--brand-alt);
 }
 
-main > section:last-of-type {
+main > section:last-of-type,
+main > .section:last-of-type{
   border-bottom: none;
 }
 
@@ -197,6 +198,7 @@ main > section:last-of-type {
 
 .box {
   background-color: white;
+  color: var(--text-color);
   border: none;
   padding: 1em;
   border-radius: 15px;
