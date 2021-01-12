@@ -348,7 +348,9 @@ We'll start with the create part of the CRUD, creating a new user. Add in the fo
 // CREATE
 app.post('/users', (req, res) => {
   readFile(data => {
-    const newUserId = Object.keys(data).length + 1;
+    // Note: this needs to be more robust for production use. 
+    // e.g. use a UUID or some kind of GUID for a unique ID value.
+    const newUserId = Date.now().toString();
 
     // add the new user
     data[newUserId] = req.body;
@@ -364,7 +366,7 @@ app.post('/users', (req, res) => {
 
 It's quite a simple operation here. Note that we've changed the `app` function call to `app.post()` as this is a POST request to the API server. The route remains as `/users` but will hit this method when the request type is a POST.
 
-First, we call our new read method and pass a callback function in. When the file is read and we get a JSON object, `data` back, we need to create a new `user` object. For this, we'll grab the number of objects in the file at the moment using `Object.keys(data)` and increment it by one.
+First, we call our new read method and pass a callback function in. When the file is read and we get a JSON object, `data` back, we need to create a new `user` object. For this, we're using the `Date.now().toString()` command to get the timestamp value for 'now', which will be unique enough, but for production purposes, you'll want something a little more robust or guaranteed to be unique. 
 
 Next, we add the new user, `req.body` to the users object using the new user ID we created – note that you may need to wrap this in `JSON.parse` to coerce the incoming request body into a format we can read and add to our current data. This will depend on how you're calling the API and supplying data to it.
 
