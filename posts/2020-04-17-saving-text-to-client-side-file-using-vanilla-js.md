@@ -1,17 +1,16 @@
 ---
 templateKey: blog-post
 title: Saving text to a client-side file using vanilla JS
-date: 2020-04-17T14:30:00.263Z
+date: 2020-04-17T14:30:00.263+00:00
 featured: true
-featuredimage: /img/saving to client-side files - blog post.png
-description: >-
-  Want to save files to the client using JavaScript? Let's look at how to save a file
-  client-side using s simple handful of vanilla JavaScript
+featuredimage: "/img/saving-to-client-side-files-blog-post.png"
+description: Want to save files to the client using JavaScript? Let's look at how
+  to save a file client-side using s simple handful of vanilla JavaScript
 tags:
-  - Tutorials
-  - JavaScript
----
+- Tutorials
+- JavaScript
 
+---
 ![Blog header for the article on ](/img/saving to client-side files - blog post.png)
 
 Another one of those 'born of an issue I stumbled across' sort of situations, I came across the need to save some data entered into a form (some configuration details into a textarea to be specific). 
