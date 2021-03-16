@@ -10,7 +10,7 @@
     "deploy": "yarn build && yarn export && node rss-gen.js"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "5.15.2",
+    "@fortawesome/fontawesome-free": "5.15.3",
     "axios": "0.21.1",
     "date-fns": "2.19.0",
     "gray-matter": "4.0.2",
