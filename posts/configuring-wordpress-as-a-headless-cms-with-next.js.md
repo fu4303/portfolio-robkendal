@@ -2,17 +2,16 @@
 date: 2020-09-06T09:33:25.000+00:00
 published: true
 title: Configuring WordPress as a headless CMS with Next.js
-description:
-  In part 1 of the Getting Started with Next.js, we're looking at how to
+description: In part 1 of the Getting Started with Next.js, we're looking at how to
   use configure WordPress as a headless CMS to use with Next.js using WPGraphQL
-featuredimage: '/img/next-js-with-wordpress-part-1-blog-post.png'
+featuredimage: "/img/next-js-with-wordpress-part-1-blog-post.png"
 featured: true
 tags:
-  - Static Sites
-  - Next
-  - JavaScript
----
+- Static Sites
+- Next
+- JavaScript
 
+---
 ![Blog article on configuring WordPress as a headless CMS with Next.js](/img/next-js-with-wordpress-part-1-blog-post.png)
 
 Welcome to the first in a series of articles on getting started with Next.js. In this very first starting point, we'll be looking at creating a brand new Next.js project using the very helpful `create-next-app` tool.
@@ -21,10 +20,10 @@ From there, we'll be setting up WordPress as a headless CMS to manage our blog p
 
 As we move through future articles in the series, we'll be covering a lot of moving parts to round out the entire process, including:
 
-- Starting a blog using Next.js,
-- Using WordPress as a headless CMS with Next.js,
-- Creating an RSS feed for our static Next.js blog
-- Bundling, building and deploying our Next.js static blog with Netlify
+* Starting a blog using Next.js,
+* Using WordPress as a headless CMS with Next.js,
+* Creating an RSS feed for our static Next.js blog
+* Bundling, building and deploying our Next.js static blog with Netlify
 
 For this very article, however, we're just going to start with the basics of getting Next.js and our headless WordPress instance setup and ready to go.
 
@@ -32,11 +31,11 @@ So let's get to it!
 
 ## Why Next.js
 
-[Next.js](https://nextjs.org/ 'Next.js from Vercel') (made by a company called [Vercel](https://vercel.com/ 'Vercel static website hosting') — formally Zeit) is a React-based framework for producing static-generated websites. It fills in some of the blanks of using React in its vanilla form, such as dynamic page routing, and it also allows developers a bevvy of choices of where to get their data from to power their static websites.
+[Next.js](https://nextjs.org/ "Next.js from Vercel") (made by a company called [Vercel](https://vercel.com/ "Vercel static website hosting") — formally Zeit) is a React-based framework for producing static-generated websites. It fills in some of the blanks of using React in its vanilla form, such as dynamic page routing, and it also allows developers a bevvy of choices of where to get their data from to power their static websites.
 
 ### Isn't it just like Gatsby
 
-It's very comparable to [Gatsby](https://nextjs.org/ 'Next.js from Vercel') (which I also love) in many ways. Indeed Next.js and Gatsby share the same end goal: to connect data with a static-generator engine to produce a static website.
+It's very comparable to [Gatsby](https://nextjs.org/ "Next.js from Vercel") (which I also love) in many ways. Indeed Next.js and Gatsby share the same end goal: to connect data with a static-generator engine to produce a static website.
 
 Personally, I prefer Next.js the more I use it. Whilst Gatsby offers a more mature eco-system with its plugins and community, Next.js offers a much less complex setup and often requires fewer plugins to achieve the same thing.
 
@@ -50,7 +49,7 @@ However, it does have a reputation for being quite clunky at times and it takes 
 
 One of the best reasons to consider WordPress as a headless CMS is that it solves the largest problem facing static-generated websites: editing content!
 
-Sure, for most developers (me included) this isn't so much of a burden. For example, I use [Forestry.io](https://forestry.io 'Forestry.io markdown CMS') as a markdown editor/CMS to edit the markdown files that power this very site directly in my GitHub repo.
+Sure, for most developers (me included) this isn't so much of a burden. For example, I use [Forestry.io](https://forestry.io "Forestry.io markdown CMS") as a markdown editor/CMS to edit the markdown files that power this very site directly in my GitHub repo.
 
 Other developers may choose to just edit HTML directly, and that's fine and dandy.
 
@@ -64,7 +63,7 @@ By using WordPress as a headless CMS with Next.js, it's win win win. Website vis
 
 Installing and getting a WordPress instance going is beyond the scope of this article and there are many places to help get you started with that.
 
-If you're looking for a recommendation then check out [Amazon's Lightsail](https://aws.amazon.com/lightsail/ 'Amazon Lightsail hosting'), or the AWS platform in general as there are often free tiers available, especially whilst you're just getting started.
+If you're looking for a recommendation then check out [Amazon's Lightsail](https://aws.amazon.com/lightsail/ "Amazon Lightsail hosting"), or the AWS platform in general as there are often free tiers available, especially whilst you're just getting started.
 
 What we're bothered about here is adding some necessary bits and pieces to a WordPress website to turn it into a headless CMS for Next.js to access.
 
@@ -72,19 +71,17 @@ So, assuming you already have a WordPress instance set up, let's move on.
 
 ![Demo WordPress website from Rob Kendal](/img/nextjs-demo-robkendal.jpg)
 
-(PS - if you want to use my demo site, which I'm using in this article, then you can check it out here - [http://demo.robkendal.co.uk/](http://demo.robkendal.co.uk/ 'Demo WordPress website for linking to Next.js')
-
 ### Installing WPGraphQL (and plugins)
 
 Out of the box you can use the WordPress REST API to fetch data and so on, but we're going to be using GraphQL to do the heavy lifting.
 
 This does mean we have to install a few plugins, however, before we can start accessing our data via Next.js.
 
-So, we'll be heading over to [https://www.wpgraphql.com/](https://www.wpgraphql.com/ 'WPGraphQL plugin') and we'll want to install the following plugins:
+So, we'll be heading over to [https://www.wpgraphql.com/](https://www.wpgraphql.com/ "WPGraphQL plugin") and we'll want to install the following plugins:
 
-- [WPGraphQL main plugin](https://github.com/wp-graphql/wp-graphql/releases 'WPGraphQL plugin')
-- [WPGraphQL for ACF](https://github.com/wp-graphql/wp-graphql-acf 'WPGraphQL for ACF plugin') (advanced custom fields)
-- [WPGraphiQL](https://github.com/wp-graphql/wp-graphiql 'WPGraphiQL plugin') - a visual query builder/explorer for GraphQL
+* [WPGraphQL main plugin](https://github.com/wp-graphql/wp-graphql/releases "WPGraphQL plugin")
+* [WPGraphQL for ACF](https://github.com/wp-graphql/wp-graphql-acf "WPGraphQL for ACF plugin") (advanced custom fields)
+* [WPGraphiQL](https://github.com/wp-graphql/wp-graphiql "WPGraphiQL plugin") - a visual query builder/explorer for GraphQL
 
 **Note:** _with the WPGraphQL stuff, you'll have to visit those links, download the Source Code (zip) as zip files and upload them to WordPress manually via the Admin Menu > Plugins > Add New > Upload dialog._
 
@@ -94,7 +91,7 @@ The reason for favouring GraphQL is that it's faster than the REST API and Graph
 
 > This is hugely important as we can see the output of the queries, testing and tweaking them as we go, _before_ we have to blindly add them to our local dev instance.
 
-We'll also need once last plugin, [Advanced Custom Fields](https://www.advancedcustomfields.com/ 'WordPress Advanced Custom Fields (ACF) plugin') (ACF). This will allow us to add extra fields to our posts or pages to extend their content capabilities.
+We'll also need one last plugin, [Advanced Custom Fields](https://www.advancedcustomfields.com/ "WordPress Advanced Custom Fields (ACF) plugin") (ACF). This will allow us to add extra fields to our posts or pages to extend their content capabilities.
 
 ### Adding custom fields to posts
 
@@ -129,7 +126,7 @@ Head over to the GraphiQL menu item in your WordPress admin console.
 
 Now for the real magic! GraphiQL is a visual query builder that lets you simply expand and toggle data fields on the left hand side, build a query in the middle using those data fields, and execute that query to see what data is returned.
 
-Very powerful stuff, I'm sure you'll agree. Now, the in's and out's of GraphQL language and the GraphiQL tool are entire articles and courses in themselves, but you can find out more from the [official GraphQL website](https://graphql.org/ 'Official GraphQL website and documentation').
+Very powerful stuff, I'm sure you'll agree. Now, the in's and out's of GraphQL language and the GraphiQL tool are entire articles and courses in themselves, but you can find out more from the [official GraphQL website](https://graphql.org/ "Official GraphQL website and documentation").
 
 For our purposes, you can see below that I've expanded various paths on the tree menu, starting with `posts` and this has automatically built me a query in the centre editor panel. When I pressed the big play button, the query is executed and the results shown in the rightmost panel.
 
@@ -204,7 +201,7 @@ And with that, we have our WordPress instance set up as a headless CMS with the 
 
 The final step in the project setup process to use WordPress as a headless CMS using Next.js is the most important part: Next.js!
 
-As it happens, [Next.js has a project create tool](https://nextjs.org/learn/basics/create-nextjs-app/setup 'Next.js Create Next App tool documentation') called `create-next-app` which will create us a bootstrapped Next.js app with the barebones of configuration ready to go.
+As it happens, [Next.js has a project create tool](https://nextjs.org/learn/basics/create-nextjs-app/setup "Next.js Create Next App tool documentation") called `create-next-app` which will create us a bootstrapped Next.js app with the barebones of configuration ready to go.
 
 Much like React's own `create-react-app` tool, the `create-next-app` tool is run from the command line and creates a directory with all the necessary project files in place.
 
