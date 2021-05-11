@@ -29,6 +29,67 @@ const Publications = () => {
               <div className='card'>
                 <div className='card-image'>
                   <a
+                    href='https://www.newline.co/courses/beginners-guide-to-real-world-react'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <img
+                      src='/img/publications/react-guide-course.png'
+                      alt='The Beginners Guide to Real-World React course cover'
+                      className='unstyled'
+                    />
+                  </a>
+                </div>
+                <div className='card-content'>
+                  <h3 className='subtitle is-size-4'>
+                    <a
+                      href='https://www.newline.co/courses/beginners-guide-to-real-world-react'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      The Beginner's Guide to Real-World React
+                    </a>
+                  </h3>
+                  <p>
+                    My course, The Beginner's Guide to Real-World React is available now and well-suited to new and aspiring developers
+                    alike.
+                  </p>
+                  <p>
+                    It's perfect for those new to the React library and will teach you solid fundamentals of React development through
+                    heaps of practical lessons, projects and realistic examples.
+                  </p>
+                  <p>
+                    With the course, you'll get access to:
+                  </p>
+                  <ul>
+                    <li>8+ hours of video,</li>
+                    <li>50 lessons,</li>
+                    <li>loads of practical React advice,</li>
+                    <li>project-based learning through building real applications,</li>
+                    <li>step-by-step teaching and guidance from a seasoned React developer,</li>
+                    <li>...and much more</li>
+                  </ul>                  
+                  <p className='has-text-centered'>                    
+                    <a
+                      className='button is-primary'
+                      href='https://www.newline.co/courses/beginners-guide-to-real-world-react'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      Learn more
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className='section'>
+          <div className='columns'>
+            <div className='column'>
+              <div className='card'>
+                <div className='card-image'>
+                  <a
                     href='https://gum.co/WssIGB'
                     target='_blank'
                     rel='noopener noreferrer'
