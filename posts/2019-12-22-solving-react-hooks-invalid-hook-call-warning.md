@@ -1,21 +1,22 @@
 ---
 templateKey: blog-post
 title: Solving React Hooks' invalid hook call warning
-date: 2019-12-22T09:28:23.344Z
+date: 2019-12-22T09:28:23.344+00:00
 featured: false
-featuredimage: /img/fixing-invalid-hooks-warning-blog-header.png
-description: >
-  Building a React project and have the error 'Hooks can only be called inside
-  the body of a function component'? We'll solve the 'invalid hook call warning'
-  error and get your project back on track.
-tags:
-  - JavaScript
-  - Development
-  - Tutorials
-  - React
-  - Debugging
----
+featuredimage: "/img/fixing-invalid-hooks-warning-blog-header.png"
+description: 'Building a React project and have the error ''Hooks can only be called
+  inside the body of a function component''? We''ll solve the ''invalid hook call
+  warning'' error and get your project back on track.
 
+'
+tags:
+- JavaScript
+- Development
+- Tutorials
+- React
+- Debugging
+
+---
 ![Blog header for article on invalid hook call warning](/img/fixing-invalid-hooks-warning-blog-header.png)
 
 Recently, I decided to build a [React-based visual query builder](https://github.com/bpk68/react-visual-query-builder) as none of the existing ones out in the wild were doing what I wanted. Awesome: who doesn't love the chance to get their chops around a meaty sort-of-side-project, especially when we'd planned to release it to the open source community?!
@@ -44,6 +45,8 @@ I definitely wasn't falling foul of causes two or three, and I thought I had num
 
 Hugely frustrating times ensued. Monitors were thrown out of the window and I started to question my entire development life.
 
+[![course banner for beginners React course](/img/react-course-cta.png "Beginner's Guide to Real-World React")](https://www.newline.co/courses/beginners-guide-to-real-world-react/ "See the Beginner's Guide to Real-World React")
+
 ### Finally finding the answer
 
 After much searching and debugging, the problem seemed to definitely lay with this duplicate versions of React or React DOM issue.
@@ -52,12 +55,10 @@ In fact, the answer lay at the end of the helpful React Hooks documentation abov
 
 For my particular scenario, I'd used my very own [Parcel JS starter project (complete with React)](https://robkendal.co.uk/blog/2019-04-29-using-parcel-bundler-with-react-js/) to build the query builder. I did take note of the 'multiple versions of React' no no from the above list and had used [Parcel's alias feature](https://parceljs.org/module_resolution.html#aliases), as well as making sure to employ the `peerDependencies` config setting in package.json.
 
-```
-"peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
-  },
-```
+    "peerDependencies": {
+        "react": ">=16.8.0",
+        "react-dom": ">=16.8.0"
+      },
 
 Despite all this caution, Parcel was still **bundling React and React DOM into the production build!**
 
@@ -91,12 +92,10 @@ In order to dodge the invalid Hooks error caused by duplicate React version, usi
 
 First things first, open your `package.json` file and set your versions of React as a peer dependency:
 
-```
-"peerDependencies": {
-   "react": ">=16.8.0",
-   "react-dom": ">=16.8.0"
-},
-```
+    "peerDependencies": {
+       "react": ">=16.8.0",
+       "react-dom": ">=16.8.0"
+    },
 
 This won't solve your issue, but it's necessary to ensure that the consuming project has React (or whatever else you have in here) installed as a dependency.
 
@@ -106,21 +105,17 @@ Now for the real meat and potatoes of the solution: we need to configure Webpack
 
 To do that, you'll need to add Webpack's `externals` property to the production settings, like so:
 
-```
-externals: {
-   react: 'commonjs react',
-  'react-dom': 'commonjs react-dom',
-},
-```
+    externals: {
+       react: 'commonjs react',
+      'react-dom': 'commonjs react-dom',
+    },
 
 Finally, we'll also adjust the type of module system that Webpack outputs in the production build. To do that, we'll add the `libraryTarget` property to the `output` setting in the Webpack config as follows:
 
-```
-output: {
-   ...// other settings here
-   libraryTarget: 'commonjs2'
-},
-```
+    output: {
+       ...// other settings here
+       libraryTarget: 'commonjs2'
+    },
 
 ## Ahh all's well that ends well
 
@@ -130,9 +125,9 @@ So that should see you right. It's worth noting that your consuming project will
 
 Here's a quick summary of the helpful links used throughout this article:
 
-- [Official React hooks error documentation](https://reactjs.org/warnings/invalid-hook-call-warning.html)
-- [The React Query Builder on GitHub](https://github.com/bpk68/react-visual-query-builder)
-- [The React Visual Query Builder on NPM](https://www.npmjs.com/package/react-visual-query-builder)
-- [The Hooks error discussion on GitHub](https://github.com/facebook/react/issues/13991)
-- [My Webpack starter project](https://github.com/bpk68/web-template)
-- [My Parcel JS starter project with React](https://github.com/bpk68/parcel-starter-with-react)
+* [Official React hooks error documentation](https://reactjs.org/warnings/invalid-hook-call-warning.html)
+* [The React Query Builder on GitHub](https://github.com/bpk68/react-visual-query-builder)
+* [The React Visual Query Builder on NPM](https://www.npmjs.com/package/react-visual-query-builder)
+* [The Hooks error discussion on GitHub](https://github.com/facebook/react/issues/13991)
+* [My Webpack starter project](https://github.com/bpk68/web-template)
+* [My Parcel JS starter project with React](https://github.com/bpk68/parcel-starter-with-react)
