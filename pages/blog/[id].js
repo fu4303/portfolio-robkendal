@@ -16,8 +16,35 @@ import {
 } from '../../lib/posts';
 
 export default function Post({ postData, allRelatedPostsData }) {
+  const adHtml = `
+    <div
+        data-ea-publisher="robkendal-co-uk"
+        class="horizontal adaptive flat"
+        data-ea-type="image"
+        id="ea_text_id_${postData.id}"
+        data-ea-keywords="${postData.tags.join('|')}"
+        data-ea-manual="true"
+    />
+  `;
+
   useEffect(() => {
+    // apply code syntax highlighting
     Prism.highlightAll();
+
+    // add ethical ads display to loaded content
+    function applyAds() {
+      const articleContent = document.querySelector('#article-content .post-content');
+      const selectParagraph = articleContent.querySelectorAll('p')[3];
+
+      selectParagraph.insertAdjacentHTML("afterend", adHtml);
+
+      if(ethicalads) {
+        ethicalads.load();
+      }
+    }
+    window.addEventListener('load', applyAds);    
+
+    return () => window.removeEventListener('load', applyAds);
   }, []);
 
   return (
@@ -28,26 +55,13 @@ export default function Post({ postData, allRelatedPostsData }) {
       url={`blog/${postData.id}`}
     >
       <>
-        <article className='container article'>
-          <div className="columns is-vcentered">
-            <div className="column">
-              <div className='post-meta'>
-                <DateDisplay
-                    dateString={postData.date}
-                    className='has-text-grey-light'
-                />
-                <h1>{postData.title}</h1>
-              </div>
-            </div>
-            <div className="column is-narrow">
-              <div
-                  data-ea-publisher="robkendal-co-uk"
-                  className="bordered"
-                  data-ea-type="image"
-                  id={`ea_text_id_${postData.id}`}
-                  data-ea-keywords={postData.tags.join('|')}
-              />
-            </div>
+        <article className='container article' id="article-content">          
+          <div className='post-meta'>
+            <DateDisplay
+                dateString={postData.date}
+                className='has-text-grey-light'
+            />
+            <h1>{postData.title}</h1>
           </div>
           <div
               className='post-content'
