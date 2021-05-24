@@ -92,10 +92,12 @@ In order to dodge the invalid Hooks error caused by duplicate React version, usi
 
 First things first, open your `package.json` file and set your versions of React as a peer dependency:
 
-    "peerDependencies": {
-       "react": ">=16.8.0",
-       "react-dom": ">=16.8.0"
-    },
+```json
+"peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+},
+```
 
 This won't solve your issue, but it's necessary to ensure that the consuming project has React (or whatever else you have in here) installed as a dependency.
 
@@ -105,17 +107,21 @@ Now for the real meat and potatoes of the solution: we need to configure Webpack
 
 To do that, you'll need to add Webpack's `externals` property to the production settings, like so:
 
-    externals: {
-       react: 'commonjs react',
-      'react-dom': 'commonjs react-dom',
-    },
+```js
+externals: {
+  react: "commonjs react",
+  "react-dom": "commonjs react-dom",
+},
+```
 
 Finally, we'll also adjust the type of module system that Webpack outputs in the production build. To do that, we'll add the `libraryTarget` property to the `output` setting in the Webpack config as follows:
 
-    output: {
-       ...// other settings here
-       libraryTarget: 'commonjs2'
-    },
+```js
+output: {
+    ...// other settings here
+    libraryTarget: 'commonjs2'
+},
+```
 
 ## Ahh all's well that ends well
 
