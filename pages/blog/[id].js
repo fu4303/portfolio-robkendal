@@ -38,9 +38,13 @@ export default function Post({ postData, allRelatedPostsData }) {
 
       selectParagraph.insertAdjacentHTML("afterend", adHtml);
 
-      if(ethicalads) {
-        ethicalads.load();
-      }
+      try {
+        if(ethicalads) {
+          ethicalads.load();
+        }  
+      } catch (error) {
+        // ethical ads not found
+      }      
     }
     window.addEventListener('load', applyAds);    
 
