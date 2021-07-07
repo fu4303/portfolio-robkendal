@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import Link from 'next/link';
 
 // helpers
-import {CalendlyLoader} from '../../lib/utils';
+// import {CalendlyLoader} from '../../lib/utils';
 
 // components
 import Layout from '../../components/Layout';
@@ -10,9 +10,9 @@ import ContactForm from '../../components/ContactForm';
 
 const Contact = () => {
 
-  useEffect(() => {
-    CalendlyLoader('rk-calendly-embed');
-  }, []);
+  // useEffect(() => {
+  //   CalendlyLoader('rk-calendly-embed');
+  // }, []);
 
   return (
     <Layout
@@ -29,14 +29,15 @@ const Contact = () => {
           </Link>
           ?
         </p>
-        <p>You can book a 30 min discovery slot directly on my calendar here, or fill in the form and I'll be in touch within 24 horus.</p>
+        {/* <p>You can book a 30 min discovery slot directly on my calendar here, or fill in the form and I'll be in touch within 24 horus.</p> */}
+        <p>Fill in the form and I'll be in touch within 24 horus.</p>
 
         {/* <!-- Calendly inline widget begin --> */}
-        <div
+        {/* <div
             id="rk-calendly-embed"
             className="calendly-inline-widget"
         >
-        </div>
+        </div> */}
         {/* <!-- Calendly inline widget end --> */}
 
         <p>
